@@ -1,0 +1,27 @@
+name: Build
+
+# Yalnızca kontrol: PR'larda (yönetim panelinden gelen düzenlemeler dahil) ve main'de build alınır.
+# Kırık link veya bozuk MDX varsa kontrol kırmızı olur ve PR birleşemez (main koruması "build" ister).
+# Yayını Cloudflare Workers Builds yapar (main'e her birleştirmede); burada Cloudflare token'ı yoktur.
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+concurrency:
+  group: build-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # "Son güncelleme" tarihleri git geçmişinden okunur
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run build

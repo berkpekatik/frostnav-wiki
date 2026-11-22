@@ -48,8 +48,8 @@ Sihirbazdaki metinler `installer.app` (VehicleFinder) ve `adbauth.web` (Customer
 
 ## Yayın
 
-`main` dalına her birleştirmede GitHub Actions build alır ve Cloudflare'e yayınlar (`.github/workflows/deploy.yml`).
-PR'larda yalnızca build alınır; kırık link varsa PR kırmızı olur.
+`main` dalına her birleştirmede **Cloudflare Workers Builds** siteyi kendisi çeker, build alır ve yayınlar.
+GitHub Actions (`.github/workflows/build.yml`) yalnızca kontroldür: PR'larda build alır, kırık link varsa PR kırmızı olur ve birleşemez.
 
 Elle yayın: `npm run deploy`.
 
@@ -62,7 +62,8 @@ Elle yayın: `npm run deploy`.
    npx wrangler@4.166.0 secret put GITHUB_CLIENT_ID
    npx wrangler@4.166.0 secret put GITHUB_CLIENT_SECRET
    ```
-3. Repo gizli değerleri (Settings → Secrets → Actions): `CLOUDFLARE_API_TOKEN` (Workers düzenleme yetkili), `CLOUDFLARE_ACCOUNT_ID`.
+3. Cloudflare → Workers → `frostnav-wiki` → Settings → Builds: repo `berkpekatik/frostnav-wiki`, dal `main`, kök dizin `/`,
+   build komutu `npm run build`, deploy komutu `npx wrangler deploy`.
 4. `main` dalı koruması: PR zorunlu, **Require review from Code Owners** açık, `build` kontrolü zorunlu (repo açık olduğu için ücretsiz).
 5. Düzenleyicileri repoya eklemeye gerek yok: panel "open authoring" modunda, herkes kendi fork'undan PR açar.
    Yalnızca sahip birleştirir. Repoya Write rolüyle kimseyi eklemeyin; eklenen kişi korumayı aşamaz ama fork yerine doğrudan dal açar.
