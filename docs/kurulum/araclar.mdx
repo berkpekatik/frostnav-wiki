@@ -77,18 +77,16 @@ Tiggo 8 2026 menüyü başka yerden açar.
 
 ## Jaecoo {#jaecoo}
 
-:::note
+Jaecoo ekranı ortada dikey, büyük ekrandır. Gizli menü Sistem ayarlarındaki Versiyon bilgisi yazısından açılır.
 
-Bu rehberdeki fotoğraflar Jaecoo modelini veya yılını göstermez. Kabin fotoğrafında direksiyon üzerinde Chery yazar. Model yılını bu fotoğraflardan seçmeyin. Jaecoo ekranında aşağıdaki adımları kullanın.
-
-:::
-
-1. Ayarlar ekranına girin.
-2. "DMC yazılımı sürüm numarası" satırını bulun. Değer `02.00.00` gibi olabilir.
-3. Bu satırın üzerindeki etikete seri bir şekilde dokunun. Gizli menü açılır.
-4. `USB认证` yazısına dokunun. Jaecoo ekranında `USB2.0认证` yazmaz.
-5. `DEVICE EYE PATTERN` / `Device眼图` düğmesi **yoksa** `adbauth.key` gerekir. [ADB Kilid](./adb-kilid.mdx) sayfasında `VERSION INFO` / `版本信息` içine girin. `productID / 产品序列号` değerini alın. `adbauth.key` dosyasını siteden indirdikten sonra kurun.
-6. Düğme **varsa** ona dokunun. `adbauth.key` gerekmez. [02.00.00 kurulumu](./02-00-00.mdx) ile devam edin.
+1. Araç ekranında Ayarlar'ı (Araç merkezi) açın. Soldan Sistem'i seçin.
+   <Shot src={require('@site/assets/finder/jaecoo-system.webp').default} alt="Jaecoo Araç merkezi; soldaki Sistem işaretli" dots={[{top: '69.9%', left: '16.4%'}]} />
+2. Sağdaki `Versiyon bilgisi` yazısına art arda hızlıca dokunun. Değeri `02.00.12` gibi görünür. Gizli menü (`EngMode`) açılır.
+   <Shot src={require('@site/assets/finder/jaecoo-system.webp').default} alt="Jaecoo Sistem; Versiyon bilgisi işaretli" dots={[{top: '54%', left: '40.2%'}]} />
+3. Gizli menüde `USB2.0 AUTH` / `USB2.0认证` yazısına dokunun.
+   <Shot src={require('@site/assets/finder/jaecoo-engmode.webp').default} alt="Jaecoo gizli menü (EngMode); USB2.0 AUTH işaretli" dots={[{top: '66.1%', left: '65.6%'}, {top: '14.2%', left: '16.1%', yellow: true}]} />
+4. `DEVICE EYE PATTERN` / `Device眼图` düğmesi **varsa** ona dokunun. `adbauth.key` gerekmez. [02.00.00 kurulumu](./02-00-00.mdx) ile devam edin.
+5. Düğme **yoksa** `adbauth.key` gerekir. Back ile gizli menüye dönün. `VERSION INFO` / `版本信息` düğmesine dokunun (fotoğrafta sarı nokta). `productID / 产品序列号` değerini alın. Ayrıntı: [ADB Kilid](./adb-kilid.mdx). `adbauth.key` dosyasını siteden indirdikten sonra kurun.
 
 [Rehber ana sayfasına dön](./index.mdx)
 

@@ -251,6 +251,10 @@
   margin-top: 0.5rem;
 }
 
+.pidSteps .shot.portrait {
+  max-width: 320px;
+}
+
 .pidRead {
   font-weight: 600;
 }

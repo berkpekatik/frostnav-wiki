@@ -6,7 +6,7 @@
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
     "start:en": "docusaurus start --locale en",
-    "build": "docusaurus build",
+    "build": "docusaurus build && node scripts/build-llms.mjs",
     "serve": "docusaurus serve",
     "clear": "docusaurus clear",
     "deploy": "npm run build && npx wrangler@4.166.0 deploy",

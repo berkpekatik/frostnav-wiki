@@ -28,13 +28,16 @@ const STEPS = {
   newHome: {img: require('@site/assets/finder/new-home.webp').default, spots: [[43.6, 22.9]]},
   newSystem: {img: require('@site/assets/finder/new-system.webp').default, spots: [[13.1, 78.2], [32.0, 16.2]]},
   newVersion: {img: require('@site/assets/finder/new-engmode.webp').default, spots: [[9.2, 15.5]]},
+  jaecooSystem: {img: require('@site/assets/finder/jaecoo-system.webp').default, spots: [[16.4, 69.9]], portrait: true},
+  jaecooVersionLabel: {img: require('@site/assets/finder/jaecoo-system.webp').default, spots: [[40.2, 54.0]], portrait: true},
+  jaecooEngmode: {img: require('@site/assets/finder/jaecoo-engmode.webp').default, spots: [[16.1, 14.2]], portrait: true},
 };
 
 /* Product ID adımları (adbauth.web Customer_Pid_* ile aynı). img yoksa yalnızca metin. */
 const PID_STEPS = {
   tiggoClassic: [['settings', 'classic1'], ['dot', 'classic2'], ['version', 'classic3']],
   tiggoNew: [['newHome', 'new1'], ['newSystem', 'new2'], ['newVersion', 'new3']],
-  jaecoo: [[null, 'jaecoo1'], [null, 'jaecoo2'], [null, 'jaecoo3']],
+  jaecoo: [['jaecooSystem', 'jaecoo1'], ['jaecooVersionLabel', 'jaecoo2'], ['jaecooEngmode', 'jaecoo3']],
 };
 
 const QUESTION_ORDER = ['model', 'settings', 'dot', 'usb', 'eye'];
@@ -106,8 +109,8 @@ const TEXT = {
       new1: "Araç ekranında uygulamalar arasından Ayarlar'a dokunun.",
       new2: "Soldan Sistem'i seçin. Sağ üstteki Hakkında başlığına art arda hızlıca dokunun. Gizli menü açılır.",
       new3: 'Gizli menüde VERSION INFO / 版本信息 düğmesine dokunun.',
-      jaecoo1: "Araç ekranında Ayarlar'a girin.",
-      jaecoo2: 'DMC yazılımı sürüm numarası satırını bulun. Bu satırın üzerindeki etikete art arda hızlıca dokunun. Gizli menü açılır.',
+      jaecoo1: "Araç ekranında Ayarlar'ı (Araç merkezi) açın. Soldan Sistem'i seçin.",
+      jaecoo2: 'Sağdaki Versiyon bilgisi yazısına art arda hızlıca dokunun. Gizli menü (EngMode) açılır.',
       jaecoo3: 'Gizli menüde VERSION INFO / 版本信息 düğmesine dokunun.',
       read: 'productID / 产品序列号 satırının sağındaki 15 haneli sayıyı not edin. 0 (sıfır) ile O (harf) karıştırmayın.',
       alt: (n) => `Adım ${n}`,
@@ -179,8 +182,8 @@ const TEXT = {
       new1: 'On the car screen, tap Settings among the apps.',
       new2: 'Pick System on the left. Tap the About heading at the top right quickly and repeatedly. The hidden menu opens.',
       new3: 'In the hidden menu, tap VERSION INFO / 版本信息.',
-      jaecoo1: 'Open Settings on the car screen.',
-      jaecoo2: 'Find the DMC software version row. Tap the label above it quickly and repeatedly. The hidden menu opens.',
+      jaecoo1: 'Open Settings (Vehicle center) on the car screen. Pick System on the left.',
+      jaecoo2: 'Tap the Version info label on the right quickly and repeatedly. The hidden menu (EngMode) opens.',
       jaecoo3: 'In the hidden menu, tap VERSION INFO / 版本信息.',
       read: "Write down the 15-digit number next to productID / 产品序列号. Don't mix up 0 (zero) and O (letter).",
       alt: (n) => `Step ${n}`,
@@ -212,9 +215,9 @@ export function ProductIdSteps({cabin}) {
 }
 
 function Shot({step, alt}) {
-  const {img, spots} = STEPS[step];
+  const {img, spots, portrait} = STEPS[step];
   return (
-    <figure className={styles.shot}>
+    <figure className={portrait ? `${styles.shot} ${styles.portrait}` : styles.shot}>
       <img src={img} alt={alt} loading="lazy" decoding="async" />
       {spots.map(([x, y]) => (
         <span key={`${x}-${y}`} className={styles.spot} style={{left: `${x}%`, top: `${y}%`}} aria-hidden="true" />

@@ -77,18 +77,16 @@ A Tiggo 8 2026 opens the menu from another place.
 
 ## Jaecoo {#jaecoo}
 
-:::note
+The Jaecoo screen is a large portrait screen in the middle. The hidden menu opens from the Version info label in the System settings.
 
-The photos in this guide do not show the Jaecoo model or the year. A cabin photo shows Chery on the steering wheel. Do not choose a model year from these photos. On a Jaecoo screen, use the steps below.
-
-:::
-
-1. Open Settings.
-2. Find the line "DMC yazılımı sürüm numarası". The value can look like `02.00.00`.
-3. Touch the label above this line quickly. The hidden menu opens.
-4. Touch `USB认证`. A Jaecoo screen does not show `USB2.0认证`.
-5. If the `DEVICE EYE PATTERN` / `Device眼图` button **is not there**, you need `adbauth.key`. On the [ADB Lock](./adb-kilid.mdx) page, open `VERSION INFO` / `版本信息`. Copy `productID / 产品序列号`. Install after you download `adbauth.key` from the site.
-6. If the button **is there**, touch it. You do not need `adbauth.key`. Continue with the [02.00.00 install](./02-00-00.mdx).
+1. Open Settings (Vehicle center, `Araç merkezi`) on the car screen. Pick System (`Sistem`) on the left.
+   <Shot src={require('@site/assets/finder/jaecoo-system.webp').default} alt="Jaecoo Vehicle center; System on the left highlighted" dots={[{top: '69.9%', left: '16.4%'}]} />
+2. Touch the `Versiyon bilgisi` (Version info) label on the right quickly and repeatedly. Its value looks like `02.00.12`. The hidden menu (`EngMode`) opens.
+   <Shot src={require('@site/assets/finder/jaecoo-system.webp').default} alt="Jaecoo System; Version info highlighted" dots={[{top: '54%', left: '40.2%'}]} />
+3. In the hidden menu, touch `USB2.0 AUTH` / `USB2.0认证`.
+   <Shot src={require('@site/assets/finder/jaecoo-engmode.webp').default} alt="Jaecoo hidden menu (EngMode); USB2.0 AUTH highlighted" dots={[{top: '66.1%', left: '65.6%'}, {top: '14.2%', left: '16.1%', yellow: true}]} />
+4. If the `DEVICE EYE PATTERN` / `Device眼图` button **is there**, touch it. You do not need `adbauth.key`. Continue with the [02.00.00 install](./02-00-00.mdx).
+5. If the button **is not there**, you need `adbauth.key`. Press Back to the hidden menu. Touch `VERSION INFO` / `版本信息` (yellow dot in the photo). Copy `productID / 产品序列号`. Details: [ADB Lock](./adb-kilid.mdx). Install after you download `adbauth.key` from the site.
 
 [Back to the guide home](./index.mdx)
 
