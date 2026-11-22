@@ -1,6 +1,6 @@
 # Decap CMS: wiki.frostnav.com/admin
-# Düzenleyiciler GitHub hesabıyla girer; yalnızca berkpekatik/frostnav-wiki reposuna ekli olanlar düzenleyebilir.
-# editorial_workflow: her değişiklik ayrı bir dal ve PR olur. main dalı korumalı olduğu için yayın, sahibin onayıyla olur.
+# Repo herkese açık. open_authoring: GitHub hesabı olan herkes girip düzenleyebilir; değişiklik kendi fork'unda
+# taslak olur ve "İncelemeye gönder" ile berkpekatik/frostnav-wiki'ye PR açılır. main korumalı: yalnızca sahip birleştirir.
 
 backend:
   name: github
@@ -8,6 +8,8 @@ backend:
   branch: main
   base_url: https://wiki.frostnav.com
   auth_endpoint: oauth/auth
+  open_authoring: true
+  auth_scope: public_repo
   commit_messages:
     create: 'docs: "{{slug}}" sayfası eklendi'
     update: 'docs: "{{slug}}" sayfası güncellendi'

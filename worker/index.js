@@ -8,11 +8,14 @@
  *   /oauth/callback  → kodu erişim anahtarına çevirir, anahtarı /admin penceresine postMessage ile verir
  *
  * Gerekli gizli değerler (wrangler secret put ...): GITHUB_CLIENT_ID, GITHUB_CLIENT_SECRET.
- * Anahtar yalnızca giriş yapan kişinin kendi GitHub yetkisini taşır; kişi yalnızca wiki reposuna
- * eklendiyse yalnızca o repoyu düzenleyebilir.
+ * Repo herkese açık ve panel "open authoring" modunda: düzenleyici kendi fork'unda çalışıp PR açar,
+ * bu yüzden yalnızca "public_repo" izni istenir. Anahtar giriş yapan kişinin kendi GitHub yetkisini taşır.
  */
 
 const STATE_COOKIE = 'decap_oauth_state';
+/** Decap'in isteyebileceği izinler. Varsayılan en dar olanı. */
+const ALLOWED_SCOPES = new Set(['public_repo', 'repo']);
+const DEFAULT_SCOPE = 'public_repo';
 
 export default {
   async fetch(request, env) {
@@ -32,8 +35,9 @@ function startAuth(url, env) {
   const authorize = new URL('https://github.com/login/oauth/authorize');
   authorize.searchParams.set('client_id', env.GITHUB_CLIENT_ID);
   authorize.searchParams.set('redirect_uri', `${url.origin}/oauth/callback`);
-  // Özel repoya yazmak için "repo" gerekir. Kişi yalnızca wiki reposuna ekli olduğu için etkisi o repoyla sınırlı kalır.
-  authorize.searchParams.set('scope', 'repo,user:email');
+  const requested = url.searchParams.get('scope');
+  const scope = ALLOWED_SCOPES.has(requested) ? requested : DEFAULT_SCOPE;
+  authorize.searchParams.set('scope', scope);
   authorize.searchParams.set('state', state);
 
   return new Response(null, {

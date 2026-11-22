@@ -5,10 +5,11 @@ Yönetim paneli: https://wiki.frostnav.com/admin
 
 ## Düzenleyiciler için
 
-1. https://wiki.frostnav.com/admin adresine gidin ve **GitHub ile giriş yapın**. Bu repoya (yalnızca bu repoya) eklenmiş olmanız gerekir.
+1. https://wiki.frostnav.com/admin adresine gidin ve **GitHub ile giriş yapın**. Herhangi bir GitHub hesabı yeterlidir; repoya eklenmeniz gerekmez.
+   İlk girişte panel bu reponun bir kopyasını (fork) hesabınızda oluşturmayı ister, onaylayın.
 2. Soldan bölümü seçin (ör. "TR · Kullanım") ve sayfayı açın. Sitedeki her sayfanın altındaki **"Bu sayfayı düzenle"** bağlantısı da doğrudan buraya getirir.
-3. Değişikliği yapın ve **Kaydet**'e basın. Değişiklik taslak olarak kaydedilir; site hemen değişmez.
-4. Durumu **"İncelemede"** yapın. Yayına alma kararı wiki sahibinindir; onaylanınca site birkaç dakika içinde güncellenir.
+3. Değişikliği yapın ve **Kaydet**'e basın. Değişiklik kendi kopyanızda taslak olarak kaydedilir; site değişmez.
+4. **"İncelemeye gönder"**e basın. Bu, wiki'ye bir PR açar. Yayına alma kararı wiki sahibinindir; onaylanınca site birkaç dakika içinde güncellenir.
 
 Kurallar:
 
@@ -62,5 +63,6 @@ Elle yayın: `npm run deploy`.
    npx wrangler@4.166.0 secret put GITHUB_CLIENT_SECRET
    ```
 3. Repo gizli değerleri (Settings → Secrets → Actions): `CLOUDFLARE_API_TOKEN` (Workers düzenleme yetkili), `CLOUDFLARE_ACCOUNT_ID`.
-4. `main` dalı koruması (Settings → Branches): PR zorunlu, **Require review from Code Owners** açık, `build` kontrolü zorunlu.
-5. Düzenleyicileri bu repoya **Write** rolüyle ekleyin. Monorepoya erişimleri olmaz.
+4. `main` dalı koruması: PR zorunlu, **Require review from Code Owners** açık, `build` kontrolü zorunlu (repo açık olduğu için ücretsiz).
+5. Düzenleyicileri repoya eklemeye gerek yok: panel "open authoring" modunda, herkes kendi fork'undan PR açar.
+   Yalnızca sahip birleştirir. Repoya Write rolüyle kimseyi eklemeyin; eklenen kişi korumayı aşamaz ama fork yerine doğrudan dal açar.
