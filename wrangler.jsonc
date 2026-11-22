@@ -10,6 +10,12 @@
     // Yalnızca /oauth/* Worker koduna gider (Decap CMS girişi); geri kalan her şey statik dosyadır.
     "run_worker_first": ["/oauth/*"]
   },
+  "observability": {
+    "enabled": true,
+    "traces": {
+      "enabled": true
+    }
+  },
   "routes": [{"pattern": "wiki.frostnav.com", "custom_domain": true}]
   // Gizli değerler: npx wrangler secret put GITHUB_CLIENT_ID / GITHUB_CLIENT_SECRET
 }
