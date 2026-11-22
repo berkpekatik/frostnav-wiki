@@ -1,0 +1,194 @@
+---
+title: "Kamera 360"
+sidebar_position: 13
+description: "FrostNav Kamera 360: dört kamerayı canlı izleyin, USB'ye veya araç içine kaydedin, sinyal verince yan kamerayı göstergede görün. Uyarılar ve önerilen kullanım."
+---
+
+Kamera 360, aracın çevresindeki dört kamerayı gösterir: Ön, Arka, Sol ve Sağ. Kameraları canlı izleyebilir,
+USB belleğe veya araç içi depoya kaydedebilir, sinyal verdiğinizde o taraftaki kamerayı gösterge ekranında görebilirsiniz.
+
+Surround kameralar yalnızca araç ünitesinde kullanılabilir. Her modelde kamera yoktur.
+
+:::danger Güvenlik
+
+- Sürüş sırasında ekrandaki kamera görüntüsüne bakmayın. Canlı önizlemeyi araç dururken kullanın.
+- Kamera 360 aynaların, omuz üstü kontrolün veya aracın kendi park kamerasının yerini tutmaz.
+- Kayıt her an çalışacak diye güvenmeyin. Kamera meşgul olabilir, USB dolabilir veya çıkarılabilir. Önemli bir kaydı hemen başka yere kopyalayın.
+
+:::
+
+:::warning Erken erişim
+
+Bu özellik erken erişim aşamasındadır. Aracınızda olmayan bir işlevi zorlamayın.
+Yapılan işlemler kullanıcının sorumluluğundadır.
+
+:::
+
+## Önerilen kullanım {#onerilen-kullanim}
+
+| Ne istiyorsunuz? | Ne kullanın? | Önerilen ayar |
+|---|---|---|
+| Her sürüşü araç kamerası (dashcam) gibi kaydetmek | [Araç İçi Kayıt](#arac-ici-kayit) | "Kontakla otomatik kaydet" açık. USB gerekmez, eski klipler kendiliğinden silinir. |
+| Uzun yolu daha net kaydetmek, kayıtları bilgisayara almak | [USB Kayıt](#usb-kayit), kontakla otomatik | 960×600. Kayıt sırasında ekran kasıyorsa 640×400. |
+| Bir anı kısa süre net kaydetmek | [USB Kayıt](#usb-kayit), elle | HD (1280×800). İşiniz bitince "Kaydı Durdur". |
+| Park ederken çevreye bakmak | [Canlı Önizleme](#canli-onizleme) | Araç dururken kullanın. |
+| Şerit değiştirirken kör noktayı görmek | [Sinyalde göstergede yan kamera](#sinyal-kamerasi) | Göstergeye yansıtma açık olmalı. |
+| Bir olayın kaydını saklamak | [İzleme Ekranı](#izleme-ekrani) | İlgili klipleri seçip "USB'ye Aktar". |
+
+İki otomatik kayıttan yalnızca birini seçin. Araç içi kayıt ile USB otomatik kayıt aynı anda açık olamaz.
+
+CarPlay veya Android Auto açıkken kayıt alacaksanız çözünürlüğü düşük tutun. Ekran yine kasarsa bu ikisi açıkken kayıt almayın.
+
+### Kamera kaydı araca zarar verir mi? {#araca-etkisi}
+
+Hayır. Kayıt, aracın kendi kamera sisteminden görüntüyü alıp belleğe yazar:
+
+- Araca ya da vitese komut gönderilmez, kamera yazılımı değiştirilmez, serviste görünen kalıcı bir arıza kodu oluşmaz.
+- Kameralar kendiliğinden açılmaz. Canlı önizlemeyi veya kaydı siz başlatmadıkça kamera kullanılmaz.
+- Otomatik kayıt, sinyal kamerası ve park fotoğrafı varsayılan olarak kapalıdır. Otomatik kayıt yalnızca siz açarsanız ve kontak açıkken çalışır.
+- Kayıtlarda balıkgözü görüntü normaldir. "Düzeltme" yalnızca canlı önizlemede uygulanır.
+
+## Kayıt açıkken bunlara dikkat edin {#kayit-acikken}
+
+:::warning Kayıt açıkken uygulamayı kapatmayın
+
+Kameralar veya kayıt açıkken FrostNav uygulaması aniden kapanırsa ekran kararabilir veya görüntü düzgün gelmeyebilir.
+Böyle olursa multimedya ünitesini [yeniden başlatın](../bilinen-sorunlar.mdx#yeniden-baslatma); ekran normale döner. Bu, araca işlenmiş kalıcı bir arıza değildir. Bunu önlemek için:
+
+- FrostNav'ı **son uygulamalar ekranından kaydırarak kapatmayın**.
+- FrostNav'ı **güncellemeden önce kaydı durdurun**. Uygulama içinden güncellerken FrostNav kaydı kendisi durdurur ve size sorar.
+- Kaydı durdurmak için uygulamadaki "Durdur" / "Kaydı Durdur" düğmesini kullanın ya da otomatik kaydı kapatın.
+
+:::
+
+- USB kaydı sürerken belleği çıkarmayın. Önce kaydı durdurun. Bellek çıkarılınca kayıt durur, son klip yarım kalabilir.
+- Kayıt arka planda sürer. Bildirimde "Kamera 360 kaydediyor" yazar, ekranda kırmızı "Kayıt devam ediyor" şeridi görünür.
+- Kamera 360 kayıt sırasında işlemciyi yorar. Harita yansıtma ile birlikte ekran yavaşlarsa çözünürlüğü düşürün.
+
+## USB bellek seçimi {#usb-bellek}
+
+- Bellek **FAT32** olmalıdır. Bkz. [FAT32](../kurulum/fat32.mdx).
+- Sürekli yazmaya dayanıklı (ör. "High Endurance" ya da araç kamerası için satılan) bir bellek tercih edin. Sıradan bellekler sürekli kayıtta çabuk yıpranabilir.
+- Kontakla otomatik USB kaydının başlaması için bellekte en az 10 dakikalık kayıt sığacak yer olmalıdır.
+- Kayıt 3 dakikalık kliplere bölünür. Bellek doldukça **en eski klipler silinir**. Saklamak istediğiniz klipleri başka yere kopyalayın.
+
+Yaklaşık dosya boyutları (dört kamera tek mozaik dosyada):
+
+| Çözünürlük | Dakikada | Saatte | 32 GB bellekte |
+|---|---|---|---|
+| HD (1280×800) | ≈ 60 MB | ≈ 3,6 GB | ≈ 8 saat |
+| 960×600 | ≈ 34 MB | ≈ 2 GB | ≈ 15 saat |
+| 640×400 | ≈ 15 MB | ≈ 0,9 GB | ≈ 35 saat |
+
+Ekrandaki "Bu alanla yaklaşık … kayıt yapılabilir" satırı sizin belleğinize göre hesaplar.
+
+## Ekranı açın
+
+1. FrostNav uygulamasını açın.
+2. Sol menüde "Kamera 360" öğesine dokunun.
+3. İlk açılışta erken erişim uyarısı çıkar. Okuyun ve devam etmek için "Kabul Ediyorum" düğmesine dokunun. Uyarı bir kez sorulur.
+4. Ekran "Bir mod seçin" der. Dört kart ve altında sinyal kamerası ayarı vardır.
+
+| Kart | Ne yapar? |
+|---|---|
+| Canlı Önizleme | Dört kamerayı canlı izler. |
+| USB Kayıt | Dört kamerayı USB belleğe MP4 olarak kaydeder. |
+| Araç İçi Kayıt | Kontak açılınca araç içi depoya otomatik kaydeder. |
+| İzleme Ekranı | Klipleri oynatır, USB'ye aktarır veya siler. |
+
+Bir kart "Devre dışı" yazıyorsa diğer otomatik kayıt açıktır. Önce onu kapatın.
+
+## Canlı Önizleme {#canli-onizleme}
+
+1. "Canlı Önizleme" kartına dokunun.
+2. "Önizlemeyi Başlat" düğmesine dokunun.
+3. Dört kamera birlikte görünür. Bir kameraya dokunun, o kamera büyür. Geri dönmek için tekrar dokunun.
+4. "Düzeltme" anahtarı balıkgözü görüntüyü düzeltir.
+5. "1 Kare Çek" o anki kareyi kaydeder.
+6. İşiniz bitince "Durdur" ile önizlemeyi kapatın.
+
+Sinyal yoksa ekran "Sinyal yok · yeniden deneniyor" yazar. Aracın kendi kamera ekranı açıksa kameralar meşgul olabilir; biraz bekleyip tekrar deneyin.
+
+## USB Kayıt {#usb-kayit}
+
+1. Belleği takın. "USB Kayıt" kartına dokunun.
+2. Bellek görünmüyorsa ekran "USB bellek takılı değil. Bir USB bellek takın." yazar. Takın ve "Yenile" düğmesine dokunun.
+3. "Kayıt Ayarları" bölümünde "Çözünürlük" seçin: HD (1280×800, en yüksek ayrıntı), 960×600 (dengeli) veya 640×400 (en küçük dosya).
+4. "Kaydı Başlat" kaydı başlatır. "Kaydı Durdur" kaydı bitirir.
+
+Dört kamera tek bir mozaik MP4 dosyasına yazılır. Dosyalar bellekteki uygulama klasörüne 3 dakikalık klipler halinde kaydedilir.
+
+### Kontakla otomatik USB kayıt
+
+1. USB Kayıt ekranında "Kontakla otomatik kaydet" anahtarını açın.
+2. Kontak açık ve USB takılıyken uygulama seçili çözünürlükle kendiliğinden kaydeder.
+3. Bellek doldukça en eski klipler silinir. Silinecek klip kalmazsa durum "USB dolu" olur ve kayıt durur.
+
+"Kaydı Durdur" ile otomatik kaydı durdurursanız o sürüş boyunca yeniden başlamaz. Bir sonraki kontakta tekrar başlar.
+
+## Araç İçi Kayıt {#arac-ici-kayit}
+
+Araç içi kayıt, belleğe gerek olmadan her sürüşü kaydeden araç kamerası (dashcam) modudur.
+
+1. "Araç İçi Kayıt" kartına dokunun.
+2. "Kontakla otomatik kaydet" anahtarını açın.
+3. "Araç içi otomatik kayıt" penceresini okuyun. Devam etmek için "Onayla", vazgeçmek için "Vazgeç" düğmesine dokunun.
+
+Kontak açıkken kayıt başlar ve durum "Kaydediyor" olur. Kontak kapalıyken durum "Kontak bekleniyor" olur.
+Dört kamera tek mozaik dosyaya, 960×600 çözünürlükte, 3 dakikalık klipler halinde kaydedilir.
+
+"Bu sürüşte durdur" o sürüş için kaydı durdurur. "Sürdür" kaydı tekrar başlatır.
+
+### Depolama
+
+- Cihazda her zaman en az 2 GB boş alan bırakılır.
+- Kayıt alanı = boş alan + klipler − 2 GB. Ekrandaki çubuk klipleri, diğer dosyaları, 2 GB rezervi ve kayda açık alanı gösterir.
+- Boş alan 2 GB rezerve yaklaşınca en eski klip silinir. Yer açılınca silme durur. Klipler tarihe göre silinmez.
+- Araç içi depo sınırlıdır. Saklamak istediğiniz klipleri [İzleme Ekranı](#izleme-ekrani) ile USB'ye aktarın.
+
+Otomatik kayıt için [Ayarlar](./settings.mdx) ekranında "Arka planda çalış" seçeneğini Açık tutun.
+
+## Sinyalde göstergede yan kamera {#sinyal-kamerasi}
+
+Sol veya sağ sinyal verdiğiniz an o taraftaki kamera gösterge ekranının üstünde küçük bir kart olarak görünür. Şerit değiştirirken kör noktayı görmeye yardım eder.
+
+1. Kamera 360 ana ekranında "Sinyalde göstergede yan kamera" seçeneğini açın.
+2. Göstergeye [yansıtma](./projection.mdx) açık olmalıdır. Yansıtma kapalıysa kart görünmez.
+3. İsterseniz "Düz görünüm" ile yan kameradaki balıkgözü etkisini azaltın. Bu seçenek biraz daha fazla işlemci kullanır.
+4. "Kart konumu ve boyutu" bölümünden "Kenardan uzaklık", "Dikey konum" ve "Boyut" ayarlayın. Sol ve sağ kart birbirinin aynasıdır. "Sıfırla" varsayılana döner.
+
+Ayar yaparken göstergede önizleme görünür; bu sırada sinyal kamerası açılmaz. Önizleme yoksa ekran "Önizlemeyi görmek için göstergeye yansıtmayı açın." der.
+
+:::note
+
+Kartın kadranları veya uyarı ışıklarını kapatmayacağı bir konum ve boyut seçin. Sinyal kamerası yalnızca yardımcıdır, aynaya bakmayı bırakmayın.
+
+:::
+
+## İzleme Ekranı {#izleme-ekrani}
+
+1. "İzleme Ekranı" kartına dokunun. Araç İçi Kayıt ekranındaki "İzleme Ekranını Aç" düğmesi de aynı ekranı açar.
+2. Kaynağı seçin: "Araç" araç içi klipleri, "USB" bellekteki klipleri gösterir.
+3. Bir klibe dokunun, klip oynar. "Geniş" ve "Tam ekran" görünümü büyütür. Açı seçin: Tümü, Ön, Arka, Sol veya Sağ.
+4. Seçmek için kliplere dokunun. "Tümünü seç" hepsini seçer, "Temizle" seçimi kaldırır.
+5. "USB'ye Aktar" seçili klipleri belleğe kopyalar. Bellek yoksa ekran "Aktarmak için USB takın" yazar.
+6. "Sil" seçili klipleri kalıcı olarak siler. Bu işlem geri alınamaz.
+
+## Sorun giderme
+
+| Sorun | Yapılacak işlem |
+|---|---|
+| Ekran karardı veya görüntü gelmiyor | Multimedya ünitesini [yeniden başlatın](../bilinen-sorunlar.mdx#yeniden-baslatma). Bir dahakine kayıt açıkken FrostNav'ı kaydırarak kapatmayın, güncellemeden önce kaydı durdurun. |
+| Kayıt sırasında ekran kasıyor | Çözünürlüğü 960×600 veya 640×400 yapın. CarPlay veya Android Auto açıksa kayıt sırasında kapatın. "Düz görünüm" açıksa kapatın. Gerekmiyorsa kaydı durdurun. |
+| Sinyal yok | Biraz bekleyin, uygulama yeniden dener. Aracın kendi kamera ekranı açık olabilir. |
+| "Kamera görüntüsü şu an alınamıyor" | Araç kameraları meşgul olabilir. Biraz sonra tekrar deneyin. |
+| "Kameralar kullanılamıyor" | Bu araçta kamera yok ya da kameralar açılmadı. Aracı yeniden çalıştırıp tekrar deneyin. |
+| "USB bekleniyor" | Belleği takın. FAT32 olduğundan emin olun. |
+| "USB dolu" | Bellekte silinecek eski klip kalmadı. Bellekte yer açın ya da başka bir bellek takın. |
+| "Yetersiz alan (2 GB rezerv)" | Araç içinde yer açın. Gereksiz uygulamaları veya indirilen dosyaları silin. |
+| USB kartı "Devre dışı" | Araç içi kayıt açıktır. Araç İçi Kayıt ekranından kapatın. |
+| Araç içi kart "Devre dışı" | USB otomatik kayıt açıktır. USB Kayıt ekranından kapatın. |
+| Kayıt kontakla başlamıyor | Anahtarın açık olduğundan emin olun. "Arka planda çalış" Açık olmalı. Bu sürüşte durdurduysanız "Sürdür"e dokunun. |
+| Sinyal kamerası görünmüyor | Göstergeye yansıtma açık olmalı. Ayar ekranı açıkken sinyal kamerası açılmaz. |
+
+[Kullanım rehberine dönün](./index.mdx)

@@ -1,0 +1,145 @@
+---
+title: "Tam ekran ana sayfa"
+sidebar_position: 17
+description: "FrostNav tam ekran ana sayfa: widget'lı ana ekran, Park ve Sürüş düzeni, düzenleme, görünüm ayarları, Bluetooth ve aramalar."
+---
+
+Tam ekran ana sayfa, FrostNav'ı widget'lı bir ana ekrana çevirir. Araç bilgisi, müzik, klima, koltuklar ve uygulamalar tek ekranda durur. Araç dururken ve giderken ayrı düzen kullanabilirsiniz.
+
+## Modu açın
+
+1. FrostNav uygulamasını açın.
+2. Sol menüde "Ana ekran" öğesine dokunun.
+3. "Tam ekran ana sayfa" için "Evet" seçin.
+
+Aynı seçenek [Ayarlar](./settings.mdx) ekranında da vardır.
+
+## Modu ana ekran yapın
+
+1. "Tam ekran ana sayfa" için "Evet" seçin.
+2. "Varsayılan ana ekran uygulamasını sistem ayarlarından değiştir" bağlantısına dokunun.
+3. Listeden FrostNav'ı seçin.
+4. Ana ekran (Home) tuşuna basınca araç FrostNav ana ekranını açar.
+
+:::note
+
+Bazı araçlarda sistem bu seçim penceresini göstermez. Bu durumda uygulama sistem ayarlarını açar.
+
+:::
+
+## Modu kapatın
+
+1. Ana ekranın üst çubuğunda dişli simgesine dokunun. FrostNav ayarları açılır.
+2. "Tam ekran ana sayfa" için "Hayır" seçin.
+
+Kapatınca Ana ekran tuşu aracın kendi ana ekranını açar.
+
+## Ana ekranı düzenleyin
+
+:::note
+
+Düzenleme yalnızca araç dururken açılır. Araç hareket ediyorsa ekran "Düzenleme yalnızca araç dururken" yazar.
+
+:::
+
+1. Üst çubukta kalem simgesine dokunun. Düzenleme açılır.
+2. Değiştirmek istediğiniz alana dokunun. Ekran "Değiştirmek için bir alana dokun" yazar.
+3. Listeden bir widget seçin. Ekranda olan widget'lar soluk görünür.
+4. Alanı boşaltmak için "Kaldır" düğmesine dokunun.
+5. Bitince "Bitti" düğmesine dokunun.
+
+Düzenleme ekranında "Park düzeni" ve "Sürüş düzeni" arasında geçebilirsiniz. "Varsayılan" düğmesi açık olan düzeni başa döndürür. Değişiklikleriniz kaybolur.
+
+## Widget'lar
+
+| Grup | Widget'lar |
+|---|---|
+| Araç | Araç, Sürüş modu, Anlık tüketim, Yolculuk, Toplam, Araç sağlığı, Hava kalitesi, Kapı kilidi, Bagaj |
+| Konfor | Sürücü koltuğu, Yolcu koltuğu, Direksiyon ısıtma, Arka hoparlör |
+| Medya ve yol | Medya, Navigasyon, Telefon, Ekolayzer |
+| Kısayol | Uygulama kısayolu, Web paneli, Otomasyon, Bölünmüş ekran, Göstergeye yansıt |
+| Diğer | Saat, Fotoğraf, Mola, Ekranı karart |
+
+"Ekranı karart" widget'ına dokununca ekran tam siyah olur. Bu widget araca veya sistem ayarlarına bir şey yazmaz.
+
+Aracınızda bir veri yoksa ilgili widget o veriyi gösteremez. Hangi widget'a veri geldiğini [Veri Kontrolü](./settings.mdx#veri-kontrolu) ile görebilirsiniz.
+
+### Navigasyon: Ev ve İş {#ev-is}
+
+Navigasyon widget'ında "Ev" ve "İş" düğmeleri vardır.
+
+1. Konum ayarlı değilse düğmede "Ayarla" yazar. Dokunun.
+2. Konumu enlem, boylam olarak girin. Örnek: `41.0082, 28.9784`. "Kaydet" düğmesine dokunun.
+3. Ayarlıysa düğmeye dokununca rota seçili harita uygulamasında (Google Maps veya Yandex) tam ekran başlar.
+4. Konumu değiştirmek veya silmek için düğmeye basılı tutun.
+
+Yol tarifi sırasında widget sonraki dönüşü, kalan mesafeyi ve varış saatini gösterir. Bunun için FrostNav'a bildirim erişimi verin. "Bitir" yol tarifini kapatır.
+
+### Araç uyarıları {#arac-uyarilari}
+
+Aracın kendi sensörlerinden gelen uyarılar ana ekranda gösterilir. Aracınızda ilgili sensör yoksa uyarı çıkmaz.
+
+| Uyarı | Nerede görünür? |
+|---|---|
+| Lastik basıncı düşük | Araç sahnesi ve uyarı şeridi. Hangi tekerlek olduğu ve psi değeri yazar. Yalnızca 4x4 araçlarda. |
+| Bakım yaklaşıyor / Bakım zamanı | Araç sağlığı widget'ı. "Bakıma kalan" km ve gün aracın bakım sayacından okunur. |
+| Yakıt az | Mini gösterge. |
+| Hava kalitesi kötü | Hava kalitesi widget'ı. Dışarıdaki hava kötüyse "İç sirkülasyon önerilir" yazar. |
+
+### Mini gösterge {#mini-gosterge}
+
+Mini gösterge saati, menzili, yakıtı, aracın küçük görünümünü, uyarıları ve çalan müziği tek panelde toplar.
+[Bölünmüş ekranda](./split-screen.mdx) navigasyonun yanında ya da tam ekran açılır. Tam ekran ana sayfa açıkken uygulama listesinde "Mini gösterge" simgesi de görünür.
+
+## Ana ekran ayarları
+
+Sol menüde "Ana ekran" öğesine dokunun. Bu ayarları değiştirmek için "Tam ekran ana sayfa" açık olmalıdır.
+
+| Ayar | Ne yapar? |
+|---|---|
+| Tema | Otomatik araç sisteminin gece ve gündüz modunu izler. Aydınlık ve Karanlık sabittir. |
+| Sürüş moduna göre renk | Açıkken vurgu rengi sürüş moduna göre değişir. |
+| Spor modu (deneysel) | Açıkken araç Spor modundayken kronograf ekranı açılır. Varsayılan olarak kapalıdır. |
+| Alt çubuk | Orijinal: aracın çubuğu görünür. FrostNav: ana ekranın kendi çubuğu gelir. Gizli: çubuk yoktur, widget'lar tüm yüksekliği kullanır. |
+| Klima derece hesabı | Çoğu araçta "Yarım derece" doğrudur. Klima HI yerine 23,5'te kalıyorsa "Tam derece" seçin. |
+| Araç ekranı | Otomatik, Tiggo 7, Tiggo 8 veya Jaecoo. Otomatik ekran boyutundan seçer. Tiggo 7 12×6, Tiggo 8 12×8 ızgara kullanır; Jaecoo dikey ekrandır (araç üstte, altında dört kart). Her birinin düzeni ayrıdır. Değişiklik ana ekranın bir sonraki açılışında uygulanır. |
+| Klima hava tuşları | Açıkken FrostNav alt çubuğunda fanın yanında yüze, ayağa, cama üfleme ve iç hava sirkülasyonu tuşları görünür. Kapalıyken çubukta yalnız sıcaklık ve fan olur. |
+| Home tuşu | FrostNav: aracın home tuşu FrostNav ana ekranına döner; ana ekrandayken basarsanız aracın kendi ana ekranı açılır. Araç: home tuşu hep aracın ana ekranını açar. |
+| Başlangıç tipi | En erken: ana ekran araç açılırken uygulama hazır olur olmaz gelir. Araç güç alınca: araç güç bilgisi okununca gelir. |
+| Radyo komut tipi | Araca uygun tip otomatik seçilir. Medya kartında AM/FM geçişi çalışmıyorsa Tip 1 veya Tip 2'yi deneyin. |
+| Araç rengi | Ana ekranın ortasındaki aracın rengi. |
+| Sürüşte ayrı düzen | Açıkken araç giderken Sürüş düzeni, dururken Park düzeni görünür. |
+
+Aynı ekrandaki sıfırlama düğmeleri Park ve Sürüş düzenini varsayılana döndürür.
+
+## Ana ekrandaki ayarlar {#ana-ekran-ayarlari-dislisi}
+
+Ana ekranın üst çubuğundaki dişli simgesi ayrı bir ayar sayfası açar:
+
+| Ayar | Ne yapar? |
+|---|---|
+| Favori tuşu (direksiyon) | Direksiyondaki favori tuşuna kısa basınca Yandex Navi veya Yandex Haritalar açılır. Varsayılan Kapalı'dır. Seçilen uygulama kurulu olmalıdır. |
+| Telefon önceliği | Açıkken telefonda müzik başlayınca araç Bluetooth'a geçer. Kapalıyken radyo sesi korunur, telefon durur. |
+| Ses tuşuna uzun basınca telefon asistanı açılsın | Direksiyondaki ses tuşuna uzun basınca telefonun sesli asistanı açılır. Kısa basış aracın kendi sesli komutunu açar. |
+| Sesli asistan düğmesi | Telefon kartında sesli asistan düğmesini gösterir. Kapalıyken son arama büyür, en çok 5 favori görünür. |
+| Klima değişince fabrika paneli | Gizle seçilirse alt çubuktan sıcaklık veya fan değişince aracın klima paneli açılmaz. Çubukta yukarı kaydırma ve fiziksel klima tuşları paneli her zaman açar. |
+| Araç ayarları / FrostNav ayarları | Aracın kendi ayarlarını veya FrostNav'ın ekranlarını açar. |
+
+## Bluetooth ve aramalar
+
+1. Üst çubukta Bluetooth simgesine dokunun. Bluetooth paneli açılır.
+2. Eşleşmiş cihazlar listesinden bir telefon seçin. "Bağlan" düğmesine dokunun.
+3. "Otomatik bağlan" seçeneğini açarsanız araç çalışınca son bağlanan telefona bağlanılır.
+
+Arama başlayınca ekranda arama sayfası açılır. Gelen aramada "Cevapla" veya "Reddet" düğmesine dokunun. Görüşme sırasında sessize alabilir, aramayı telefona aktarabilir veya sayfayı küçültebilirsiniz.
+
+## Sorun giderme
+
+| Sorun | Yapılacak işlem |
+|---|---|
+| Araç verisi bekleniyor yazıyor | Aracın çalışır durumda olduğundan emin olun. Biraz bekleyin. |
+| Ana ekran açılışta gelmiyor | [Ayarlar](./settings.mdx) ekranında "Uygulamayı ekranda aç" ve "Arka planda çalış" seçeneklerini Açık yapın. FrostNav'ı ana ekran uygulaması yapın. |
+| Düzenleme açılmıyor | Aracı durdurun. Düzenleme yalnızca araç dururken açılır. |
+| Klima HI yerine 23,5'te kalıyor | "Klima derece hesabı" için "Tam derece" seçin. |
+| Müzik bilgisi yok | FrostNav için bildirim erişimini verin. |
+| Normal görünüme dönmek istiyorsunuz | "Tam ekran ana sayfa" için "Hayır" seçin. |

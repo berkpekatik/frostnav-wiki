@@ -1,0 +1,14 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.wiki.category.Kurulum": {
+    "message": "Installation",
+    "description": "The label for category 'Kurulum' in sidebar 'wiki'"
+  },
+  "sidebar.wiki.category.Kullanım": {
+    "message": "Usage",
+    "description": "The label for category 'Kullanım' in sidebar 'wiki'"
+  }
+}

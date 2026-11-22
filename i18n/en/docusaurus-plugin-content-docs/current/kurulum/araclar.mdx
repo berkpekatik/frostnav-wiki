@@ -1,0 +1,107 @@
+---
+title: "Install for your vehicle"
+sidebar_position: 2
+description: "FrostNav install headings for Tiggo 7 2025, Tiggo 8 2025, Tiggo 8 2026, and Jaecoo. If DEVICE EYE PATTERN is on the USB2.0 AUTH screen, adbauth.key is not required."
+---
+
+import VehicleFinder from '@site/src/components/VehicleFinder';
+
+import Shot from '@site/src/components/Shot';
+
+Select your car. Then do the steps under that heading. If you're not sure, use the wizard below.
+
+<VehicleFinder />
+
+You can watch the Tiggo 7 and Tiggo 8 install video [here](https://www.youtube.com/watch?v=D8KxEsYhqpA).
+
+After the engineering menu opens, open `USB2.0 AUTH` / `USB2.0认证`. The button name on that screen is `DEVICE EYE PATTERN` / `Device眼图`.
+
+| Vehicle | Heading |
+|---|---|
+| [Tiggo 7 2025. The screen can look like an Omoda 5.](#foto-tiggo) | [Tiggo 7 2025](#tiggo7-2025) |
+| [Tiggo 8 2025](#foto-tiggo) | [Tiggo 8 2025](#tiggo8-2025) |
+| [Tiggo 8 2026](#foto-tiggo8-2026) | [Tiggo 8 2026](#tiggo8-2026) |
+| Jaecoo | [Jaecoo](#jaecoo) |
+
+## Tiggo 7 2025 {#tiggo7-2025}
+
+Use this heading for a Tiggo 7 2025. The car screen can look like an Omoda 5. Use this heading for an Omoda 5 too.
+
+The way to open the menu is the known way. The only difference is on the USB 2.0 screen.
+
+:::note
+
+On the pictures, the glowing gold dot shows where you touch. The yellow dot is an extra mark.
+
+:::
+
+1. Touch the blinking dot on the car screen. The car settings open.
+
+   <Shot src={require('@site/assets/howto/1.png').default} alt="Step 1: car settings" dots={[{top: '90%', left: '82.3%'}]} />
+2. Find the blue dot in System. Touch it 10 times quickly.
+
+   <Shot src={require('@site/assets/howto/2.png').default} alt="Step 2: blue dot" dots={[{top: '56.8%', left: '4.1%'}, {top: '54.8%', left: '96.1%', yellow: true}]} />
+3. Touch `USB2.0 AUTH` / `USB2.0认证`.
+
+   <Shot src={require('@site/assets/howto/3.png').default} alt="Step 3: USB2.0 AUTH" dots={[{top: '72%', left: '7.7%'}]} />
+4. Look at the USB 2.0 screen. Find the `DEVICE EYE PATTERN` / `Device眼图` button.
+
+   <Shot src={require('@site/assets/howto/4.png').default} alt="Step 4: DEVICE EYE PATTERN" dots={[{top: '82%', left: '40.8%'}]} />
+
+### Is `DEVICE EYE PATTERN` / `Device眼图` there?
+
+- If the button **is there**: touch it. The screen looks like the picture below. You do not need `adbauth.key`. Continue with the [02.00.00 install](./02-00-00.mdx). In the web installer, the install type is "02.00.00".
+
+  <img src={require('@site/assets/howto/5.png').default} alt="DEVICE EYE PATTERN selected" width={400} />
+- If the button **is not there**: you need `adbauth.key`. On the [ADB Lock](./adb-kilid.mdx) page, open `VERSION INFO` / `版本信息`. Copy `productID / 产品序列号`. Install after you download `adbauth.key` from the site.
+
+## Tiggo 8 2025 {#tiggo8-2025}
+
+A Tiggo 8 2025 uses the same path as a Tiggo 7 2025.
+
+1. Open the engineering menu with the [Tiggo 7 2025](#tiggo7-2025) steps.
+2. Open the `USB2.0 AUTH` / `USB2.0认证` screen.
+3. If the `DEVICE EYE PATTERN` / `Device眼图` button is there, touch it. You do not need `adbauth.key`. Continue with the [02.00.00 install](./02-00-00.mdx).
+4. If the button is not there, you need `adbauth.key`. On the [ADB Lock](./adb-kilid.mdx) page, open `VERSION INFO` / `版本信息`. Copy `productID / 产品序列号`. Install after you download `adbauth.key` from the site.
+
+## Tiggo 8 2026 {#tiggo8-2026}
+
+A Tiggo 8 2026 opens the menu from another place.
+
+1. Press Settings on the screen.
+2. In the menu, go to System.
+3. Touch the top title "About" (Hakkında) quickly. Touch it until the hidden menu opens.
+4. Touch `USB2.0 AUTH` / `USB2.0认证` in the menu.
+5. If the `DEVICE EYE PATTERN` / `Device眼图` button **is there**, touch it. You can install without `adbauth.key`. Continue with the [02.00.00 install](./02-00-00.mdx). In the web installer, the install type is "02.00.00".
+6. If the button **is not there**, you need `adbauth.key`. On the [ADB Lock](./adb-kilid.mdx) page, open `VERSION INFO` / `版本信息`. Copy `productID / 产品序列号`. Install after you download `adbauth.key` from the site.
+
+## Jaecoo {#jaecoo}
+
+:::note
+
+The photos in this guide do not show the Jaecoo model or the year. A cabin photo shows Chery on the steering wheel. Do not choose a model year from these photos. On a Jaecoo screen, use the steps below.
+
+:::
+
+1. Open Settings.
+2. Find the line "DMC yazılımı sürüm numarası". The value can look like `02.00.00`.
+3. Touch the label above this line quickly. The hidden menu opens.
+4. Touch `USB认证`. A Jaecoo screen does not show `USB2.0认证`.
+5. If the `DEVICE EYE PATTERN` / `Device眼图` button **is not there**, you need `adbauth.key`. On the [ADB Lock](./adb-kilid.mdx) page, open `VERSION INFO` / `版本信息`. Copy `productID / 产品序列号`. Install after you download `adbauth.key` from the site.
+6. If the button **is there**, touch it. You do not need `adbauth.key`. Continue with the [02.00.00 install](./02-00-00.mdx).
+
+[Back to the guide home](./index.mdx)
+
+## Cabin photos
+
+### Tiggo 7 and Tiggo 8 2025 cabin {#foto-tiggo}
+
+<img src={require('@site/assets/install-guide/tiggo7-tiggo8.png').default} alt="Tiggo 7 and Tiggo 8 2025 cabin" />
+
+[Tiggo 7 2025 steps](#tiggo7-2025) · [Tiggo 8 2025 steps](#tiggo8-2025)
+
+### Tiggo 8 2026 cabin {#foto-tiggo8-2026}
+
+<img src={require('@site/assets/install-guide/tiggo8-2026.png').default} alt="Tiggo 8 2026 cabin" />
+
+[Tiggo 8 2026 steps](#tiggo8-2026)

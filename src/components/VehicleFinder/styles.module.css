@@ -1,0 +1,256 @@
+.finder {
+  margin: 1rem 0 1.5rem;
+  padding: 1rem 1.1rem 1.1rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 14px;
+  background: var(--ifm-background-surface-color);
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.6rem;
+  font-size: 0.85rem;
+}
+
+.count {
+  color: var(--ifm-color-primary);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.linkButton {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--ifm-color-primary);
+  font: inherit;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.title {
+  margin: 0 0 0.35rem;
+  font-size: 1.12rem;
+}
+
+.lead {
+  margin: 0 0 0.8rem;
+  color: var(--ifm-color-emphasis-800);
+}
+
+.tip {
+  margin: 0.75rem 0 0;
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.88rem;
+}
+
+.cabins {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+}
+
+.cabin {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 12px;
+  background: var(--ifm-background-color);
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.cabin:hover,
+.cabin:focus-visible {
+  border-color: var(--ifm-color-primary);
+  transform: translateY(-2px);
+}
+
+.cabin img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+.cabinName {
+  padding: 0 0.75rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.cabinHint {
+  padding: 0 0.75rem 0.75rem;
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+
+.shot {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 10px;
+  background: #000;
+}
+
+.shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.spot {
+  position: absolute;
+  width: 34px;
+  height: 34px;
+  margin: -17px 0 0 -17px;
+  border: 3px solid #ffd54f;
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(255, 213, 79, 0.25), 0 0 18px rgba(255, 213, 79, 0.7);
+  animation: pulse 1.4s ease-out infinite;
+  pointer-events: none;
+}
+
+@keyframes pulse {
+  0% { transform: scale(0.85); opacity: 1; }
+  70% { transform: scale(1.25); opacity: 0.55; }
+  100% { transform: scale(0.85); opacity: 1; }
+}
+
+.answers {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+
+.result {
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 12px;
+  background: var(--ifm-background-color);
+}
+
+.result p {
+  margin: 0.4rem 0 0;
+}
+
+.ok {
+  border-color: var(--ifm-color-success);
+}
+
+.key {
+  border-color: #ff9f1c;
+}
+
+.pid {
+  margin-top: 0.9rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--ifm-color-emphasis-300);
+}
+
+.pid .shot {
+  margin-top: 0.6rem;
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem 1.25rem;
+  margin-top: 0.9rem !important;
+}
+
+.buy {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #ffc857 0%, #ff9f1c 100%);
+  color: #2a1a00 !important;
+  font-weight: 700;
+  text-decoration: none !important;
+}
+
+@media (max-width: 640px) {
+  .cabins {
+    grid-template-columns: 1fr;
+  }
+
+  .cabin {
+    display: grid;
+    grid-template-columns: 40% 1fr;
+    grid-template-rows: auto 1fr;
+    column-gap: 0.75rem;
+    row-gap: 0.2rem;
+  }
+
+  .cabin img {
+    grid-row: 1 / span 2;
+    height: 100%;
+  }
+
+  .cabinName {
+    padding: 0.6rem 0.6rem 0 0;
+  }
+
+  .cabinHint {
+    padding: 0 0.6rem 0.6rem 0;
+  }
+
+  .spot {
+    width: 24px;
+    height: 24px;
+    margin: -12px 0 0 -12px;
+    border-width: 2px;
+  }
+
+  .answers {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spot {
+    animation: none;
+  }
+
+  .cabin {
+    transition: none;
+  }
+}
+
+.pidSteps {
+  margin: 0.6rem 0 0;
+  padding-left: 1.25rem;
+}
+
+.pidSteps li {
+  margin-bottom: 0.8rem;
+}
+
+.pidSteps .shot {
+  max-width: 560px;
+  margin-top: 0.5rem;
+}
+
+.pidRead {
+  font-weight: 600;
+}

@@ -1,0 +1,62 @@
+---
+title: "FrostNav Install Guide"
+sidebar_position: 1
+description: "FrostNav install guide: step-by-step setup for software version 02.00.00 and for ADB Lock vehicles (above 02.00.00)."
+---
+
+import VehicleFinder from '@site/src/components/VehicleFinder';
+
+FrostNav is a free app. You install it on the multimedia screen of your Chery car. You use a web browser to install it.
+
+Select your car first. The vehicle heading tells you if you need `adbauth.key`.
+
+## Step 1: Select your vehicle {#arac-sec}
+
+The wizard below finds out with a few questions whether you need an `adbauth.key`. If you do, it also shows how to get the Product ID.
+
+<VehicleFinder />
+
+Or open your car's heading directly:
+
+| Vehicle | Guide |
+|---|---|
+| Tiggo 7 2025 (the screen can look like an Omoda 5) | [Tiggo 7 2025](./araclar.mdx#tiggo7-2025) |
+| Tiggo 8 2025 | [Tiggo 8 2025](./araclar.mdx#tiggo8-2025) |
+| Tiggo 8 2026 | [Tiggo 8 2026](./araclar.mdx#tiggo8-2026) |
+| Jaecoo | [Jaecoo](./araclar.mdx#jaecoo) |
+
+All headings: [Install by vehicle](./araclar.mdx).
+
+You can watch the Tiggo 7 and Tiggo 8 install video [here](https://www.youtube.com/watch?v=D8KxEsYhqpA).
+
+## Step 2: Find your software version
+
+1. Open "Settings" (local settings) on the car screen.
+2. Touch "System" in the left menu.
+3. Scroll to the bottom of the page.
+4. Read the last line. It shows "DMC yazılımı sürüm numarası" and the version number. Example: `DMC yazılımı sürüm numarası 02.00.00`.
+
+:::note
+
+The word "DMC yazılımı sürüm numarası" is in English, also when the car language is Turkish.
+
+:::
+
+## Step 3: Select the correct guide
+
+| Your software version | Guide | Install type in the web installer |
+|---|---|---|
+| Exactly **02.00.00** | [Install for 02.00.00](./02-00-00.mdx) | "02.00.00" |
+| Higher than **02.00.00** (ADB Lock) | [Install for ADB Lock](./adb-kilid.mdx) | "I have adbauth.key" |
+
+:::warning
+
+Do not select the wrong guide. The install does not complete.
+
+:::
+
+The web installer is at [https://frostnav.com/install](https://frostnav.com/install). It needs JavaScript and WebUSB. These guide pages do not need JavaScript.
+
+## After the install
+
+Learn how to use the app: [Usage guide](../kullanim/index.mdx). Phone app: [Mobile app](../kullanim/mobile.mdx).

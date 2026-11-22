@@ -1,0 +1,101 @@
+---
+title: "Karşılama"
+sidebar_position: 7
+description: "FrostNav Karşılama: USB'den açılış sesi, giriş tasarımı ve ilk açılış pencereleri."
+---
+
+Ekranın başlığı "Hoşgeldin Ekranı"dır. Sol menüde ve ana panelde adı "Karşılama"dır.
+
+## İlk açılış
+
+Uygulamayı ilk kez açtığınızda şu pencereler görünür:
+
+1. **Hoş Geldiniz penceresi:** Yasal uyarıyı ve kullanım şartlarını gösterir. Okuyun. Devam etmek için "Kabul Ediyorum" düğmesine dokunun. "Kabul Etmiyorum" düğmesine dokunursanız uygulama kapanır.
+2. **Dil penceresi:** "Başlamak için dilinizi seçin". Bir dil seçin. "Devam Et" düğmesine dokunun.
+
+Yasal uyarı şunu söyler: Yazılım ücretsizdir, ayarları kendi isteğinizle değiştirirsiniz ve geliştirici zarardan sorumlu değildir.
+
+## Ekranı açın
+
+1. FrostNav uygulamasını açın.
+2. Sol menüde "Karşılama" öğesine dokunun. Ana panelde "Karşılama" kısayoluna dokunun.
+3. İki kart görünür: "USB'den seç" ve "Açılış Tasarımı".
+
+## Açılış Sesi
+
+Açılış Sesi, aracın çaldığı bir ses dosyasıdır. Aracı her çalıştırdığınızda çalmasını ayarlayabilirsiniz.
+
+### Ses dosyası ekleyin
+
+1. Telefonda bir ses dosyası indirin. Uygulama şu türleri okur: mp3, wav, m4a, ogg, flac, aac, wma ve amr.
+2. USB belleği araca takın.
+3. "USB'den seç" kartına dokunun.
+4. "USB'deki ses dosyaları" altında dosya adına dokunun. Uygulama dosyayı kaydeder. Dosya adı "Seçilen ses" altında görünür.
+5. USB yoksa dosyayı [Aktar](./web-server.mdx) ekranıyla İndirilenler klasörüne gönderin. "Ses seç" satırına dokunun ve dosyayı bulun. Dosya penceresi açılmazsa İndirilenler listesi çıkar.
+
+### Çalın ve durdurun
+
+- Sesi dinlemek için "Çal" satırına dokunun.
+- Ses çalarken aynı satır "Durdur" olur. Durdurmak için o satıra tekrar dokunun.
+- Dosya seçmediyseniz uygulama "Önce bir ses dosyası seçin" mesajını gösterir.
+
+### Açılışta otomatik çalın
+
+1. Bir ses dosyası seçin.
+2. "Açılışta otomatik çal" için "Evet" seçin.
+3. Uygulama aracı her çalıştırdığınızda sesi çalar.
+4. Bunu durdurmak için "Hayır" seçin.
+
+## Giriş tasarımı
+
+"Açılış Tasarımı" kartına dokunun. Giriş tasarımı, araç çalışınca ana ekranda görünen bir görseldir. Bu görsel ses dosyasından ayrıdır.
+
+### Tasarımlar
+
+| Seçenek | Ne gösterir? |
+|---|---|
+| Kapalı | Açılışta görsel yok. Bu varsayılan seçenektir. |
+| Standart Karşılama | Saate göre karşılama, büyük saat ve yazdığınız satır. Karşılama Günaydın, İyi günler, İyi akşamlar veya İyi geceler olur. |
+| Kış Dokunuşu | Pembe gece, düşen yapraklar, ay ışığı ve yazdığınız satır. |
+| Dağ Yürüyüşü | Gün batımı, dağ silüeti ve yazdığınız satır. |
+| Prestij | Karbon zemin, altın ışık süpürmesi, saate göre metalik ton ve yazdığınız satır. |
+
+### Tasarım seçin
+
+1. "Açılış Tasarımı" kartına dokunun.
+2. "Giriş tasarımı" bölümünde bir karta dokunun. Seçili kart vurgulanır.
+3. Uygulama seçiminizi kaydeder.
+
+### Özel yazı
+
+1. "Özel yazı" kutusuna bir satır yazın. Kutuda "Ad soyad" yazar.
+2. Uygulama yazıyı kaydeder.
+3. Kutuyu boş bırakırsanız isim satırı görünmez.
+
+### Önizleyin
+
+1. "Önizle" düğmesine dokunun.
+2. Seçili tasarım ana ekranda açılır.
+3. Görseli kapatmak için ekrana dokunun.
+4. Dokunmazsanız görsel yaklaşık 4,5 saniye sonra kapanır.
+
+:::note
+
+"Kapalı" seçiliyse "Önizle" bir görsel göstermez.
+
+:::
+
+### Araç çalışınca ne olur?
+
+1. Aracı çalıştırırsınız.
+2. Uygulama seçili tasarımı ana ekranda gösterir.
+3. Ekrana dokunun. Görsel kapanır.
+4. Dokunmazsanız görsel yaklaşık 4,5 saniye sonra kapanır.
+
+"Kapalı" seçiliyse uygulama açılışta görsel göstermez.
+
+:::note
+
+Bu görsel Overlay iznine ihtiyaç duyar. Yükleyici bu izni verir.
+
+:::

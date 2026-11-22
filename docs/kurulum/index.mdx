@@ -1,0 +1,62 @@
+---
+title: "FrostNav Kurulum Rehberi"
+sidebar_position: 1
+description: "FrostNav kurulum rehberi: 02.00.00 yazılım sürümü ve ADB Kilid (02.00.00 üzeri) araçlar için adım adım kurulum."
+---
+
+import VehicleFinder from '@site/src/components/VehicleFinder';
+
+FrostNav uygulamasını Chery aracınızın multimedya ekranına kurarsınız. Kurulum için bir web tarayıcısı kullanırsınız.
+
+Önce aracınızı seçin. Araç başlığı, `adbauth.key` gerekip gerekmediğini söyler.
+
+## Adım 1: Aracınızı seçin {#arac-sec}
+
+Aşağıdaki sihirbaz birkaç soruyla `adbauth.key` gerekip gerekmediğini bulur. Gerekiyorsa Product ID'yi nasıl alacağınızı da gösterir.
+
+<VehicleFinder />
+
+Ya da aracınızın başlığını doğrudan açın:
+
+| Araç | Rehber |
+|---|---|
+| Tiggo 7 2025 (ekran Omoda 5 gibi olabilir) | [Tiggo 7 2025](./araclar.mdx#tiggo7-2025) |
+| Tiggo 8 2025 | [Tiggo 8 2025](./araclar.mdx#tiggo8-2025) |
+| Tiggo 8 2026 | [Tiggo 8 2026](./araclar.mdx#tiggo8-2026) |
+| Jaecoo | [Jaecoo](./araclar.mdx#jaecoo) |
+
+Tüm başlıklar: [Araca göre kurulum](./araclar.mdx).
+
+Tiggo 7 ve Tiggo 8 kurulum videosunu [buradan](https://www.youtube.com/watch?v=D8KxEsYhqpA) izleyebilirsiniz.
+
+## Adım 2: Yazılım sürümünüzü bulun
+
+1. Araç ekranında "Yerel Ayarlar" (Settings) öğesini açın.
+2. Sol menüde "Sistem" (System) öğesine dokunun.
+3. Sayfanın en altına kadar kaydırın.
+4. En alttaki satırı okuyun. Satırda "DMC yazılımı sürüm numarası" ve sürüm numarası yazar. Örnek: `DMC yazılımı sürüm numarası 02.00.00`.
+
+:::note
+
+"DMC yazılımı sürüm numarası" yazısı İngilizcedir. Araç dili Türkçe olsa da bu satır İngilizce görünür.
+
+:::
+
+## Adım 3: Doğru rehberi seçin
+
+| Yazılım sürümünüz | Rehber | Web yükleyicide kurulum tipi |
+|---|---|---|
+| Tam olarak **02.00.00** | [02.00.00 kurulumu](./02-00-00.mdx) | "02.00.00" |
+| **02.00.00**'dan yüksek (ADB Kilid) | [ADB Kilid kurulumu](./adb-kilid.mdx) | "adbauth.key sahibiyim" |
+
+:::warning
+
+Yanlış rehberi seçmeyin. Kurulum tamamlanmaz.
+
+:::
+
+Web yükleyici: [https://frostnav.com/install](https://frostnav.com/install). JavaScript ve WebUSB gerekir. Bu rehber sayfaları için JavaScript gerekmez.
+
+## Kurulumdan sonra
+
+Uygulamayı nasıl kullanacağınızı öğrenin: [Kullanım rehberi](../kullanim/index.mdx). Telefon uygulaması: [Mobil uygulama](../kullanim/mobile.mdx).

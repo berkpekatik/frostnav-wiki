@@ -1,0 +1,75 @@
+---
+title: "Automation"
+sidebar_position: 10
+description: "FrostNav comfort automation: seat, glass, and steering heat turn on when the outside temperature reaches your threshold."
+---
+
+Automation watches the outside temperature from the vehicle thermometer. When the temperature reaches the threshold you set, seat heat, seat ventilation, window heat, steering-wheel heat, or climate turns on by itself.
+
+The screen title is "Comfort automation".
+
+## Open the screen
+
+1. Open the FrostNav app.
+2. In the side menu, touch "Automation".
+3. The first time, an early access notice appears. Touch "I accept" to continue. The notice is asked once.
+
+:::note
+
+Do not force a function your vehicle does not have. It depends on the hardware and software, and it may not work on every model.
+
+:::
+
+## Run automation
+
+1. Turn on "Run automation". The status becomes "On".
+2. The top of the screen says "VEHICLE THERMOMETER · LIVE DATA". When a temperature is available, the "Outside" line shows the degrees.
+3. While the switch is off, rules are not sent to the car.
+
+If the thermometer is not connected, the screen says "Vehicle thermometer is not connected". If the temperature is not ready yet, it says "Outside temperature is not available yet". In that case, wait with the ignition on.
+
+So automation can run when the ignition turns on, keep "Run in the background" On in [Settings](./settings.mdx).
+
+## Rules
+
+"Automation rules" are split into three groups.
+
+| Group | Rules |
+|---|---|
+| Driver Side | Driver seat heat, driver seat ventilation. |
+| Passenger Side | Passenger seat heat, passenger seat ventilation. |
+| Glass & Steering | Steering-wheel heat, windshield heat, rear window and mirror heat, climate (AUTO). |
+
+## Set a rule
+
+1. Turn on the switch on the rule card.
+2. Set the time slider. 0 minutes means "Do not auto shut off (continuous)". 1–30 minutes means "Auto shut off … min after ignition".
+3. Touch the temperature chip. The comparison changes in order: below, at or below, above, at or above. The chip shows &lt;, ≤, &gt;, or ≥.
+4. The temperature slider sets the threshold. The range is −20°C to 40°C.
+5. Seat heat and ventilation also have a "Level" slider. The level is 1, 2, or 3. The level appears only while the rule is on.
+
+Example: set driver seat heat to turn on below 5°C, at level 2. When the outside temperature falls below 5°C, seat heat turns on at level 2.
+
+## Heat and ventilation conflict
+
+On the same seat, the heat and ventilation temperature ranges cannot overlap. If they overlap, the app reverts the change and says: "Conflict Prevention: Heating and ventilation cannot be active at the same time! Change reverted."
+
+Use a low threshold for heat and a high threshold for ventilation. Example: heat below 10°C, ventilation above 25°C.
+
+## Turn it off
+
+- To turn off one rule, turn off that card's switch.
+- To stop all automation, turn off "Run automation". The status becomes "Off".
+
+If you turn the related function off on the vehicle screen after the car has started, automation does not turn that function on again during that drive.
+
+## Troubleshooting
+
+| Problem | What to do |
+|---|---|
+| Outside temperature is missing | Wait with the ignition on. If the thermometer is not connected, this car may not report the outside temperature. |
+| A rule will not turn on | Turn on "Run automation" first. If heat and ventilation thresholds overlap, separate them. |
+| The seat or the glass does not respond | This hardware may not be on the car. Make sure the ignition is on. |
+| The function turns off quickly | If the time slider is not 0, the function turns off that many minutes after ignition. Set the time to 0 if you want it to stay on. |
+
+[Back to the usage guide](./index.mdx)

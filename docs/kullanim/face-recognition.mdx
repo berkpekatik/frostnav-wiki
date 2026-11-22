@@ -1,0 +1,72 @@
+---
+title: "Yüz Tanıma"
+sidebar_position: 12
+description: "FrostNav yüz tanıma: DMS kamerasıyla sürücüyü tanır, koltuk hafızasını uygular ve sesli bildirir."
+---
+
+Yüz tanıma, kontak açıldığında DMS kamerasıyla sürücüyü tanır. Kayıtlı bir kişi bulunursa uygulama sesli bildirim yapar. Araçta koltuk hafızası varsa kayıtlı koltuk hafızasını (1, 2 veya 3) uygular.
+
+En fazla 3 kişi kaydedilir. Koltuk hafızası olmayan araçta yalnızca tanıma ve sesli bildirim yapılır.
+
+## Ekranı açın
+
+1. FrostNav uygulamasını açın.
+2. Sol menüde "Yüz Tanıma" öğesine dokunun.
+3. İlk açılışta erken erişim uyarısı çıkar. Devam etmek için "Kabul Ediyorum" düğmesine dokunun. Uyarı bir kez sorulur.
+
+:::note
+
+Kamera izni gerekir. Jaecoo araçlarda DMS kamerasına erişim henüz yapılmadı; yüz tanıma bu araçlarda şimdilik çalışmaz.
+
+:::
+
+## Otomatik tanımayı açın
+
+1. Anahtarı açın. Koltuk hafızası olan araçta anahtarın adı "Otomatik yüz tanıma ve koltuk hafızası"dır. Koltuk hafızası yoksa adı "Otomatik yüz tanıma"dır.
+2. Durum satırı kaç kişinin kayıtlı olduğunu ve tanımanın açık olup olmadığını gösterir.
+3. Önce en az bir yüz profili ekleyin. Profil yoksa uygulama "Önce en az bir yüz profili ekleyin." yazar.
+
+Kontak açılınca DMS kamerası sürücüyü tarar. Eşleşme olursa kamera serbest bırakılır. Kontak kapalıyken uygulama sonraki çalıştırmayı bekler.
+
+Bu işlem için [Ayarlar](./settings.mdx) ekranında "Arka planda çalış" seçeneğini Açık tutun.
+
+## Bir kişi kaydedin
+
+1. "Yüz Tara / Profilleri Yönet" düğmesine dokunun. "Yüz Tanıma ve Profil Yönetimi" ekranı açılır.
+2. Kameraya düz bakın.
+3. Kişinin adını yazın. Aynı isimle ikinci bir profil kaydedilemez.
+4. Koltuk hafızası varsa "Koltuk Hafızası Seçin" satırından 1, 2 veya 3 seçin. Bu numara, araçtaki koltuk hafıza düğmesiyle aynı olmalıdır.
+5. "Yüz Taramayı Başlat" düğmesine dokunun.
+6. Yüzünüzü çerçeveye ortalayın. Ekran adımları sırayla ister: düz karşıya bakın, başınızı hafif sola çevirin, hafif sağa çevirin, biraz yukarı bakın, biraz aşağı bakın.
+7. Gösterge "Lütfen buraya bakınız" diyebilir. Tarama bitince "Tamamlandı" yazar.
+8. Kayıt başarılıysa ekran kişinin adını ve koltuk hafızası numarasını gösterir.
+
+Yüz görünmezse ekran "Yüz algılanmadı" yazar. Yaklaşın ve yüzün net göründüğünden emin olun. Taramayı bırakmak için "Taramayı İptal Et" düğmesine dokunun.
+
+## Profili silin
+
+- Bir kişinin yanındaki "Sil" düğmesi yalnızca o profili siler.
+- "Tümünü Sil" kayıtlı bütün profilleri siler. Uygulama "Kayıtlı tüm yüz profilleri silinsin mi?" diye sorar.
+- 3 kişi doluysa yeni kayıt için önce bir profil silin.
+
+## Kontak açılınca ne olur?
+
+1. Aracı çalıştırırsınız.
+2. Uygulama DMS kamerasıyla sürücü yüzünü tarar.
+3. Eşleşme olursa ekran "Kullanıcı tespit edildi" yazar ve sesli bildirim yapar.
+4. Koltuk hafızası bağlıysa uygulama o numaranın koltuk hafızasını uygular.
+5. Tarama bitince DMS kamerası serbest bırakılır.
+
+Ses motoru hazır değilse sesli anons yapılmaz. Ekran bunu yazar. Koltuk hafızası gönderilemezse neden durum satırında görünür. Örnek nedenler: kontak açık değil, hafıza numarası 1–3 dışında, araç bağlantısı bekleniyor.
+
+## Sorun giderme
+
+| Sorun | Yapılacak işlem |
+|---|---|
+| Kamera bulunamadı | Araçta DMS veya ön kamera olmalıdır. Biraz bekleyin. Ekran "Kamera bağlantısı bekleniyor" diyorsa bağlantı gelince tekrar deneyin. |
+| Kamera izni gerekli | FrostNav için kamera iznini verin. |
+| Kayıtlı kişilerle eşleşmedi | Yüzü yeniden taratın. Işığın yeterli olduğundan ve kameraya düz baktığınızdan emin olun. |
+| Koltuk hareket etmiyor | Bu araçta koltuk hafızası olmayabilir. Varsa profildeki numara ile araçtaki hafıza düğmesi aynı olmalıdır. Kontak açık olmalıdır. |
+| Tanıma kontakla başlamıyor | Anahtarı ve "Arka planda çalış" seçeneğini Açık yapın. En az bir profil kayıtlı olmalıdır. |
+
+[Kullanım rehberine dönün](./index.mdx)

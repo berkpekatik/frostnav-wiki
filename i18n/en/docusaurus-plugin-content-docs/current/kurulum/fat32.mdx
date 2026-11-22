@@ -1,0 +1,46 @@
+---
+title: "Format the USB stick as FAT32"
+sidebar_position: 5
+description: "Format a USB stick as FAT32 for adbauth.key: Windows and Mac."
+---
+
+Use this page for the [ADB Lock](./adb-kilid.mdx) install. The car reads the USB stick only as **FAT32**.
+
+:::warning
+
+Format deletes all files on the USB stick. Copy the files you need to another place first.
+
+:::
+
+## Windows
+
+1. Connect the USB stick to the computer.
+2. Open File Explorer.
+3. Right-click the USB stick drive.
+4. Click Format.
+5. Select **FAT32** as the file system.
+6. Leave Quick Format selected.
+7. Press Start. Wait until it finishes.
+
+:::note
+
+Windows can hide FAT32 for a stick larger than 32 GB. Use a USB stick of 32 GB or smaller.
+
+:::
+
+## Mac
+
+1. Connect the USB stick to the Mac.
+2. Open Disk Utility.
+3. Select the USB stick on the left. Select the disk, not only a partition.
+4. Press Erase.
+5. Select **MS-DOS (FAT)** as the format. This is FAT32.
+6. Select **Master Boot Record** as the scheme.
+7. Press Erase. Wait until it finishes.
+
+## After the format
+
+1. Copy `svtasklist.flag` to the top folder of the USB stick.
+2. Copy `adbauth.key` to the same top folder.
+3. Do not put the files in a subfolder.
+4. Go back to the [ADB Lock install](./adb-kilid.mdx).

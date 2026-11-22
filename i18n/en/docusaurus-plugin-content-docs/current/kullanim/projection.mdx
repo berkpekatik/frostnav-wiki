@@ -1,0 +1,97 @@
+---
+title: "Instrument display"
+sidebar_position: 15
+description: "FrostNav instrument display: project a map, the FrostNav key, map swipe, and Google Maps and Yandex cards."
+---
+
+The instrument display sends an app, for example a map, to the cluster in front of the driver. You manage projection from this screen.
+
+## Open the screen
+
+1. Open the FrostNav app.
+2. Touch "Instrument display" in the side menu.
+3. On the full-screen home, touch the "Projection" status on the vehicle card. That status opens the same screen.
+
+## Start projection the first time
+
+1. In "App", touch "Change".
+2. Choose an app from the list. The list shows installed apps. The app name appears next to "Selected:".
+3. Touch "Project".
+4. The status changes from "Projection off" to "Projection on". While it works, the app shows "Projecting…".
+
+:::note
+
+If the app says the overlay permission is required, grant the overlay permission. The installer grants it.
+
+:::
+
+If you have not chosen an app, "Select an app first!" appears.
+
+## Stop projection
+
+1. Touch "Stop".
+2. The app shows "Stopping…". Then the status becomes "Projection off".
+
+You can also use the [on-screen back button](./settings.mdx) bar: Map to start, and X to stop.
+
+## Bring the app to the main screen
+
+1. Choose the app.
+2. Touch "Bring to main screen".
+3. The app opens on the main multimedia screen.
+
+## Navigation behavior
+
+### Start: when does projection start?
+
+| Option | Meaning |
+|---|---|
+| Engine | Projection starts when the engine starts. |
+| Ready | Projection starts on one Engine Start press, without the brake. |
+| Manual | You start projection yourself with "Project". |
+
+### Shutdown
+
+- **Yes:** Projection closes by itself when the car turns off.
+- **No:** Projection stays on. Close it by hand.
+
+### FrostNav key
+
+- **On:** The car's hardware key controls the map on the cluster.
+- **Off:** The hardware key does nothing for the map.
+
+### Map swipe
+
+- **On:** A two-finger swipe to the left moves Google Maps or Yandex to the instrument display. If both maps are open, they swap places. A swipe to the right closes the display.
+- **Off:** The car swipe is ignored. FrostNav does not move an app.
+
+Usage access is required. If access is missing, the app shows "Enable usage access for FrostNav first. The swipe stays off until then."
+
+If [split screen](./split-screen.mdx) or the [sunroof](./sunroof.mdx) already uses that swipe, this switch does not turn on. Turn that gesture off first.
+
+## Google Maps
+
+### Open with navigation
+
+- **On:** The instrument display opens when Google Maps navigation starts. Google Maps must be selected, and notification access must be on. The display stays open when navigation ends.
+- **Off:** The app does not open the display from a Google Maps notification.
+
+If notification access is off, the app shows "Enable notification access for FrostNav first."
+
+### Direction cards
+
+- **On:** The instrument display shows the maneuver and ETA cards. Notification access is required.
+- **Off:** The cluster navigation cards are hidden.
+
+"Card style" has three options. "Detail card" shows the maneuver on top, and remaining, arrival, and duration below. "Thin line" shows the maneuver and the ETA on one slim line. "Launcher glass" is the home-screen look that follows the light and dark theme, with a large distance and remaining, arrival, and duration below.
+
+"Google Maps card position" sets the place and the size of the card. The sliders are Horizontal (X), Vertical (Y), and Size. "Reset" returns the card to the default place and size.
+
+## Yandex → Cluster
+
+- **On:** The app reads Yandex Maps guidance. During guidance it shows the maneuver and ETA card on the cluster. It does not cover the left quarter of the home screen.
+- **Off:** The cluster navigation summary is off.
+
+The FrostNav accessibility service must be on. If it is off, the app shows "Enable the FrostNav accessibility service first."
+
+"Yandex card position" uses the same sliders as the Google Maps card: Horizontal (X), Vertical (Y), Size, and Reset. The same three card styles are available here.

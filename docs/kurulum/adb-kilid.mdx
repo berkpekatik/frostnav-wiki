@@ -1,0 +1,156 @@
+---
+title: "ADB Kilid (02.00.00 Üzeri) İçin Kurulum"
+sidebar_position: 4
+description: "Multimedya yazılım sürümü 02.00.00 üzerinde olan, ADB Kilid'li Chery araçlara adbauth.key ile FrostNav kurulumu."
+---
+
+import {ProductIdSteps} from '@site/src/components/VehicleFinder';
+
+Yazılım sürümü `02.00.00`'dan yüksekse bu rehberi kullanın. Bu araçlarda ADB kilitlidir. Örnek: Omoda 5, Tiggo 7, Tiggo 8.
+
+İşlem iki bölümden oluşur:
+
+1. USB bellek ve `adbauth.key` dosyası ile ADB'yi açın.
+2. Web yükleyici ile uygulamayı kurun.
+
+Kurulumun iki tipi vardır:
+
+- `DEVICE EYE PATTERN` / `Device眼图` varsa `adbauth.key` gerekmez. [02.00.00 kurulumu](./02-00-00.mdx) kullanın.
+- Bu düğme yoksa bu sayfayı kullanın. Önce Product ID alın. `adbauth.key` dosyasını siteden indirdikten sonra kurun.
+
+:::warning
+
+Bölümleri bu sırayla yapın.
+
+:::
+
+## Bölüm 1: adbauth.key hakkında
+
+- Uygulama ücretsizdir. `adbauth.key` dosyası ücretsiz değildir.
+- Key dosyasını FrostNav üretmez. Site, Product ID ile dosyayı dış bir API hizmetinden alır.
+- Key dosyası araç seri numarasından (SN) ve bir tarihten üretilir. Tarih biçimi yyyyMMdd'dir. Örnek: `20260930`.
+- Key dosyası bir araç ve bir tarih için çalışır. Tek kullanımlık key gibi görünür.
+- Key dosyasını tekrar kullanabilirsiniz. Bunun için araç tarihini key dosyasının tarihine geri alın.
+
+### Product ID nasıl alınır?
+
+`DEVICE EYE PATTERN` / `Device眼图` yoksa önce Product ID gerekir. Product ID, araç seri numarasıdır. Ekrandaki satırın adı `productID / 产品序列号` şeklindedir. İngilizce ekranda `product ID` yazabilir.
+
+1. Gizli mühendislik menüsünü açın. Menüyü aracınıza göre açın: [Araca göre kurulum](./araclar.mdx). Adım adım görmek için [araç sihirbazını](./index.mdx#arac-sec) kullanabilirsiniz.
+2. Menüde `VERSION INFO` / `版本信息` düğmesine dokunun.
+3. `productID / 产品序列号` satırını bulun.
+4. Satırın sağındaki değeri olduğu gibi yazın. 0 (sıfır) ile O (harf) karıştırmayın.
+5. Ekranın fotoğrafını çekin.
+6. Anahtarı [adbauth sitesinden](https://platform.frostnav.com/buy) satın alın. Product ID değerini girin. Site dosyayı hazırlar.
+7. `adbauth.key` dosyasını indirdikten sonra Bölüm 2'ye geçin.
+
+#### Araca göre gizli menüye giriş {#pid-arac}
+
+Aracınızın ekranına uyan başlığı açın. Ekran tipini bilmiyorsanız [araç sihirbazını](./index.mdx#arac-sec) kullanın.
+
+<details>
+<summary>Tiggo 7 / Tiggo 8 / Omoda 5 (gösterge ve multimedya yan yana, çift ekran)</summary>
+
+<ProductIdSteps cabin="tiggoClassic" />
+
+</details>
+
+<details>
+<summary>Tiggo 8 yeni nesil (panelin üstünde duran tek parça yatay ekran)</summary>
+
+<ProductIdSteps cabin="tiggoNew" />
+
+</details>
+
+<details>
+<summary>Jaecoo (ortada dikey, büyük ekran)</summary>
+
+<ProductIdSteps cabin="jaecoo" />
+
+</details>
+
+<img src={require('@site/assets/adbauth-mapcontrol.jpg').default} alt="adbauth ile FrostNav" width={300} />
+
+<img src={require('@site/assets/adbauth-cockpit.jpg').default} alt="adbauth ile Cockpit" width={300} />
+
+## Bölüm 2: ADB'yi açın
+
+### Gerekenler
+
+- Bir USB bellek.
+- `svtasklist.flag` dosyası.
+- `adbauth.key` dosyası.
+
+### İşlem
+
+1. USB belleği **FAT32** yapın. Adımlar: [USB belleği FAT32 yapın](./fat32.mdx).
+2. `svtasklist.flag` ve `adbauth.key` dosyalarını USB belleğin ana klasörüne kopyalayın. Alt klasöre koymayın.
+3. Araç tarihini key dosyasının tarihine ayarlayın. Tarih aynı olmalıdır. Biçim yyyyMMdd'dir. Örnek: key `20260930` ise araç tarihi 30 Eylül 2026 olur.
+4. Multimedya ekranının açık olduğundan emin olun.
+5. USB belleği aracın USB girişine takın.
+6. Ekranda Çince bir mesaj çıkmasını bekleyin.
+7. Mesaj `验证成功，打开adb!!!` ise ADB açıktır. USB belleği çıkarın.
+8. Başka bir mesaj görürseniz aşağıdaki tabloyu kullanın.
+
+### Ekrandaki mesajlar
+
+| Mesaj | Anlamı | Yapılacak işlem |
+|---|---|---|
+| `验证成功，打开adb!!!` | Key doğru. ADB açık. | Bölüm 3'e geçin. |
+| `鉴权失败，文件不存在，请检查` | Araç `adbauth.key` dosyasını bulamıyor. | Dosyayı USB belleğin ana klasörüne koyun. Adının `adbauth.key` olduğundan emin olun. |
+| `鉴权失败，文件无效` | Dosya geçersiz veya boş. | Dosyayı tekrar kopyalayın. Veya dosyayı siteden tekrar indirin. |
+| `鉴权失败，数据异常` | Araç seri numarasını okuyamıyor. | Aracı yeniden başlatın. Tekrar deneyin. |
+| `鉴权失败，验证失败!!!` | Key dosyası araç ve tarih ile eşleşmiyor. | Araç tarihini key dosyasının tarihine (yyyyMMdd) ayarlayın. Tekrar deneyin. |
+
+## Bölüm 3: Kabloyu bağlayın
+
+WebUSB destekleyen bir tarayıcı kullanın: Chrome, Edge veya Opera.
+
+### Android telefon veya tablet
+
+İki parça gerekir. Biri Type-C OTG adaptörüdür. Type-C fiş telefona veya tablete girer. Diğer uç USB dişidir. İkincisi, iki ucu da USB fiş olan bir kablodur.
+
+<img src={require('@site/assets/howto/usb-otg-typec.jpg').default} alt="Type-C OTG: bir uç Type-C fiş, diğer uç USB dişi" width={400} />
+
+Fotoğraf: Fructibus, Wikimedia Commons, CC0.
+
+<img src={require('@site/assets/howto/usb-a-a-cable.svg').default} alt="İki ucu USB fiş olan kablo" width={400} />
+
+1. Type-C fişi telefonun veya tabletin Type-C girişine takın.
+2. Kablonun bir USB fişini adaptörün dişi ucuna takın.
+3. Kablonun diğer USB fişini aracın USB girişine takın.
+
+### Windows dizüstü bilgisayar
+
+OTG adaptörü gerekmez. İki ucu USB fiş olan kablo yeterlidir.
+
+1. Kablonun bir USB fişini bilgisayarın USB girişine takın.
+2. Kablonun diğer USB fişini aracın USB girişine takın.
+
+## Bölüm 4: Uygulamayı kurun
+
+1. Tarayıcıda [/install](https://frostnav.com/install) sayfasını açın.
+2. Kurulum tipi olarak **"adbauth.key sahibiyim"** seçin.
+3. "Bağlan" düğmesine basın. Tarayıcı penceresinde aracı seçin.
+4. "Cihaz Bilgisi" düğmesine basın. Cihaz bilgisinin göründüğünden emin olun.
+5. "Kur" düğmesine basın. Kurulumun bitmesini bekleyin.
+6. Mağaza uygulaması istiyorsanız "Market uygulaması yükle" düğmesine basın. Bu adım FrostNav kurulumundan ayrıdır.
+
+### Yükleyici ne yapar?
+
+1. Tarayıcı ADB kimlik doğrulamasını yapar.
+2. İki yardımcı dosyayı araçta `/data/local/tmp/` konumuna yazar: `mapcontrol-silent-installer.dex` ve `mc-run.sh`.
+3. APK dosyasını `com.frostnav.adb.MapControlSilentInstaller` ile kurar. Bu program `app_process64` üzerinden çalışır.
+4. İzinleri verir.
+
+## Yükleyicinin verdiği izinler
+
+Yükleyici bu izinleri `com.frostnav` uygulamasına verir. Kaynak: `MapControl/install.sh`.
+
+- Doze whitelist: `dumpsys deviceidle whitelist +com.frostnav`
+- AppOps: SYSTEM_ALERT_WINDOW, GET_USAGE_STATS, REQUEST_INSTALL_PACKAGES, MANAGE_EXTERNAL_STORAGE, WRITE_SETTINGS
+- `pm grant`: READ_LOGS, QUERY_ALL_PACKAGES, PACKAGE_USAGE_STATS, konum (hassas, yaklaşık, arka plan), WRITE_SECURE_SETTINGS, RECORD_AUDIO, BLUETOOTH_CONNECT, CAMERA ve diğerleri
+- Erişilebilirlik servisi: `com.frostnav/com.frostnav.service.GlobalBackService`
+- Bildirim dinleyicisi: `com.frostnav/com.frostnav.media.LauncherMediaNotificationListener`
+
+[Rehber ana sayfasına dön](./index.mdx)

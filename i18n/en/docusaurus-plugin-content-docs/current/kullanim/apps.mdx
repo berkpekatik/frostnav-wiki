@@ -1,0 +1,128 @@
+---
+title: "App Management"
+sidebar_position: 4
+description: "How to install, update, open, and remove apps in FrostNav App management, including Server mode, Local mode, downloaded files, and Delete all."
+---
+
+Use this screen to install, update, open, and remove apps on the car.
+
+:::warning
+
+WARNING:
+
+You are fully responsible for the apps that you install or remove. The developer is not liable for these apps.
+
+:::
+
+## Open the screen
+
+1. Open the FrostNav app.
+2. Touch "Apps" in the side menu. On the home panel, touch the "Apps" shortcut.
+3. The first time, a window shows "App management" and a notice about your responsibility. Touch "I accept" to continue.
+
+## Icons at the top of the screen
+
+| Icon | What it does |
+|---|---|
+| Refresh | Loads the list again. |
+| Folder | Opens the list of downloaded files. |
+| Server / Local button | Changes the list mode. Touch it to switch. |
+| Three dots (⋮) | Opens "More options". It has "Delete all". |
+
+## Server mode and Local mode
+
+The mode button shows the mode that is active. Touch the button to switch to the other mode.
+
+|  | Server mode (web icon) | Local mode (phone icon) |
+|---|---|---|
+| List source | The app list from the FrostNav server (`frostnav.com`). | The apps that are already installed on the car. |
+| Internet | Necessary. | Not necessary. |
+| Use it to | Install and update apps. | Open and remove apps that are on the car. |
+| Buttons | INSTALL, UPDATE, OPEN, REMOVE, LOCKED | OPEN, REMOVE |
+
+In Local mode, the list does not show system apps or FrostNav.
+
+### Switch the mode
+
+1. Find the mode button at the top of the screen. It shows "Server" or "Local".
+2. Touch the button.
+3. The list changes. The button text changes.
+
+If the server is not available, the screen shows "Cannot reach server. Refreshing automatically…". The app tries again when the network is back.
+
+## Install an app (Server mode)
+
+1. Make sure that Wi-Fi is on and connected. See [Wi-Fi screen](./wifi.mdx).
+2. Set the mode to "Server".
+3. Find the app. The status shows "Not installed".
+4. Touch "INSTALL".
+5. Wait. The screen shows "Downloading…" and then "Installing…".
+6. When the message "App installed!" shows, the app is ready. The button changes to "OPEN".
+
+If a downloaded file for the same app is already on the car, the button says "INSTALL LOCAL". The status says "Downloaded file will be used". The install skips the download.
+
+### Related package
+
+Some apps need another package. The "Related package" window opens.
+
+- **Install required too:** Installs this app and the required package.
+- **Only this one:** Installs only the app you chose. You can install the required package separately later.
+
+## Update an app
+
+1. Set the mode to "Server".
+2. If a new version is available, the button shows "UPDATE".
+3. Touch "UPDATE". Wait for the install to finish.
+
+You update FrostNav from the same place. The app closes during the update. The cameras and any running Camera 360 recording stop automatically first. If the "Camera 360 will stop" window appears, continue. You can see your version in the About section of [Settings](./settings.mdx).
+
+## Open an app
+
+1. Find the app in the list. The status shows "Installed • v" and the version.
+2. Touch "OPEN".
+
+## Remove an app
+
+1. Find the app in the list.
+2. Touch "REMOVE".
+3. Touch "Yes" in the window "Remove app".
+4. If a system window opens, confirm the removal.
+
+FrostNav shows "LOCKED". You cannot remove it in this list.
+
+## Remove all apps at one time (Delete all)
+
+1. Touch the three dots (⋮).
+2. Touch "Delete all".
+3. Touch "Delete" to confirm.
+4. In the window "Reset option", select one option:
+
+   - **Remove installed apps:** removes all apps that you installed. FrostNav stays.
+   - **Remove installed apps and this app:** removes all apps that you installed and FrostNav.
+   - **Cancel:** does nothing.
+5. Read the window "Confirm reset". It shows the number of apps that the app removes. It also removes the linked APK files in `/data/local/tmp`.
+6. Confirm. The system can ask you to confirm one time for each app.
+
+:::warning
+
+WARNING:
+
+If you select "Remove installed apps and this app", you must install FrostNav again to use it.
+
+:::
+
+## Downloaded files
+
+1. Touch the folder icon.
+2. The window shows the number of files and the total size. It also shows the Downloads folder and the Cache folder.
+3. For each file, you can see the size. Touch "Install" to install an APK file. Touch "Delete" to delete the file.
+4. Touch "Delete all" to delete all downloaded files.
+
+## Install your own APK file
+
+1. Start the [web server](./web-server.mdx).
+2. Upload the APK file in the "Files" section of the web page.
+3. On the car, touch the folder icon.
+4. Touch "Install" next to the APK file.
+
+You can also touch "Install" for the file in the "Uploaded files" list on the web page.

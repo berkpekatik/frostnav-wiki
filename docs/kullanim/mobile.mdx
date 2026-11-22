@@ -1,0 +1,107 @@
+---
+title: "Mobil uygulama"
+sidebar_position: 2
+description: "FrostNav telefon uygulaması: aracı eşleştirme, depo ve yolculuk, park yeri, GPS Link, araçta link açma ve ayar yedeği."
+---
+
+FrostNav'ın telefon uygulaması, araçtaki FrostNav'ın yanında durur. Depoyu, kilometreyi ve yolculukları telefonda görürsünüz. Aynı Wi-Fi'deyken bir linki veya uygulamayı araç ekranında açarsınız. Telefonun konumunu araca verebilirsiniz.
+
+Telefon araca uzaktan komut vermez. Kontağı, kilidi, klimayı veya cam tavanı telefondan açmazsınız. Araç ekranı yalnızca okunur. Orada "Bu ekran yalnızca okur. Araca komut göndermez." yazar.
+
+Özelliklerin çoğu Premium abonelik ister. Abonelik yoksa uygulama "Premium abonelik gerekli" der. O zaman yalnızca profilinizi görür, çıkış yapar veya hesabınızı silersiniz.
+
+<video className="promo" controls preload="metadata" playsInline poster={require('@site/assets/app-mobile/frostnav-tanitim-poster.jpg').default} aria-label="FrostNav Mobil tanıtım videosu">
+  <source src={require('@site/assets/app-mobile/frostnav-tanitim.mp4').default} type="video/mp4" />
+</video>
+
+## Uygulamayı indirin ve giriş yapın
+
+- iPhone için uygulamayı [App Store'dan](https://apps.apple.com/tr/app/frostnav/id6829233441) indirin. Android için [Google Play'den](https://play.google.com/store/apps/details?id=com.frostblack.frostnav) indirin.
+- Hesap yalnızca web sitesinden açılır. Hesabınız yoksa [buradan kayıt olun](https://platform.frostnav.com/Account/Register). E-posta adresinizi doğrulayın.
+- Uygulamaya ilk kez giriş yapanlara 3 gün deneme hediye edilir.
+- Premium aylık veya yıllık alınır. [Üye panelinde](https://platform.frostnav.com/) giriş yapın ve Mobil uygulama sayfasını açın. Otomatik yenilenmez.
+
+## Alttaki üç sekme
+
+| Sekme | Ne işe yarar? |
+|---|---|
+| Anasayfa | Depo, menzil, kilometre, son yolculuk, bakım uyarısı ve park yeri. |
+| Uygulama | Aynı ağdaki araçta bir link, harita veya video açmak. Kısayol ve APK. |
+| Profil | Hesap, araç, GPS Link, davranış ayarları ve yedek. |
+
+## Aracı eşleştirin
+
+Telefon ve araç aynı ağda olmalıdır. Telefonu aracın Wi-Fi ağına veya hotspot'una bağlayın.
+
+1. Araçta FrostNav'ı açın. [Aktar](./web-server.mdx) ekranını açın. Eşleşme QR'ı, araç adresi ve anahtar orada görünür.
+2. Telefonda "Aracı eşleştir" düğmesine dokunun.
+3. QR'ı okutun. Olmazsa adresi ve anahtarı elle yazın. Anahtar 32 karakterdir.
+4. "Eşleştir" düğmesine dokunun. "Eşleşiyor…" yazısını bekleyin.
+
+Telefonun eşleşme adımı hâlâ "Web Yönetimi" diyebilir. Araçtaki menü adı Aktar'dır. QR aynı ekrandadır.
+
+Anahtar uymazsa uygulama "Anahtar 32 onaltılık karakter olmalı." veya anahtarın yanlış olduğunu söyler. QR FrostNav kodu değilse "Bu QR bir FrostNav eşleşme kodu değil." yazar. Şase başka bir araca aitse "Bu araç başka bir şaseye ait." yazar.
+
+## Anasayfa
+
+Araç yoksa ekran "Henüz araç yok" der. Eşleşince sayaçlar burada görünür.
+
+- **Depo, menzil ve odometre:** Son görülen yakıt yüzdesi, kalan menzil ve toplam kilometre. Araç aynı ağdaysa sayılar yenilenir. Değilse son görülen değer durur. Durum "Araç bağlı", "Bağlantı zayıf" veya "Araç bağlı değil" olur.
+- **Son yolculuk:** Kontak açılınca yolculuk başlar, kapanınca biter. Kartta yol, yakıt ve süre görünür. Yakıt tahminsel ise başında ~ vardır. "Yolculuk" ile gün, hafta ve ay listesine geçersiniz. Rota varsa haritada hıza göre renkli çizilir. Nokta yoksa "Bu yolculuk için rota noktası kaydedilmemiş." yazar.
+- **Kayıt sürerken:** "Yolculuk kaydediliyor" şeridi çıkar. Konum telefondan, araçtan veya hiç olmayabilir. Konum yoksa rota çizilmez. Kilometre yine yazılır.
+- **Bakım:** Son bakımdan 15.000 km'ye 500 km kala veya 12 aya 30 gün kala "Bakım yaklaşıyor" uyarısı gelir. "Bakım kaydet" ile kilometre, tarih ve not eklersiniz.
+- **Park yeri:** "Aracı bıraktığın yer" son konumu gösterir. "Park fotoğrafı çek" açıksa kontak kapanınca dört kameradan bir mozaik fotoğraf alınır. Kendi fotoğrafınızı da "Kamerayla çek" veya "Galeriden seç" ile ekleyebilirsiniz. "Haritada aç" konumu haritada açar.
+
+Hızlı düğmeler: Yolculuk, Harita, YouTube ve APK kur. Harita, YouTube ve APK, Uygulama sekmesini açar.
+
+## Uygulama sekmesi
+
+Alt yazı "Aynı Wi-Fi’deki araçta açılır" der. Telefon ve araç aynı ağda olmalıdır.
+
+1. "Bağlantı" kutusuna bir adres yazın.
+2. "Araçta aç" düğmesine dokunun. Link aracın ekranında açılır.
+
+Başka bir uygulamadan konum veya video paylaşırsanız "Araca gönder" sayfası açılır. "Navigasyonu başlat", "Videoyu aç" veya "YouTube’da aç" seçebilirsiniz. Desteklenmeyen bir paylaşımda uygulama bunu söyler.
+
+"Kısayollar" araçtaki uygulamaları açar. Bir kısayola basılı tutup başka bir uygulama seçebilirsiniz. "Varsayılan kısayollara dön" listeyi eski haline getirir. Liste için araç bağlı olmalıdır. Değilse "Uygulama listesi için araca bağlan." yazar.
+
+"APK kur" aracın İndirilenler klasöründeki dosyaları gösterir. Kurulum araçta yapılır.
+
+## Park saati
+
+Park saati, otoparkın ücretsiz süresini takip eder. Süre dolmadan bildirim gönderir.
+
+1. Park edince "Park saati başlat" kartında "Başlat" düğmesine dokunun.
+2. Ücretsiz süreyi seçin. Listede yoksa "Diğer" ile dakika yazın. Süre yoksa "Süresiz" seçin.
+3. Bitişten kaç dakika önce haber almak istediğinizi seçin.
+4. Otoparka daha önce girdiyseniz kaç dakika önce girdiğinizi seçin. İsterseniz kat veya bölüm notu yazın.
+5. "Park ettim" düğmesine dokunun.
+
+Anasayfadaki kartta kalan süre görünür. Süre geçerse kart ne kadar geçtiğinizi yazar. Süreyi uzatabilir, "Düzenle" ile değiştirebilir veya "Bitir" ile kapatabilirsiniz.
+
+## GPS Link
+
+GPS Link, telefonun konumunu araca gönderir. Garajda veya tünelde araç kendi konumunu bulamazsa işe yarar.
+
+1. Profilde "GPS Link" satırına dokunun.
+2. Konum iznini verin. Telefonun konum servisi açık olmalıdır.
+3. Gönderimi açın. Durum "Canlı gönderiliyor" olunca araç konumu alıyordur.
+
+"GPS bekleniyor" açık gökyüzü ister. "Bağlantı koptu" veya "Ağ hatası" aynı ağa dönünce düzelir. Gönderim açıkken bildirim "Konum araca gönderiliyor" der. Uygulama arka plandayken de sürebilir.
+
+Araç eşleşmesi GPS Link için de kullanılır. Adres veya anahtar değişirse GPS Link kendiliğinden güncellenir.
+
+## Ana ekran widget'ı
+
+Telefonun ana ekranına FrostNav widget'ı ekleyebilirsiniz. Araç yoksa "Araç ekle" yazar. Varsa son yolculuğu gösterir. GPS Link için "QR ile bağla", "Aç" ve "Kapat" vardır.
+
+## Profil
+
+- **Araçlarım:** Birden fazla araç olabilir. Adını değiştirir veya silersiniz. Şase, model ve depo litresini buradan görürsünüz. Depo litresi, yakıt yüzdesinden tahmini litre hesabına yarar. Harcanan yakıtın yerine geçmez.
+- **FrostNav Davranış Ayarları:** Araçtaki birkaç anahtarı telefondan değiştirirsiniz. Örnek: güç kapanınca yansıtmayı kapatmak, açılışta servisi başlatmak, Google Maps yol tarifinde göstergeyi açmak. "Tüm ayarlar" geri kalanını listeler. Bazı satırlar "Aracın kendi ekranından değişir." der. Onlar salt okunurdur.
+- **Ayar yedeği:** Cam tavan, klima ve hafıza modu kurallarını hesaba kaydeder. "Şimdi yedekle" araçtakini alır. "Araca geri yükle" yedeği araca yazar. Yedek yoksa "Önce bir yedek al." der. Güvenlik özelliği kapanacaksa uygulama uyarır. Devam etmek için "Sorumluluk bende, geri yükle" dersiniz.
+- **Dil:** Türkçe veya English.
+- **Veri yedeği:** "Veritabanını dışa aktar" telefonunuzdaki yolculuk ve bakım verisinin .db dosyasını kaydeder. "Yedekten geri yükle" o dosyayı geri getirir. Başka bir dosya seçerseniz "Bu dosya bir FrostNav yedeği değil" der. İşlem bozulursa mevcut veri korunur.
+- **Hesap:** Premium'un bitişini, çıkışı ve hesap silmeyi burada görürsünüz.
+
+[Kullanım rehberine dönün](./index.mdx)

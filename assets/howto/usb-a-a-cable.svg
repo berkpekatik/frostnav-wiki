@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 200" role="img" aria-label="USB plug on both ends">
+  <rect width="720" height="200" fill="#f7f7f7"/>
+  <text x="360" y="28" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" fill="#222">USB  USB</text>
+  <path d="M150 100 H250" stroke="#444" stroke-width="10" fill="none" stroke-linecap="round"/>
+  <path d="M250 100 C340 40 380 160 470 100" stroke="#444" stroke-width="10" fill="none" stroke-linecap="round"/>
+  <path d="M470 100 H570" stroke="#444" stroke-width="10" fill="none" stroke-linecap="round"/>
+  <g transform="translate(40,68)">
+    <rect x="0" y="8" width="70" height="48" rx="4" fill="#d9d9d9" stroke="#666"/>
+    <rect x="70" y="16" width="42" height="32" rx="2" fill="#c0c4c8" stroke="#555"/>
+    <rect x="78" y="24" width="26" height="16" fill="#8d939a"/>
+  </g>
+  <g transform="translate(568,68)">
+    <rect x="42" y="8" width="70" height="48" rx="4" fill="#d9d9d9" stroke="#666"/>
+    <rect x="0" y="16" width="42" height="32" rx="2" fill="#c0c4c8" stroke="#555"/>
+    <rect x="8" y="24" width="26" height="16" fill="#8d939a"/>
+  </g>
+  <text x="86" y="150" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#333">USB</text>
+  <text x="634" y="150" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#333">USB</text>
+</svg>

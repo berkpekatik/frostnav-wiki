@@ -1,0 +1,26 @@
+{
+  "title": {
+    "message": "FrostNav Wiki",
+    "description": "The title in the navbar"
+  },
+  "logo.alt": {
+    "message": "FrostNav",
+    "description": "The alt text of navbar logo"
+  },
+  "item.label.Rehber": {
+    "message": "Guide",
+    "description": "Navbar item with label Rehber"
+  },
+  "item.label.SSS": {
+    "message": "FAQ",
+    "description": "Navbar item with label SSS"
+  },
+  "item.label.Web Installer": {
+    "message": "Web Installer",
+    "description": "Navbar item with label Web Installer"
+  },
+  "item.label.Platform": {
+    "message": "Platform",
+    "description": "Navbar item with label Platform"
+  }
+}

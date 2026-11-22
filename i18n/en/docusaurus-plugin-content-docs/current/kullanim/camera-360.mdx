@@ -1,0 +1,194 @@
+---
+title: "Camera 360"
+sidebar_position: 13
+description: "FrostNav Camera 360: watch the four cameras live, record to USB or in-car storage, and see the side camera on the cluster when you signal. Warnings and recommended use."
+---
+
+Camera 360 shows the four cameras around the car: Front, Rear, Left and Right. You can watch them live,
+record to a USB stick or to in-car storage, and see the camera on the side you signal on the instrument cluster.
+
+Surround cameras are available only on the car unit. Not every model has cameras.
+
+:::danger Safety
+
+- Do not look at the camera image while driving. Use Live Preview while the car is stopped.
+- Camera 360 does not replace your mirrors, a shoulder check or the car's own parking camera.
+- Do not rely on recording always running. The cameras can be busy, the USB stick can fill up or be removed. Copy an important recording somewhere else right away.
+
+:::
+
+:::warning Early access
+
+This feature is in early access. Do not force a function your car does not have.
+You use it at your own responsibility.
+
+:::
+
+## Recommended use {#onerilen-kullanim}
+
+| What do you want? | Use | Recommended setting |
+|---|---|---|
+| Record every drive like a dashcam | [In-Car Recording](#arac-ici-kayit) | "Record automatically with ignition" on. No USB needed; old clips are removed automatically. |
+| Record a long trip in more detail and copy it to a computer | [USB Recording](#usb-kayit), with ignition | 960×600. If the screen lags while recording, 640×400. |
+| Record a short moment sharply | [USB Recording](#usb-kayit), by hand | HD (1280×800). Touch "Stop Recording" when done. |
+| Look around while parking | [Live Preview](#canli-onizleme) | Use it while the car is stopped. |
+| See the blind spot when changing lanes | [Side camera on cluster with turn signal](#sinyal-kamerasi) | Cluster projection must be on. |
+| Keep the recording of an incident | [Viewer](#izleme-ekrani) | Select the clips and touch "Copy to USB". |
+
+Pick only one of the two automatic recordings. In-car recording and USB auto recording cannot both be on.
+
+If you record while CarPlay or Android Auto is on, keep the resolution low. If the screen still lags, do not record while either is on.
+
+### Does camera recording harm the car? {#araca-etkisi}
+
+No. Recording takes the image from the car's own camera system and writes it to storage:
+
+- No command is sent to the car or the gearbox, the camera software is not changed, and no permanent fault code appears at the service.
+- The cameras do not turn on by themselves. They are used only when you start live preview or recording.
+- Automatic recording, the turn-signal camera and park photo are off by default. Automatic recording runs only if you turn it on, and only while the ignition is on.
+- A fisheye image in recordings is normal. "Dewarp" applies only to the live preview.
+
+## While recording is on {#kayit-acikken}
+
+:::warning Do not close the app while recording
+
+If FrostNav closes suddenly while the cameras or recording are on, the screen can go black or the image may not come through properly.
+If that happens, [restart](../bilinen-sorunlar.mdx#yeniden-baslatma) the multimedia unit; the screen returns to normal. This is not a permanent fault recorded in the car. To avoid this:
+
+- **Do not swipe FrostNav away** from the recent apps screen.
+- **Stop recording before updating** FrostNav. When you update from inside the app, FrostNav stops recording itself and asks you first.
+- To stop recording, use the "Stop" / "Stop Recording" button in the app, or turn off automatic recording.
+
+:::
+
+- Do not remove the USB stick while USB recording runs. Stop recording first. Removing the stick stops recording, and the last clip can be cut short.
+- Recording keeps running in the background. The notification says "Camera 360 recording" and a red "Recording in progress" bar appears on the screen.
+- Camera 360 loads the processor while recording. If the screen slows down together with map projection, lower the resolution.
+
+## Choosing a USB stick {#usb-bellek}
+
+- The stick must be **FAT32**. See [FAT32](../kurulum/fat32.mdx).
+- Prefer a stick made for continuous writing (e.g. "High Endurance" or one sold for dashcams). Ordinary sticks can wear out quickly under constant recording.
+- For automatic USB recording to start, the stick must have room for at least 10 minutes of recording.
+- Recording is split into 3-minute clips. As the stick fills up, **the oldest clips are deleted**. Copy clips you want to keep somewhere else.
+
+Approximate file sizes (four cameras in one mosaic file):
+
+| Resolution | Per minute | Per hour | On a 32 GB stick |
+|---|---|---|---|
+| HD (1280×800) | ≈ 60 MB | ≈ 3.6 GB | ≈ 8 hours |
+| 960×600 | ≈ 34 MB | ≈ 2 GB | ≈ 15 hours |
+| 640×400 | ≈ 15 MB | ≈ 0.9 GB | ≈ 35 hours |
+
+The on-screen estimate line calculates this for your own stick.
+
+## Open the screen
+
+1. Open the FrostNav app.
+2. Touch "Camera 360" in the side menu.
+3. The first time, an early access notice appears. Read it and touch "I accept" to continue. It is asked only once.
+4. The screen says "Choose a mode". There are four cards and the turn-signal camera setting below them.
+
+| Card | What it does |
+|---|---|
+| Live Preview | Watches the four cameras live. |
+| USB Recording | Records the four cameras to a USB stick as MP4. |
+| In-Car Recording | Records automatically to in-car storage when the ignition is on. |
+| Viewer | Plays clips, copies them to USB or deletes them. |
+
+If a card says "Disabled", the other automatic recording is on. Turn that off first.
+
+## Live Preview {#canli-onizleme}
+
+1. Touch the "Live Preview" card.
+2. Touch "Start Preview".
+3. The four cameras appear together. Touch a camera to enlarge it. Touch it again to go back.
+4. The "Dewarp" switch corrects the fisheye image.
+5. "Capture 1 Frame" saves the current frame.
+6. When you are done, close the preview with "Stop".
+
+If there is no signal, the screen says "No signal · retrying". If the car's own camera screen is open, the cameras can be busy; wait a moment and try again.
+
+## USB Recording {#usb-kayit}
+
+1. Plug in the stick. Touch the "USB Recording" card.
+2. If the stick is not detected, the screen says "No USB storage connected. Plug in a USB drive." Plug it in and touch "Refresh".
+3. Under "Recording Settings", choose a "Resolution": HD (1280×800, most detail), 960×600 (balanced) or 640×400 (smallest file).
+4. "Start Recording" starts recording. "Stop Recording" ends it.
+
+The four cameras are written into one mosaic MP4. Files are saved to the app folder on the stick as 3-minute clips.
+
+### Automatic USB recording with ignition
+
+1. On the USB Recording screen, turn on "Auto-record with ignition".
+2. While the ignition is on and the USB stick is plugged in, the app records on its own at the chosen resolution.
+3. As the stick fills, the oldest clips are deleted. When no clip is left to delete, the status becomes "USB is full" and recording stops.
+
+If you stop automatic recording with "Stop Recording", it does not restart for that drive. It starts again at the next ignition.
+
+## In-Car Recording {#arac-ici-kayit}
+
+In-car recording is a dashcam mode that records every drive without a USB stick.
+
+1. Touch the "In-Car Recording" card.
+2. Turn on "Record automatically with ignition".
+3. Read the "In-car automatic recording" window. Touch "Confirm" to continue or "Cancel" to back out.
+
+Recording starts while the ignition is on and the status becomes "Recording". With the ignition off the status is "Waiting for ignition".
+The four cameras are saved into one mosaic file at 960×600, as 3-minute clips.
+
+"Stop for this drive" stops recording for that drive. "Resume" starts it again.
+
+### Storage
+
+- At least 2 GB of free space is always kept on the device.
+- Recording space = free space + clips − 2 GB. The bar on the screen shows clips, other files, the 2 GB reserve and the space open for recording.
+- When free space nears the 2 GB reserve, the oldest clip is deleted. Deleting stops once there is room. Clips are not deleted by date.
+- In-car storage is limited. Copy clips you want to keep to USB with the [Viewer](#izleme-ekrani).
+
+For automatic recording, keep "Run in the background" On in [Settings](./settings.mdx).
+
+## Side camera on cluster with turn signal {#sinyal-kamerasi}
+
+As soon as you signal left or right, the camera on that side appears as a small card on top of the instrument cluster. It helps you see the blind spot when changing lanes.
+
+1. On the Camera 360 main screen, turn on "Side camera on cluster with turn signal".
+2. Cluster [projection](./projection.mdx) must be on. Without projection the card does not appear.
+3. Optionally use "Flat view" to reduce the fisheye effect of the side camera. This uses a bit more processor.
+4. Under "Card position and size", set "Distance from edge", "Vertical position" and "Size". The left and right cards mirror each other. "Reset" restores the defaults.
+
+While you adjust, a preview appears on the cluster; the turn-signal camera does not open during this time. Without a preview the screen says "Turn on cluster projection to see the preview."
+
+:::note
+
+Choose a position and size where the card does not cover the gauges or warning lights. The turn-signal camera is only an aid; keep checking your mirrors.
+
+:::
+
+## Viewer {#izleme-ekrani}
+
+1. Touch the "Viewer" card. The "Open Viewer" button on the In-Car Recording screen opens the same screen.
+2. Choose the source: "Car" shows in-car clips, "USB" shows clips on the stick.
+3. Touch a clip to play it. "Wide" and "Full screen" enlarge the view. Choose an angle: All, Front, Rear, Left or Right.
+4. Touch clips to select them. "Select all" selects all of them, "Clear" removes the selection.
+5. "Copy to USB" copies the selected clips to the stick. Without a stick the screen says "Plug in a USB drive to copy".
+6. "Delete" deletes the selected clips permanently. This cannot be undone.
+
+## Troubleshooting
+
+| Problem | What to do |
+|---|---|
+| The screen went black or shows no image | [Restart](../bilinen-sorunlar.mdx#yeniden-baslatma) the multimedia unit. Next time, do not swipe FrostNav away while recording, and stop recording before updating. |
+| The screen lags while recording | Set the resolution to 960×600 or 640×400. If CarPlay or Android Auto is on, close it while recording. Turn off "Flat view" if it is on. Stop recording if you do not need it. |
+| No signal | Wait a moment; the app retries. The car's own camera screen may be open. |
+| "Camera image is unavailable right now" | The vehicle cameras may be busy. Try again shortly. |
+| "Cameras unavailable" | This car has no cameras or they did not start. Restart the car and try again. |
+| "Waiting for USB" | Plug in the stick. Make sure it is FAT32. |
+| "USB is full" | No old clips are left to delete on the stick. Free up space or use another stick. |
+| "Not enough space (2 GB reserve)" | Free up space in the car. Delete unused apps or downloaded files. |
+| USB card says "Disabled" | In-car recording is on. Turn it off on the In-Car Recording screen. |
+| In-car card says "Disabled" | USB auto recording is on. Turn it off on the USB Recording screen. |
+| Recording does not start with ignition | Make sure the switch is on. "Run in the background" must be On. If you stopped it for this drive, touch "Resume". |
+| The turn-signal camera does not appear | Cluster projection must be on. The turn-signal camera does not open while the settings screen is open. |
+
+[Back to the usage guide](./index.mdx)

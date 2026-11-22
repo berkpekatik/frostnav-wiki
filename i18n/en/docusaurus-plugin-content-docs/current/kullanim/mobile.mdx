@@ -1,0 +1,103 @@
+---
+title: "Mobile app"
+sidebar_position: 2
+description: "The FrostNav phone app: pair the car, see fuel and trips, find the parking spot, use GPS Link, open a link on the car, and back up settings."
+---
+
+The FrostNav phone app sits beside FrostNav on the car. You see the tank, the odometer, and your trips on the phone. On the same Wi-Fi you open a link or an app on the car screen. You can also give the car this phone's location.
+
+The phone does not send remote commands to the car. You do not start the ignition, unlock the doors, or run the climate or the sunroof from the phone. The vehicle screen is read-only. It says that the screen only reads and does not send a command to the car.
+
+Most features need a Premium subscription. Without it, the app says "Premium subscription required". You can then only see your profile, sign out, or delete the account.
+
+## Download the app and sign in
+
+- For iPhone, download the app from the [App Store](https://apps.apple.com/tr/app/frostnav/id6829233441). For Android, download it from [Google Play](https://play.google.com/store/apps/details?id=com.frostblack.frostnav).
+- Accounts can only be created on the website. If you do not have one, [register here](https://platform.frostnav.com/Account/Register). Verify your email address.
+- People who sign in to the app for the first time get a 3-day trial as a gift.
+- Premium is monthly or yearly. Sign in to the [member panel](https://platform.frostnav.com/) and open the Mobile app page. It does not renew automatically.
+
+## The three tabs
+
+| Tab | What it is for |
+|---|---|
+| Home | Fuel, range, distance, the last trip, a service alert, and where you parked. |
+| Apps | Open a link, a map, or a video on the car when you share the same network. Shortcuts and APK install. |
+| Profile | Account, cars, GPS Link, behavior settings, and backup. |
+
+## Pair the car
+
+The phone and the car must be on the same network. Connect the phone to the car's Wi-Fi or hotspot.
+
+1. Open FrostNav on the car. Open [Transfer](./web-server.mdx). The pairing QR, the car address, and the key are there.
+2. On the phone, touch "Pair your car".
+3. Scan the QR. If that fails, type the address and the key. The key is 32 characters.
+4. Touch "Pair". Wait for "Pairing…".
+
+The phone's pairing step may still say "Web Management". On the car, that screen is Transfer. The QR is on that screen.
+
+If the key does not fit, the app says the key must be 32 hexadecimal characters, or that the key is wrong. If the QR is not a FrostNav code, it says so. If the VIN belongs to another car, it says this car belongs to another VIN.
+
+## Home
+
+With no car, the screen says "No vehicle yet". After pairing, the gauges appear here.
+
+- **Fuel, range, and odometer:** The last fuel percent, the remaining range, and the total distance. Numbers refresh while the car is on the same network. Otherwise the last reading stays. The status is "Car connected", "Weak connection", or "Car not connected".
+- **Last trip:** A trip starts when the ignition turns on and ends when it turns off. The card shows distance, fuel, and time. A ~ in front of the fuel means it is an estimate. "Trips" opens the day, week, and month list. When a route exists, the map colors it by speed. If there are no points, the app says "No route points were recorded for this trip."
+- **While a trip is recording:** A "Recording trip" bar appears. The location can come from the phone, from the car, or from nowhere. With no location, the route is not drawn. The distance is still saved.
+- **Service:** "Service due soon" appears 500 km before the 15,000 km mark, or 30 days before 12 months since the last service. "Log service" saves the distance, the date, and a note.
+- **Parking spot:** "Where you parked" shows the last place. With "Take a parking photo" on, the car takes one mosaic from the four cameras when the ignition turns off. You can also add your own photo with "Take with camera" or "Choose from gallery". "Open in Maps" opens the place on a map.
+
+The quick buttons are Trips, Map, YouTube, and Install APK. Map, YouTube, and Install APK open the Apps tab.
+
+## Apps tab
+
+The subtitle says it opens on the car that shares your Wi-Fi. The phone and the car must be on the same network.
+
+1. Type an address in the "Link" box.
+2. Touch "Open on car". The link opens on the car screen.
+
+If you share a place or a video from another app, the "Send to car" sheet opens. You can choose "Start navigation", "Open video", or "Open in YouTube". The app tells you when a share is not supported.
+
+"Shortcuts" open apps on the car. Press and hold a shortcut to choose another app. "Reset to default shortcuts" restores the list. The car must be connected for the list. Otherwise the app says to connect to the car for the app list.
+
+"Install APK" shows files in the car's Downloads folder. The install runs on the car.
+
+## Parking timer
+
+The parking timer tracks the free period of a car park. It sends a notification before the time runs out.
+
+1. After you park, tap "Start" on the "Start the parking timer" card.
+2. Choose the free period. If it is not listed, use "Other" and type the minutes. If there is no limit, choose "Unlimited".
+3. Choose how many minutes before the end you want a notification.
+4. If you entered the car park earlier, choose how many minutes ago. You can add a floor or section note.
+5. Tap "I parked".
+
+The card on Home shows the time left. If the time passes, the card shows by how much. You can extend the time, change it with "Edit", or close it with "End".
+
+## GPS Link
+
+GPS Link sends this phone's location to the car. It helps when the car cannot find itself, for example in a garage or a tunnel.
+
+1. In Profile, touch the "GPS Link" row.
+2. Grant location permission. The phone's location service must be on.
+3. Turn sending on. When the status is "Sending live", the car is receiving the location.
+
+"Waiting for GPS" needs open sky. "Connection lost" or "Network error" clears when you are on the same network again. While sending is on, the notification says the location is being sent to the car. It can keep going while the app is in the background.
+
+The car pairing is also used for GPS Link. If the address or the key changes, GPS Link updates on its own.
+
+## Home-screen widget
+
+You can add the FrostNav widget to the phone's home screen. With no car it says "Add a car". With a car it shows the last trip. For GPS Link it has "Connect with QR", "Turn on", and "Turn off".
+
+## Profile
+
+- **My vehicles:** You can have more than one car. Rename or delete one. The VIN, the model, and the tank size are here. The tank size turns the fuel percent into an estimated number of liters. It does not replace the fuel the trip actually used.
+- **FrostNav behavior settings:** Change a few switches on the car from the phone. For example, close projection when the power turns off, start the service at boot, or open the cluster when Google Maps navigation starts. "All settings" lists the rest. Some rows say they change from the car's own screen. Those are read-only.
+- **Settings backup:** Saves the sunroof, climate, and drive-memory rules to the account. "Back up now" reads them from the car. "Restore to car" writes the backup back. With no backup it says "Back up first." If a safety feature would turn off, the app warns you. To continue, touch "I accept the responsibility, restore".
+- **Language:** Türkçe or English.
+- **Data backup:** "Export database" saves a .db file of the trips and service records on this phone. "Restore from backup" brings that file back. Another file is rejected as not a FrostNav backup. If the restore fails, the current data stays.
+- **Account:** Premium end date, sign out, and delete account are here.
+
+[Back to the usage guide](./index.mdx)

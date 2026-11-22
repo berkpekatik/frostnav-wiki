@@ -1,0 +1,231 @@
+---
+title: Frequently asked questions
+slug: /sss
+sidebar_position: 100
+description: Frequently asked questions about FrostNav installation, adbauth.key, cables, projection, cameras and more.
+---
+
+:::tip Read the guide first
+
+Before asking about `adbauth.key` or installing the app, read the [install guide](./kurulum/index.mdx).
+Install video: [YouTube](https://www.youtube.com/watch?v=D8KxEsYhqpA).
+
+:::
+
+## Installation
+
+### Where do I start? {#kurulum-nereden}
+
+First check that [your car is supported](./desteklenen-araclar.mdx). Then follow the steps in the [install guide](./kurulum/index.mdx).
+The guide helps you find your software version and pick the right install path.
+
+### How do I find my software version? {#yazilim-surumu}
+
+On the car screen, look at the version line at the bottom of **Settings > System**. Example: `02.00.00`.
+
+| Version | Install | Install type in the web installer |
+|---|---|---|
+| Exactly `02.00.00` | [02.00.00 install](./kurulum/02-00-00.mdx), no `adbauth.key` needed | "02.00.00" |
+| Higher than `02.00.00` (ADB Lock) | [ADB Lock install](./kurulum/adb-kilid.mdx), `adbauth.key` needed | "I have adbauth.key" |
+
+### Which browser do I need? {#tarayici}
+
+The [web installer](https://frostnav.com/install) works with Chrome, Edge or Opera. Safari and Firefox do not work.
+JavaScript and WebUSB must be enabled. You can use a Windows PC, a Mac or an Android phone.
+
+### Which cable and OTG do I need? {#kablo}
+
+- **Phone or tablet:** a Type-C OTG adapter and a cable with a USB plug on both ends.
+- **Computer:** only the cable with a USB plug on both ends.
+
+See the [02.00.00 install](./kurulum/02-00-00.mdx) page for pictures.
+
+### Installing from my phone does not work. What should I do? {#telefonla-kurulum}
+
+On some phones the install does not complete. Use a **computer** if you can; the install usually finishes in one go.
+
+- On Samsung phones, **Settings > Security and privacy > Auto Blocker** can block the USB connection. Turn it off during the install.
+- First try a cable with USB-A on both ends; once it works, try Type-C.
+- Unplug and replug the cable and allow USB access in the browser again.
+
+### The USB stick says there is no write permission {#usb-yazma}
+
+The stick may be old or faulty. Try another USB stick and format it as [FAT32](./kurulum/fat32.mdx).
+
+### What do I do if the multimedia screen freezes? {#ekran-dondu}
+
+Restart the multimedia unit: press and hold the volume knob, or the star and rectangle buttons, for 10 seconds.
+Details: [Known issues](./bilinen-sorunlar.mdx#yeniden-baslatma).
+
+### Do I need to remove the app before going to the service? {#servis}
+
+Yes. Remove the apps before you go to the service. Uninstall them one by one in App Management,
+or do a factory reset from **Settings > System**.
+
+## adbauth.key
+
+### What is adbauth.key? {#adbauth-key-nedir}
+
+`adbauth.key` is a key file that turns on ADB on the car. It is not a license.
+You use it to turn on ADB before installing. Details: [ADB Lock](./kurulum/adb-kilid.mdx).
+
+### Key first or cable first? How much is the key? {#fiyat}
+
+The FrostNav app is free. `adbauth.key` is paid; see the current price on [platform.frostnav.com](https://platform.frostnav.com/).
+
+On a locked car the order is:
+
+1. Get and send the Product ID.
+2. Receive the `adbauth.key` file.
+3. Install with the cable.
+
+The cable is sold separately.
+
+### Where do I read the Product ID? {#product-id}
+
+The Product ID is the 15-digit serial number on the `productID / 产品序列号` line. Do not confuse `0` (zero) with `O` (letter).
+Open the hidden menu and touch `VERSION INFO` / `版本信息` to read it. Steps per model are on
+[Install by vehicle](./kurulum/araclar.mdx) and [ADB Lock](./kurulum/adb-kilid.mdx).
+
+### Do I need a new key if the screen is replaced? {#ekran-degisirse}
+
+Yes. The Product ID is tied to the multimedia screen. If the screen is replaced (e.g. after an accident), the Product ID changes and you need a new `adbauth.key`.
+
+### How do I prepare the USB stick? {#usb-bellek}
+
+1. Format the stick as FAT32: [FAT32](./kurulum/fat32.mdx).
+2. Copy `adbauth.key` and `svtasklist.flag` to the **root folder** of the stick. Do not put them in a subfolder.
+
+### Why must the car date match the key? {#arac-tarihi}
+
+The key file carries a date in `yyyyMMdd` format. Set the car date to that date.
+As long as the date matches, you can turn on ADB again and again.
+
+Example: if the key is `20260930`, the car date must be 30 September 2026.
+
+### What does a Chinese message on the screen mean? {#cince-mesajlar}
+
+Each message and its fix are in the table on the [ADB Lock](./kurulum/adb-kilid.mdx) page. In short:
+
+- **Success:** ADB is on. Remove the USB stick.
+- **File not found:** put `adbauth.key` in the root folder of the stick.
+- **File invalid or empty:** copy the file again or download it again.
+- **Serial number unreadable:** restart the car and try again.
+- **Verification failed:** the key does not match the car or the date. Set the car date to the key date.
+
+### How do I stop the warning that appears at every start while the USB stick is plugged in? {#usb-uyarisi}
+
+Remove the USB stick after you see the ADB success message. While a stick stays plugged in, the car shows its own warning;
+FrostNav has no setting that turns it off.
+
+## Usage
+
+### Where do I install Yandex or Google Maps? Does it show on the instrument cluster? {#harita-kurulumu}
+
+Map apps are installed separately: with the "Install market app" option in the web installer, or with Server mode on the
+[Apps](./kullanim/apps.mdx) screen.
+
+Turn on projection on FrostNav's [Projection](./kullanim/projection.mdx) screen.
+For Google Maps, cluster cards appear when notification access is on. Yandex needs the FrostNav accessibility service.
+
+### How do I open a WhatsApp location on the map? {#whatsapp-konum}
+
+You need the [FrostNav mobile app](./kullanim/mobile.mdx) on your phone. Share the WhatsApp location to FrostNav and choose "Open on car".
+The phone and the car must be on the same Wi‑Fi network.
+
+### How do I send a file or link from my phone to the car? {#dosya-gonderme}
+
+The phone and the car must be on the same Wi‑Fi network. Start the server on the [Transfer](./kullanim/web-server.mdx) screen,
+then open the address shown or scan the QR code. The port is always `7462` (example: `http://192.168.1.20:7462`).
+
+- Files go to the car's Downloads folder. APK files get an install button.
+- `http`, `https`, `geo` and `google.navigation` links open. `javascript`, `file`, `data` and `content` links are blocked.
+
+### Why does Wi‑Fi drop while Android Auto is on? {#android-auto-wifi}
+
+If the car cannot run the hotspot and Wi‑Fi at the same time, the connection may drop. Mark the phone as connected in the car's Wi‑Fi settings.
+
+If you are connected to your phone's hotspot, the phone may turn the hotspot off by itself when it thinks it is unused. Turn off the automatic timeout in the phone's hotspot settings.
+
+### Can I use it together with Android Auto or CarPlay? {#android-auto}
+
+Yes. But using them while camera recording is on can slow down the screen. See [Known issues](./bilinen-sorunlar.mdx#kayit-carplay).
+
+### Does the mobile app work on its own? {#mobil-tek-basina}
+
+No. The mobile app works together with the free FrostNav app on the car. Install FrostNav on the car first.
+
+### Why does a connection fail on the FrostNav Wi‑Fi screen? {#wifi-hata}
+
+| Message | Fix |
+|---|---|
+| Wi‑Fi is off | Turn Wi‑Fi on, then refresh. |
+| No network found | Refresh. Check the modem or hotspot. |
+| Password is empty | Enter the password. |
+| Connection failed | Check the password and try again. |
+
+To connect: refresh with Wi‑Fi on, touch the network, enter the password and touch Connect. Details: [Wi‑Fi](./kullanim/wifi.mdx).
+
+### Can the drive mode change every time the car starts? {#surus-modu}
+
+[Drive Memory](./kullanim/memory-mode.mdx) saves the drive mode you choose and applies it again each time the car starts
+(Eco, Normal, Sport; with "4x4 modes" on also Snow, Mud, Offroad, Sand). The default is "None", which changes nothing.
+"Run in the background" must be On in [Settings](./kullanim/settings.mdx).
+
+### Can I record with the car cameras? Why does the screen lag while recording? {#kamera-kayit}
+
+Yes. [Camera 360](./kullanim/camera-360.mdx) shows the four cameras live and records to a FAT32 USB stick or internal storage.
+Not every model has cameras.
+
+At the top resolution a recording takes about 60 MB per minute. If the screen lags:
+
+- Stop recording, or switch to 960×600 or 640×400.
+- Turn off "Flat view" for the turn-signal camera if it is on.
+
+In-car auto recording and USB auto recording cannot both be on.
+
+:::warning
+
+While recording, do not swipe FrostNav away from recent apps, and stop recording before updating. Otherwise the screen can go black. Details and recommended use: [Camera 360](./kullanim/camera-360.mdx#kayit-acikken).
+
+:::
+
+### Why doesn't face recognition move the seat? {#yuz-tanima}
+
+Without seat memory, [Face recognition](./kullanim/face-recognition.mdx) only recognizes and announces the person. For the seat to move:
+
+- The ignition must be on.
+- Profile 1, 2 or 3 must be selected and match the car's memory button.
+- At least one face profile must be enrolled.
+- Auto recognition must be on.
+- "Run in the background" must be On in [Settings](./kullanim/settings.mdx).
+
+Recognition does not work without camera permission. Access to the DMS camera on Jaecoo cars is not done yet; face recognition does not work on these cars for now.
+
+### Why does seat heating turn off right away? {#koltuk-isitma}
+
+If the duration slider on the [Automation](./kullanim/automation.mdx) screen is not 0, the feature turns off after the chosen minutes from ignition.
+Set it to 0 to keep it on. "Run automation" must be on.
+
+If the heating and ventilation temperature ranges overlap, a warning appears and the change is reverted.
+Example: heat below 10°C, ventilate above 25°C. If you turn the feature off on the car screen, automation stops for that drive.
+
+### Why doesn't split screen open? {#bolunmus-ekran}
+
+If the status line says the car does not allow free windows, [Split screen](./kullanim/split-screen.mdx) cannot open.
+Otherwise choose two different apps for App 1 and App 2 and touch "Split and open".
+An app that is already open keeps its size; close it and try again.
+
+### Why doesn't the launcher panel appear at startup? {#launcher}
+
+On the [Settings](./kullanim/settings.mdx) screen set "Full-screen home" to Yes and keep "Run in the background" On.
+Make FrostNav the default home app. The home button opens the panel.
+
+If it says "Waiting for car data", the car must be running. Use the X on the quick-access card to return to the normal view.
+Details: [Full-screen home](./kullanim/launcher-mode.mdx).
+
+## Account and support
+
+### I don't get the email confirmation or can't sign in {#giris}
+
+Contact us through the [WhatsApp support group](https://chat.whatsapp.com/FoUWKEC0xbr09DtLAgvthg) or the contact page on [platform.frostnav.com](https://platform.frostnav.com/).

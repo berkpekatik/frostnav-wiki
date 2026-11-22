@@ -1,0 +1,107 @@
+---
+title: "Aracınıza göre kurulum"
+sidebar_position: 2
+description: "Tiggo 7 2025, Tiggo 8 2025, Tiggo 8 2026 ve Jaecoo için FrostNav kurulum başlıkları. USB2.0 AUTH ekranında DEVICE EYE PATTERN varsa adbauth.key gerekmez."
+---
+
+import VehicleFinder from '@site/src/components/VehicleFinder';
+
+import Shot from '@site/src/components/Shot';
+
+Aracınızı seçin. Sonra o başlıktaki adımları yapın. Emin değilseniz aşağıdaki sihirbazı kullanın.
+
+<VehicleFinder />
+
+Tiggo 7 ve Tiggo 8 kurulum videosunu [buradan](https://www.youtube.com/watch?v=D8KxEsYhqpA) izleyebilirsiniz.
+
+Mühendislik menüsü açılınca `USB2.0 AUTH` / `USB2.0认证` ekranına girin. Ekrandaki düğmenin adı `DEVICE EYE PATTERN` / `Device眼图` şeklindedir.
+
+| Araç | Başlık |
+|---|---|
+| [Tiggo 7 2025. Ekran Omoda 5 gibi olabilir.](#foto-tiggo) | [Tiggo 7 2025](#tiggo7-2025) |
+| [Tiggo 8 2025](#foto-tiggo) | [Tiggo 8 2025](#tiggo8-2025) |
+| [Tiggo 8 2026](#foto-tiggo8-2026) | [Tiggo 8 2026](#tiggo8-2026) |
+| Jaecoo | [Jaecoo](#jaecoo) |
+
+## Tiggo 7 2025 {#tiggo7-2025}
+
+Bu başlık Tiggo 7 2025 içindir. Araç ekranı Omoda 5 gibi görünebilir. Omoda 5 için de bu başlığı kullanın.
+
+Menüyü açma yolu bilinen yoldur. Tek fark USB 2.0 ekranındadır.
+
+:::note
+
+Resimlerde parlayan altın nokta dokunacağınız yeri gösterir. Sarı nokta ek bir işarettir.
+
+:::
+
+1. Araç ekranındaki yanıp sönen noktaya dokunun. Araç ayarları açılır.
+
+   <Shot src={require('@site/assets/howto/1.png').default} alt="Adım 1: araç ayarları" dots={[{top: '90%', left: '82.3%'}]} />
+2. Sistem içinde mavi noktayı bulun. Ona hızlıca 10 kez dokunun.
+
+   <Shot src={require('@site/assets/howto/2.png').default} alt="Adım 2: mavi nokta" dots={[{top: '56.8%', left: '4.1%'}, {top: '54.8%', left: '96.1%', yellow: true}]} />
+3. `USB2.0 AUTH` / `USB2.0认证` yazısına dokunun.
+
+   <Shot src={require('@site/assets/howto/3.png').default} alt="Adım 3: USB2.0 AUTH" dots={[{top: '72%', left: '7.7%'}]} />
+4. USB 2.0 ekranına bakın. `DEVICE EYE PATTERN` / `Device眼图` düğmesini arayın.
+
+   <Shot src={require('@site/assets/howto/4.png').default} alt="Adım 4: DEVICE EYE PATTERN" dots={[{top: '82%', left: '40.8%'}]} />
+
+### `DEVICE EYE PATTERN` / `Device眼图` var mı?
+
+- Düğme **varsa**: ona dokunun. Ekran aşağıdaki resim gibi olur. `adbauth.key` gerekmez. [02.00.00 kurulumu](./02-00-00.mdx) ile devam edin. Web yükleyicide kurulum tipi "02.00.00" olur.
+
+  <img src={require('@site/assets/howto/5.png').default} alt="DEVICE EYE PATTERN seçili" width={400} />
+- Düğme **yoksa**: `adbauth.key` gerekir. [ADB Kilid](./adb-kilid.mdx) sayfasında `VERSION INFO` / `版本信息` içine girin. `productID / 产品序列号` değerini alın. `adbauth.key` dosyasını siteden indirdikten sonra kurun.
+
+## Tiggo 8 2025 {#tiggo8-2025}
+
+Tiggo 8 2025, Tiggo 7 2025 ile aynı yolu kullanır.
+
+1. [Tiggo 7 2025](#tiggo7-2025) adımları ile mühendislik menüsünü açın.
+2. `USB2.0 AUTH` / `USB2.0认证` ekranını açın.
+3. `DEVICE EYE PATTERN` / `Device眼图` düğmesi varsa ona dokunun. `adbauth.key` gerekmez. [02.00.00 kurulumu](./02-00-00.mdx) ile devam edin.
+4. Düğme yoksa `adbauth.key` gerekir. [ADB Kilid](./adb-kilid.mdx) sayfasında `VERSION INFO` / `版本信息` içine girin. `productID / 产品序列号` değerini alın. `adbauth.key` dosyasını siteden indirdikten sonra kurun.
+
+## Tiggo 8 2026 {#tiggo8-2026}
+
+Tiggo 8 2026 menüyü başka yerden açar.
+
+1. Ekranda Ayarlar düğmesine basın.
+2. Gelen menüde Sistem öğesine gidin.
+3. En üstteki Hakkında başlığına seri bir şekilde dokunun. Gizli menü açılana kadar dokunun.
+4. Menüde `USB2.0 AUTH` / `USB2.0认证` yazısına dokunun.
+5. `DEVICE EYE PATTERN` / `Device眼图` düğmesi **varsa** ona dokunun. `adbauth.key` olmadan kurulum yapabilirsiniz. [02.00.00 kurulumu](./02-00-00.mdx) ile devam edin. Web yükleyicide kurulum tipi "02.00.00" olur.
+6. Düğme **yoksa** `adbauth.key` gerekir. [ADB Kilid](./adb-kilid.mdx) sayfasında `VERSION INFO` / `版本信息` içine girin. `productID / 产品序列号` değerini alın. `adbauth.key` dosyasını siteden indirdikten sonra kurun.
+
+## Jaecoo {#jaecoo}
+
+:::note
+
+Bu rehberdeki fotoğraflar Jaecoo modelini veya yılını göstermez. Kabin fotoğrafında direksiyon üzerinde Chery yazar. Model yılını bu fotoğraflardan seçmeyin. Jaecoo ekranında aşağıdaki adımları kullanın.
+
+:::
+
+1. Ayarlar ekranına girin.
+2. "DMC yazılımı sürüm numarası" satırını bulun. Değer `02.00.00` gibi olabilir.
+3. Bu satırın üzerindeki etikete seri bir şekilde dokunun. Gizli menü açılır.
+4. `USB认证` yazısına dokunun. Jaecoo ekranında `USB2.0认证` yazmaz.
+5. `DEVICE EYE PATTERN` / `Device眼图` düğmesi **yoksa** `adbauth.key` gerekir. [ADB Kilid](./adb-kilid.mdx) sayfasında `VERSION INFO` / `版本信息` içine girin. `productID / 产品序列号` değerini alın. `adbauth.key` dosyasını siteden indirdikten sonra kurun.
+6. Düğme **varsa** ona dokunun. `adbauth.key` gerekmez. [02.00.00 kurulumu](./02-00-00.mdx) ile devam edin.
+
+[Rehber ana sayfasına dön](./index.mdx)
+
+## Kabin fotoğrafları
+
+### Tiggo 7 ve Tiggo 8 2025 kabin {#foto-tiggo}
+
+<img src={require('@site/assets/install-guide/tiggo7-tiggo8.png').default} alt="Tiggo 7 ve Tiggo 8 2025 kabin" />
+
+[Tiggo 7 2025 adımları](#tiggo7-2025) · [Tiggo 8 2025 adımları](#tiggo8-2025)
+
+### Tiggo 8 2026 kabin {#foto-tiggo8-2026}
+
+<img src={require('@site/assets/install-guide/tiggo8-2026.png').default} alt="Tiggo 8 2026 kabin" />
+
+[Tiggo 8 2026 adımları](#tiggo8-2026)

@@ -1,0 +1,104 @@
+# Decap CMS: wiki.frostnav.com/admin
+# Düzenleyiciler GitHub hesabıyla girer; yalnızca berkpekatik/frostnav-wiki reposuna ekli olanlar düzenleyebilir.
+# editorial_workflow: her değişiklik ayrı bir dal ve PR olur. main dalı korumalı olduğu için yayın, sahibin onayıyla olur.
+
+backend:
+  name: github
+  repo: berkpekatik/frostnav-wiki
+  branch: main
+  base_url: https://wiki.frostnav.com
+  auth_endpoint: oauth/auth
+  commit_messages:
+    create: 'docs: "{{slug}}" sayfası eklendi'
+    update: 'docs: "{{slug}}" sayfası güncellendi'
+    delete: 'docs: "{{slug}}" sayfası silindi'
+    uploadMedia: 'docs: "{{path}}" yüklendi'
+    deleteMedia: 'docs: "{{path}}" silindi'
+
+publish_mode: editorial_workflow
+locale: tr
+site_url: https://wiki.frostnav.com
+display_url: https://wiki.frostnav.com
+logo_url: /img/logo.png
+
+# Yüklenen görseller. Sayfada ![açıklama](/img/uploads/dosya.png) olarak kullanılır.
+media_folder: static/img/uploads
+public_folder: /img/uploads
+
+collections:
+  # ---------- Türkçe ----------
+  - name: tr-genel
+    label: 'TR · Genel sayfalar'
+    label_singular: Sayfa
+    folder: docs
+    extension: mdx
+    format: frontmatter
+    create: true
+    slug: '{{slug}}'
+    sortable_fields: [title, sidebar_position]
+    # Sayfa alanları. Docusaurus'un kullandığı ön bilgi alanları dışında alan eklemeyin: tanımlanmayan alanlar kaydederken silinir.
+    fields: &page_fields
+    - {label: Başlık, name: title, widget: string}
+    - {label: Kısa açıklama (arama motorları için), name: description, widget: text, required: false}
+    - {label: Menüdeki sıra, name: sidebar_position, widget: number, value_type: int, required: false,
+       hint: 'Küçük sayı menüde üstte görünür.'}
+    - {label: Adres (slug), name: slug, widget: string, required: false,
+       hint: 'Yalnızca özel sayfalarda dolu. Boşsa dokunmayın; doluysa değiştirmeyin, bağlantılar kırılır.'}
+    - {label: İçerik, name: body, widget: markdown, modes: [raw, rich_text],
+       hint: '<Shot>, <VehicleFinder> gibi bileşenler ve import satırları olan sayfaları yalnızca "Markdown" (raw) modunda düzenleyin.'}
+
+  - name: tr-kurulum
+    label: 'TR · Kurulum'
+    label_singular: Kurulum sayfası
+    folder: docs/kurulum
+    extension: mdx
+    format: frontmatter
+    create: true
+    slug: '{{slug}}'
+    sortable_fields: [title, sidebar_position]
+    fields: *page_fields
+
+  - name: tr-kullanim
+    label: 'TR · Kullanım'
+    label_singular: Kullanım sayfası
+    folder: docs/kullanim
+    extension: mdx
+    format: frontmatter
+    create: true
+    slug: '{{slug}}'
+    sortable_fields: [title, sidebar_position]
+    fields: *page_fields
+
+  # ---------- English ----------
+  - name: en-genel
+    label: 'EN · General pages'
+    label_singular: Page
+    folder: i18n/en/docusaurus-plugin-content-docs/current
+    extension: mdx
+    format: frontmatter
+    create: true
+    slug: '{{slug}}'
+    sortable_fields: [title, sidebar_position]
+    fields: *page_fields
+
+  - name: en-kurulum
+    label: 'EN · Installation'
+    label_singular: Installation page
+    folder: i18n/en/docusaurus-plugin-content-docs/current/kurulum
+    extension: mdx
+    format: frontmatter
+    create: true
+    slug: '{{slug}}'
+    sortable_fields: [title, sidebar_position]
+    fields: *page_fields
+
+  - name: en-kullanim
+    label: 'EN · Usage'
+    label_singular: Usage page
+    folder: i18n/en/docusaurus-plugin-content-docs/current/kullanim
+    extension: mdx
+    format: frontmatter
+    create: true
+    slug: '{{slug}}'
+    sortable_fields: [title, sidebar_position]
+    fields: *page_fields

@@ -1,0 +1,152 @@
+---
+title: "Settings"
+sidebar_position: 9
+description: "FrostNav settings: full-screen home, on-screen back button, theme, background running, language, vehicle image, and technical details."
+---
+
+This page explains each setting and what happens when you turn it on or off.
+
+## Open the screen
+
+1. Open the FrostNav app.
+2. Touch "Settings" in the side menu. On the home panel, touch the "Settings" shortcut.
+
+## Full-screen home
+
+See [Full-screen home](./launcher-mode.mdx) for the details.
+
+- **Yes:** FrostNav opens as a full-screen car panel. The side menu is hidden. The panel shows the gauges and the app shortcuts.
+- **No:** The app shows the normal view with the side menu.
+
+To make FrostNav the car's home app, touch "Change default home app in system settings". The link is visible while "Yes" is selected.
+
+## On-screen back button
+
+This is a small bar that stays on top of other apps. Tap to go back. Press and hold for shortcuts. Drag to move.
+
+- **On:** The bar shows on the screen.
+- **Off:** The bar is hidden.
+
+Use the bar like this:
+
+- Tap the left arrow once to go back (the system Back key).
+- Press and hold the left arrow to open the menu. Press and hold again to close it.
+- The bar stays open when you touch a button in the menu.
+- Drag the bar to move it.
+
+| Icon on the bar | What it does |
+|---|---|
+| Left arrow | System Back key. |
+| Box | Chooses the target app for map projection. |
+| Map | Opens the instrument display (starts projection). |
+| X | Stops projection. |
+| Lightning | Shows the quick-actions menu. |
+| Double left arrow | Collapses the quick-actions menu. |
+| Phone | Shows the open apps on display 1. |
+| Monitor | Shows the open apps on display 2. |
+
+In the open-apps list, a tap force-stops the app. A press and hold opens the app info.
+
+:::note
+
+This bar needs the overlay permission. The installer grants it.
+
+:::
+
+## Theme
+
+| Option | What it does |
+|---|---|
+| Auto | The theme follows the system. The app turns dark when the vehicle switches to night mode. |
+| Light | The light theme is used. |
+| Dark | The dark theme is used. It is easier on the eyes for night driving. |
+
+## Run in the background
+
+- **On:** FrostNav runs in the background when the vehicle starts.
+- **Off:** FrostNav starts when you open it.
+
+:::note
+
+[Drive Memory](./memory-mode.mdx), automatic [Camera 360](./camera-360.mdx) recording, [face recognition](./face-recognition.mdx), [automation](./automation.mdx), the [sunroof](./sunroof.mdx), and [sound settings](./equalizer.mdx) use this service. Keep "Run in the background" On.
+
+:::
+
+## Open the app on screen
+
+- **On:** FrostNav also opens on screen when the vehicle starts.
+- **Off:** Tap the app icon to open the screen.
+
+## Language
+
+- Select "Türkçe" or "English".
+- The screen refreshes with the new language.
+
+## Edit menu {#menuyu-duzenle}
+
+The first time FrostNav opens, it asks what you want to use. The sections you pick appear in the side menu.
+Apps, Wi-Fi, Transfer and Settings are always shown. This choice turns no setting off; it only simplifies the menu.
+
+| Card | Adds to the menu |
+|---|---|
+| Custom Car Launcher | [Full-screen home](./launcher-mode.mdx) |
+| Maps and cluster | [Instrument display](./projection.mdx), [Split screen](./split-screen.mdx) |
+| Music and sound | [Sound settings](./equalizer.mdx) |
+| Welcome | [Welcome](./welcome-sound.mdx) |
+| Automation | [Automation](./automation.mdx), [Sunroof](./sunroof.mdx) |
+| Memory mode | [Drive Memory](./memory-mode.mdx) |
+| Camera and safety | [Camera 360](./camera-360.mdx), [Face recognition](./face-recognition.mdx) |
+| Technical | [Vehicle information](./vehicle-info.mdx) |
+
+"Skip, show everything" turns on every section. If you picked the launcher card, you are then asked whether the car's home button should open the FrostNav home screen.
+
+To change the choice later, tap **Settings > Edit menu**.
+
+## Send Log to Developer {#log-gonder}
+
+If the app froze, Bluetooth dropped or the screen restarted, use this button to send the system logs to the developer.
+
+1. On the **Settings** screen, tap "Send Log to Developer".
+2. Read what will be sent: recent crash, freeze and restart logs, and FrostNav's recent exit reasons.
+3. Tap "Send". A reference number is shown when it is sent. Share this number when asking for support.
+
+Nothing is collected or sent until you confirm. The log goes to your account and only the developer can read it.
+
+:::note
+
+Sending needs the car to be linked to your account. If it says the car is not linked, open the [FrostNav mobile app](./mobile.mdx) while your phone is on the car's network and try again.
+If it says the VIN could not be read yet, drive for a while and try again.
+
+:::
+
+## Data Check {#veri-kontrolu}
+
+The "Data Check (vehicle signals)" button opens a table on the home screen showing whether data arrives from the car for each widget.
+Look here if a widget stays empty. "Share/Save" saves the table as a file you can send when asking for support.
+
+This screen only reads; it writes nothing to the car.
+
+## Fix home screen icons {#ikon-onar}
+
+Shown only on some Jaecoo cars. If extra FrostNav icons appear on the car's own home screen, this button removes them.
+The car's home screen restarts for a moment; system icons and their positions stay.
+
+## Technical details
+
+Touch "Show technical details". While it is open, the same button says "Hide technical details".
+
+### App permissions
+
+"View permissions" opens the "Permission test" window. The window checks missing access and connection problems.
+
+- Green: the API call finished with the permission.
+- Red: the permission is missing, or the call failed.
+- Amber: only the permission flag was read.
+
+This test does not write system settings, delete packages, open the camera, or change Wi-Fi.
+
+### About
+
+- **Version:** Shows the current version and the latest version.
+- **Install:** Shows that the app can be installed for free from `https://frostnav.com`.
+- **Release notes:** Shows the changes in each version.

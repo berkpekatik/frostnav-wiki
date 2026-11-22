@@ -1,0 +1,46 @@
+---
+title: "USB belleği FAT32 yapın"
+sidebar_position: 5
+description: "adbauth.key için USB belleği FAT32 olarak biçimlendirme: Windows ve Mac."
+---
+
+Bu sayfa [ADB Kilid](./adb-kilid.mdx) kurulumu içindir. Araç USB belleği yalnız **FAT32** olarak okur.
+
+:::warning
+
+Biçimlendirme USB bellekteki tüm dosyaları siler. Önce gerekli dosyaları başka bir yere kopyalayın.
+
+:::
+
+## Windows
+
+1. USB belleği bilgisayara takın.
+2. Dosya Gezgini'ni açın.
+3. USB bellek sürücüsüne sağ tıklayın.
+4. "Biçimlendir" öğesine tıklayın.
+5. Dosya sistemi olarak **FAT32** seçin.
+6. "Hızlı biçimlendir" kutusunu işaretli bırakın.
+7. "Başlat" düğmesine basın. Bitmesini bekleyin.
+
+:::note
+
+Windows, 32 GB'den büyük bellekte FAT32 seçeneğini gizleyebilir. 32 GB veya daha küçük bir USB bellek kullanın.
+
+:::
+
+## Mac
+
+1. USB belleği Mac'e takın.
+2. Disk İzlencesi'ni açın.
+3. Solda USB belleği seçin. Bölüntüyü değil, diskin kendisini seçin.
+4. "Sil" düğmesine basın.
+5. Biçim olarak **MS-DOS (FAT)** seçin. Bu, FAT32 demektir.
+6. Düzen olarak **Master Boot Record** seçin.
+7. "Sil" düğmesine basın. Bitmesini bekleyin.
+
+## Biçimden sonra
+
+1. `svtasklist.flag` dosyasını USB belleğin ana klasörüne kopyalayın.
+2. `adbauth.key` dosyasını aynı ana klasöre kopyalayın.
+3. Dosyaları alt klasöre koymayın.
+4. [ADB Kilid kurulumu](./adb-kilid.mdx) adımlarına dönün.

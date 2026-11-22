@@ -1,0 +1,140 @@
+---
+title: Bilinen sorunlar
+slug: /bilinen-sorunlar
+sidebar_position: 101
+description: FrostNav'da bilinen sorunlar, araca bağlı sınırlar ve geçici çözümleri.
+---
+
+Bu sayfada bildiğimiz sorunlar ve şimdilik nasıl aşılacakları yer alır. Burada olmayan bir sorun yaşıyorsanız
+sayfanın sonundaki [destek](#destek) adımlarına bakın.
+
+## Multimedya ünitesini yeniden başlatma {#yeniden-baslatma}
+
+Ekran donduysa, karardıysa ya da bir sorun geçmiyorsa önce multimedya ünitesini yeniden başlatın.
+Bu işlem format değildir; uygulamaları ve ayarları silmez, yalnızca ekranı yeniden açar.
+
+| Araç / ekran | Nasıl yapılır? |
+|---|---|
+| Tiggo 7 / Tiggo 8, yatay birleşik ekran | Vites yanındaki ses düğmesine (rulo) çevirmeden **10 saniye** basılı tutun. |
+| Tiggo 8 dikey ekran ve ses düğmesi (rulo) olmayan araçlar | **Yıldız** ve **iç içe dikdörtgen** tuşlarına birlikte **10 saniye** basılı tutun. |
+
+Ekran kapanıp yeniden açılır. Ardından sesli asistan kendi kendine konuşmaya başlarsa [aşağıdaki](#sesli-asistan) adımı uygulayın.
+
+## Açık sorunlar
+
+### Yeniden başlattıktan sonra sesli asistan kendiliğinden açılıyor {#sesli-asistan}
+
+**Belirti:** Araç yeniden başlatıldığında Wi‑Fi açıksa aracın sesli asistanı kendiliğinden devreye giriyor ve tekrar tekrar konuşuyor.
+
+**Neden:** Yeniden başlatmadan sonra sesli asistan uyanır ve Wi‑Fi açık olduğu için internete bağlanmaya çalışır. Bağlanamayınca yeniden dener ve döngüye girer.
+
+**Çözüm:** Wi‑Fi'yi 1–2 dakika kapatıp yeniden açın. Sorun ortadan kalkar.
+
+### Araç konum (GPS) alamıyor {#gps}
+
+**Belirti:** Google Maps veya Yandex konum bulamıyor, "konum yok" diyor ya da rota çizemiyor. FrostNav yüklü değilken de aracın pusulası sürüş sırasında hep aynı yönü (ör. Kuzey) gösteriyor.
+
+**Neden:** Bazı araçlarda, özellikle bazı Jaecoo ve Tiggo 8'lerde, aracın kendi GPS modülü zaman zaman konum alamıyor. Bu FrostNav'dan kaynaklanmaz.
+
+**Çözüm:**
+
+- Telefonun konumunu araca aktarın: [FrostNav mobil uygulamasında](./kullanim/mobile.mdx) GPS Link'i açın. Harita uygulamaları telefonun konumunu kullanır.
+- Açık gökyüzü altında biraz bekleyin; sorun çoğu zaman kendiliğinden geçer.
+- Geçmezse multimedya ünitesini [yeniden başlatın](#yeniden-baslatma).
+
+### Kamera kaydı açıkken uygulama kapatılırsa ekran tepki vermeyebilir {#kamera-kapatma}
+
+**Belirti:** Kamera 360 kaydı ya da canlı önizleme açıkken FrostNav kapatılırsa ekran kararabilir veya görüntü düzgün gelmeyebilir.
+
+**Çözüm:** Multimedya ünitesini [yeniden başlatın](#yeniden-baslatma); ekran normale döner. Bu, araca işlenmiş kalıcı bir arıza değildir. Bunu önlemek için:
+
+- Kayıt açıkken FrostNav'ı son uygulamalar ekranından kaydırarak kapatmayın.
+- Güncellemeden önce kaydı durdurun.
+- Kaydı uygulamadaki "Durdur" / "Kaydı Durdur" düğmesiyle bitirin.
+
+Ayrıntılar: [Kamera 360](./kullanim/camera-360.mdx#kayit-acikken).
+
+### Uygulama beklenmedik şekilde kapanırsa son klip eksik kalabilir {#son-klip}
+
+**Belirti:** Kayıt sırasında FrostNav beklenmedik şekilde kapanırsa o an kaydedilen klip (en fazla 3 dakika) kaydedilmeyebilir. Önceki klipler etkilenmez.
+
+**Çözüm:** Saklamak istediğiniz klipleri [İzleme Ekranı](./kullanim/camera-360.mdx#izleme-ekrani) ile hemen USB'ye aktarın.
+
+### Telefonla görüşmeden sonra USB müzik kendiliğinden devam etmiyor {#usb-muzik}
+
+**Belirti:** Aracın USB'sinden müzik çalarken telefonla görüşme yapılınca müzik duruyor ve görüşme bitince geri gelmiyor. Radyo, Spotify ve YouTube Music normal şekilde devam ediyor.
+
+**Çözüm:** Görüşmeden sonra Oynat'a basın. Bu davranış aracın kendi müzik uygulamasından kaynaklanıyor.
+
+### Telefona mesaj gelince ses Bluetooth'a geçebiliyor {#telefon-onceligi}
+
+**Belirti:** Radyo veya USB çalarken telefona mesaj gelince ses kaynağı Bluetooth'a geçiyor; telefonda duraklatılmış bir şarkı varsa çalmaya başlıyor.
+
+**Çözüm:** Ana ekranın dişli ayarlarında "Telefon önceliği"ni kapatın. Bu konuda iyileştirme üzerinde çalışılıyor.
+Bkz. [Tam ekran ana sayfa](./kullanim/launcher-mode.mdx#ana-ekran-ayarlari-dislisi).
+
+### Lastik basıncı yalnızca 4x4 araçlarda görünüyor {#lastik}
+
+**Belirti:** Lastik basıncı boş kalıyor.
+
+**Açıklama:** Lastik basıncı bilgisi yalnızca 4x4 araçlardan alınabiliyor. Diğer araçlarda bu bilgi gelmez.
+Aracın kendi göstergesindeki lastik uyarısını esas alın.
+
+### Ev ve İş konumları yedeğe dahil değil {#ev-is}
+
+**Belirti:** Ayar yedeğini geri yükleyince Navigasyon widget'ındaki Ev ve İş konumları gelmiyor. Google Maps veya Yandex'te kayıtlı Ev/İş adresleri de otomatik okunmuyor.
+
+**Çözüm:** Konumları [Navigasyon widget'ından](./kullanim/launcher-mode.mdx#ev-is) elle girin.
+
+### Jaecoo'da ana ekranda fazladan FrostNav ikonları çıkıyor {#jaecoo-ikon}
+
+**Belirti:** Aracın kendi ana ekranında birden fazla FrostNav veya Mini gösterge ikonu görünüyor.
+
+**Çözüm:** **Ayarlar > Ana ekran ikonlarını onar** düğmesine dokunun. Aracın ana ekranı bir an yeniden başlar; sistem ikonları ve yerleri korunur.
+Bkz. [Ayarlar](./kullanim/settings.mdx#ikon-onar).
+
+### Kamera kaydı sırasında CarPlay veya Android Auto açıkken ekran kasıyor {#kayit-carplay}
+
+**Belirti:** Kamera kaydı sürerken CarPlay, Android Auto, YouTube veya Yandex Haritalar da açıksa ekran yavaşlıyor.
+
+**Neden:** Kayıt görüntüyü ekran işlemcisi üzerinden sıkıştırır. CarPlay ve Android Auto da aynı anda telefonun görüntüsünü işler. Yüksek çözünürlükte ikisi aynı video yongasını paylaşır.
+
+**Çözüm:** Kayıt çözünürlüğünü 960×600 veya 640×400'e düşürün. Yine kasarsa CarPlay veya Android Auto açıkken kayıt almayın.
+Bkz. [Kamera 360](./kullanim/camera-360.mdx#onerilen-kullanim).
+
+### Sinyal kamerası açıkken işlemci yükü artıyor {#sinyal-kamerasi}
+
+**Belirti:** "Sinyalde göstergede yan kamera" açıkken, ilk sinyalde gecikme olmasın diye kameralar sürüş boyunca hazır tutulur. Bu, işlemciye ek yük getirir.
+
+**Çözüm:** Kullanmıyorsanız [Kamera 360](./kullanim/camera-360.mdx#sinyal-kamerasi) ekranından kapatın.
+
+## Araca bağlı sınırlar
+
+| Konu | Açıklama |
+|---|---|
+| Yüz tanıma, Jaecoo | Jaecoo araçlarda DMS kamerasına erişim henüz yapılmadı. Yüz tanıma bu araçlarda şimdilik çalışmaz. |
+| CPD (çocuk algılama) | Donanıma bağlıdır; bazı Tiggo 8 donanımlarında çalışmaz. |
+| Kamera 360 | Çevre kameraları olmayan araçlarda kullanılamaz. Omoda 9'da çalışmaz. |
+| Bölünmüş ekran | Araç serbest pencereye izin vermiyorsa açılmaz. Bkz. [Bölünmüş ekran](./kullanim/split-screen.mdx). |
+| Klima HI yerine 23,5'te kalıyor | Ana ekran ayarlarında "Klima derece hesabı" için "Tam derece" seçin. Bkz. [Tam ekran ana sayfa](./kullanim/launcher-mode.mdx). |
+| XAPK dosyaları | Birleşik ekranlarda XAPK kurulumu hata veriyor. Uygulamanın APK sürümünü kullanın. |
+| Tiggo 8 Pro | Desteklenmiyor. Bkz. [Desteklenen araçlar](./desteklenen-araclar.mdx). |
+| AM/FM geçişi çalışmıyor | Ana ekran ayarlarında "Radyo komut tipi" için Tip 1 veya Tip 2'yi deneyin. |
+| Android Auto açıkken Wi‑Fi kopuyor | Araç hotspot ile Wi‑Fi'yi aynı anda çalıştıramıyor olabilir. Bkz. [SSS](./sss.mdx#android-auto-wifi). |
+| USB takılıyken her açılışta uyarı | Uyarıyı araç gösterir. ADB açıldıktan sonra USB belleği çıkarın. Bkz. [SSS](./sss.mdx#usb-uyarisi). |
+
+## Sayfalardaki sorun giderme bölümleri
+
+- [Kamera 360](./kullanim/camera-360.mdx)
+- [Tam ekran ana sayfa](./kullanim/launcher-mode.mdx)
+- [Yüz tanıma](./kullanim/face-recognition.mdx)
+- [Otomasyon](./kullanim/automation.mdx)
+- [Bölünmüş ekran](./kullanim/split-screen.mdx)
+- [ADB Kilid: Çince mesajlar](./kurulum/adb-kilid.mdx)
+- [Sık sorulan sorular](./sss.mdx)
+
+## Sorununuz burada yoksa {#destek}
+
+1. FrostNav'ın son sürümde olduğundan emin olun. Bkz. [Uygulamalar](./kullanim/apps.mdx).
+2. Sorun yaşandıktan hemen sonra **Ayarlar > Log Kaydını Geliştiriciye Gönder** ile kayıt gönderin. Bkz. [Ayarlar](./kullanim/settings.mdx#log-gonder).
+3. Gösterilen kayıt numarasıyla birlikte [WhatsApp destek grubuna](https://chat.whatsapp.com/FoUWKEC0xbr09DtLAgvthg) yazın.

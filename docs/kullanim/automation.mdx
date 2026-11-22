@@ -1,0 +1,75 @@
+---
+title: "Otomasyon"
+sidebar_position: 10
+description: "FrostNav konfor otomasyonu: dış ortam sıcaklığı eşiğe gelince koltuk, cam ve direksiyon ısıtmasını açar."
+---
+
+Otomasyon, araç termometresindeki dış ortam sıcaklığını izler. Sıcaklık seçtiğiniz eşiğe gelince koltuk ısıtma, koltuk havalandırma, cam ısıtma, direksiyon ısıtma veya klima otomatik açılır.
+
+Ekranın başlığı "Konfor otomasyonu"dur.
+
+## Ekranı açın
+
+1. FrostNav uygulamasını açın.
+2. Sol menüde "Otomasyon" öğesine dokunun.
+3. İlk açılışta erken erişim uyarısı çıkar. Devam etmek için "Kabul Ediyorum" düğmesine dokunun. Uyarı bir kez sorulur.
+
+:::note
+
+Aracınızda olmayan bir işlevi zorlamayın. Donanım ve yazılıma bağlıdır; her modelde çalışmayabilir.
+
+:::
+
+## Otomasyonu çalıştırın
+
+1. "Otomasyonu çalıştır" anahtarını açın. Durum "Açık" olur.
+2. Üstte "ARAÇ TERMOMETRESİ · CANLI VERİ" yazar. Sıcaklık okunursa "Dış ortam" satırı dereceyi gösterir.
+3. Anahtar kapalıyken kurallar araca gönderilmez.
+
+Termometre bağlı değilse ekran "Araç termometresi bağlı değil" yazar. Sıcaklık henüz yoksa "Dış ortam sıcaklığı henüz okunamadı" yazar. Bu durumda kontak açıkken biraz bekleyin.
+
+Otomasyonun kontakla çalışması için [Ayarlar](./settings.mdx) ekranında "Arka planda çalış" seçeneğini Açık tutun.
+
+## Kurallar
+
+"Otomasyon kuralları" üç gruba ayrılır.
+
+| Grup | Kurallar |
+|---|---|
+| Sürücü Tarafı | Sürücü koltuk ısıtma, sürücü koltuk havalandırma. |
+| Yolcu Tarafı | Yolcu koltuk ısıtma, yolcu koltuk havalandırma. |
+| Cam & Direksiyon | Direksiyon ısıtma, ön cam ısıtma, arka cam ve ayna ısıtma, klima (AUTO). |
+
+## Bir kuralı ayarlayın
+
+1. Kural kartındaki anahtarı açın.
+2. Süre sürgüsünü ayarlayın. 0 dakika "Otomatik kapatılmaz (sürekli açık)" demektir. 1–30 dakika "Kontaktan … dakika sonra kapatılır" demektir.
+3. Sıcaklık çipine dokunun. Karşılaştırma sırayla değişir: altındayken, ve altındayken, üzerindeyken, ve üzerindeyken. Çipte işaret &lt;, ≤, &gt; veya ≥ olarak görünür.
+4. Sıcaklık sürgüsü eşiği ayarlar. Aralık −20°C ile 40°C arasındadır.
+5. Koltuk ısıtma ve havalandırmada "Seviye" sürgüsü vardır. Seviye 1, 2 veya 3 olur. Seviye yalnızca kural açıkken görünür.
+
+Örnek: sürücü koltuk ısıtmayı "5°C altındayken aç" ve seviye 2 yapın. Dış ortam 5°C altına inince koltuk ısıtması 2. seviyede açılır.
+
+## Isıtma ve havalandırma çakışması
+
+Aynı koltukta ısıtma ve havalandırma sıcaklık aralıkları üst üste binemez. Aralıklar çakışırsa uygulama değişikliği geri alır ve şunu yazar: "Çakışma Önleme: Isıtma ve havalandırma sıcaklık aralıkları çakışıyor! Birbirinden farklı eşikler belirleyin."
+
+Isıtma için düşük bir eşik, havalandırma için yüksek bir eşik kullanın. Örnek: ısıtma 10°C altında, havalandırma 25°C üzerinde.
+
+## Kapatın
+
+- Tek bir kuralı kapatmak için o kartın anahtarını kapatın.
+- Tüm otomasyonu durdurmak için "Otomasyonu çalıştır" anahtarını kapatın. Durum "Kapalı" olur.
+
+Siz aracı çalıştırdıktan sonra ilgili özelliği araç ekranından kapatırsanız otomasyon o sürüşte özelliği tekrar açmaz.
+
+## Sorun giderme
+
+| Sorun | Yapılacak işlem |
+|---|---|
+| Dış ortam görünmüyor | Kontak açıkken bekleyin. Termometre bağlı değilse bu araçta dış sıcaklık okunamıyor olabilir. |
+| Kural açılmıyor | Önce "Otomasyonu çalıştır" anahtarını açın. Isıtma ve havalandırma eşikleri çakışıyorsa eşikleri ayırın. |
+| Koltuk veya cam tepki vermiyor | Bu donanım araçta olmayabilir. Kontağın açık olduğundan emin olun. |
+| Özellik hemen kapanıyor | Süre sürgüsü 0 değilse özellik, kontaktan seçilen dakika sonra kapanır. Sürekli açık kalsın istiyorsanız süreyi 0 yapın. |
+
+[Kullanım rehberine dönün](./index.mdx)

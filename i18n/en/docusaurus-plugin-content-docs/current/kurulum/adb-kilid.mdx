@@ -1,0 +1,156 @@
+---
+title: "Install for ADB Lock (Above 02.00.00)"
+sidebar_position: 4
+description: "Installing FrostNav with adbauth.key on ADB Lock Chery vehicles whose multimedia software is above 02.00.00."
+---
+
+import {ProductIdSteps} from '@site/src/components/VehicleFinder';
+
+Use this guide if the software version is higher than `02.00.00`. These cars have a locked ADB. Examples: Omoda 5, Tiggo 7, Tiggo 8.
+
+The procedure has two parts:
+
+1. Turn on ADB with a USB stick and the `adbauth.key` file.
+2. Install the app with the web installer.
+
+There are two install types:
+
+- If `DEVICE EYE PATTERN` / `Device眼图` is on the screen, you do not need `adbauth.key`. Use the [02.00.00 install](./02-00-00.mdx).
+- If that button is not there, use this page. Get the Product ID first. Install after you download `adbauth.key` from the site.
+
+:::warning
+
+Do the parts in this order.
+
+:::
+
+## Part 1: Learn about adbauth.key
+
+- The app is free. The `adbauth.key` file is not free.
+- FrostNav does not make the key file. The site gets it from an external API service using your Product ID.
+- The key file is made from the car serial number (SN) and a date. The date format is yyyyMMdd. Example: `20260930`.
+- The key file works for one car and one date. It looks like a single-use key.
+- You can use the key file again. To do this, set the car date back to the date of the key file.
+
+### How to get the Product ID
+
+If `DEVICE EYE PATTERN` / `Device眼图` is not on the screen, you need the Product ID first. The Product ID is the vehicle serial number. The line name on the screen is `productID / 产品序列号`. An English screen can show `product ID`.
+
+1. Open the hidden engineering menu. Open it for your car: [Install by vehicle](./araclar.mdx). For step-by-step help, use the [vehicle wizard](./index.mdx#arac-sec).
+2. Touch `VERSION INFO` / `版本信息` in the menu.
+3. Find the line `productID / 产品序列号`.
+4. Write the value on the right exactly as it is. Do not confuse 0 (zero) with O (letter).
+5. Take a photo of the screen.
+6. Buy the key on the [adbauth site](https://platform.frostnav.com/buy). Enter the Product ID. The site prepares the file.
+7. After you download `adbauth.key`, go to Part 2.
+
+#### Opening the hidden menu by vehicle {#pid-arac}
+
+Open the heading that matches your car's screen. If you don't know the screen type, use the [vehicle wizard](./index.mdx#arac-sec).
+
+<details>
+<summary>Tiggo 7 / Tiggo 8 / Omoda 5 (cluster and multimedia side by side, dual screen)</summary>
+
+<ProductIdSteps cabin="tiggoClassic" />
+
+</details>
+
+<details>
+<summary>Tiggo 8 new generation (single landscape screen standing on top of the dashboard)</summary>
+
+<ProductIdSteps cabin="tiggoNew" />
+
+</details>
+
+<details>
+<summary>Jaecoo (large portrait screen in the middle)</summary>
+
+<ProductIdSteps cabin="jaecoo" />
+
+</details>
+
+<img src={require('@site/assets/adbauth-mapcontrol.jpg').default} alt="FrostNav with adbauth" width={300} />
+
+<img src={require('@site/assets/adbauth-cockpit.jpg').default} alt="Cockpit with adbauth" width={300} />
+
+## Part 2: Turn on ADB
+
+### What you need
+
+- One USB stick.
+- The file `svtasklist.flag`.
+- The file `adbauth.key`.
+
+### Procedure
+
+1. Format the USB stick as **FAT32**. Steps: [Format the USB stick as FAT32](./fat32.mdx).
+2. Copy `svtasklist.flag` and `adbauth.key` to the root folder of the USB stick. Do not put them in a subfolder.
+3. Set the car date to the date of the key file. The dates must be the same. The format is yyyyMMdd. Example: if the key is `20260930`, the car date is 30 September 2026.
+4. Make sure that the multimedia screen is on.
+5. Put the USB stick in the USB port of the car.
+6. Wait for a Chinese message on the screen.
+7. If the message is `验证成功，打开adb!!!`, ADB is on. Remove the USB stick.
+8. If you see a different message, use the table below.
+
+### Messages on the screen
+
+| Message | Meaning | Action |
+|---|---|---|
+| `验证成功，打开adb!!!` | The key is correct. ADB is on. | Go to Part 3. |
+| `鉴权失败，文件不存在，请检查` | The car cannot find `adbauth.key`. | Put the file in the root folder of the USB stick. Make sure that the name is `adbauth.key`. |
+| `鉴权失败，文件无效` | The file is not valid or is empty. | Copy the file again. Or download the file from the site again. |
+| `鉴权失败，数据异常` | The car cannot read its serial number. | Restart the car. Try again. |
+| `鉴权失败，验证失败!!!` | The key file does not match the car and the date. | Set the car date to the date of the key file (yyyyMMdd). Try again. |
+
+## Part 3: Connect the cable
+
+Use a browser that supports WebUSB: Chrome, Edge, or Opera.
+
+### Android phone or tablet
+
+You need two parts. One is a Type-C OTG adapter. The Type-C plug goes into the phone or the tablet. The other end is a USB socket. The second part is a cable with a USB plug on both ends.
+
+<img src={require('@site/assets/howto/usb-otg-typec.jpg').default} alt="Type-C OTG: Type-C plug on one end, USB socket on the other" width={400} />
+
+Photo: Fructibus, Wikimedia Commons, CC0.
+
+<img src={require('@site/assets/howto/usb-a-a-cable.svg').default} alt="Cable with a USB plug on both ends" width={400} />
+
+1. Put the Type-C plug into the Type-C port of the phone or the tablet.
+2. Put one USB plug of the cable into the socket of the adapter.
+3. Put the other USB plug of the cable into the USB port of the car.
+
+### Windows laptop
+
+You do not need the OTG adapter. A cable with a USB plug on both ends is enough.
+
+1. Put one USB plug of the cable into a USB port of the computer.
+2. Put the other USB plug of the cable into the USB port of the car.
+
+## Part 4: Install the app
+
+1. Open [/install](https://frostnav.com/install) in the browser.
+2. Select the install type **"I have adbauth.key"**.
+3. Press "Connect". Select the car in the browser window.
+4. Press "Device Info". Make sure that the device information is visible.
+5. Press "Install". Wait until the install finishes.
+6. If you want a store app, press "Install market app". This step is separate from the FrostNav install.
+
+### What the installer does
+
+1. The browser does the ADB authentication.
+2. It writes two helper files to `/data/local/tmp/` in the car: `mapcontrol-silent-installer.dex` and `mc-run.sh`.
+3. It installs the APK file with `com.frostnav.adb.MapControlSilentInstaller`. This program runs through `app_process64`.
+4. It gives the permissions.
+
+## Permissions that the installer gives
+
+The installer gives these permissions to `com.frostnav`. The source is `MapControl/install.sh`.
+
+- Doze whitelist: `dumpsys deviceidle whitelist +com.frostnav`
+- AppOps: SYSTEM_ALERT_WINDOW, GET_USAGE_STATS, REQUEST_INSTALL_PACKAGES, MANAGE_EXTERNAL_STORAGE, WRITE_SETTINGS
+- `pm grant`: READ_LOGS, QUERY_ALL_PACKAGES, PACKAGE_USAGE_STATS, location (fine, coarse, background), WRITE_SECURE_SETTINGS, RECORD_AUDIO, BLUETOOTH_CONNECT, CAMERA, and others
+- Accessibility service: `com.frostnav/com.frostnav.service.GlobalBackService`
+- Notification listener: `com.frostnav/com.frostnav.media.LauncherMediaNotificationListener`
+
+[Back to the guide home](./index.mdx)

@@ -1,0 +1,76 @@
+---
+title: "Web Sunucusu"
+sidebar_position: 5
+description: "FrostNav web sunucusunu başlatma, telefon veya bilgisayardan sayfayı açma, dosya yükleme, link açma ve araca metin gönderme."
+---
+
+Web sunucusuyla aracı telefondan veya bilgisayardan yönetirsiniz. Cihazınızda bir web sayfası açarsınız. Sayfada üç bölüm vardır: Dosyalar, Link aç ve Klavye.
+
+## Gerekenler
+
+- Araç ve cihazınız aynı Wi-Fi ağında olmalıdır. Bkz. [Wi-Fi ekranı](./wifi.mdx).
+- Cihazınızda herhangi bir web tarayıcısı çalışır.
+
+## Sunucuyu başlatın
+
+1. FrostNav uygulamasını açın.
+2. Sol menüde "Aktar" öğesine dokunun. Ana panelde "Aktar" kısayoluna dokunun. Araç kartındaki "Telefon" durumu da bu ekranı açar.
+3. "▶ Web Server Başlat" düğmesine dokunun.
+4. Ekrandaki adresi okuyun. Adres şuna benzer: `http://192.168.1.20:7462`. Port numarası her zaman `7462`'dir.
+5. Ekranda bir QR kod da görünür.
+
+## Sayfayı cihazınızda açın
+
+1. A seçeneği: Telefonunuzla QR kodu okutun.
+2. B seçeneği: Adresi cihazınızın tarayıcısına yazın.
+3. "FrostNav - Web Yönetimi" sayfası açılır.
+4. Dili değiştirmek için sayfadaki "TR" veya "EN" düğmesine dokunun.
+
+## Bölüm: Dosyalar
+
+Bu bölümle araca dosya gönderir ve uygulamaları yönetirsiniz.
+
+1. "Dosya seç veya sürükle" alanına dokunun. Bir dosya seçin. APK, ZIP, PDF ve diğer türleri gönderebilirsiniz.
+2. "Gönder" düğmesine dokunun. Dosya aracın İndirilenler klasörüne gider.
+3. "Dosya başarıyla yüklendi" mesajını bekleyin.
+
+- **Yüklenen dosyalar:** Bu liste araçtaki dosyaları gösterir. APK dosyasını kurmak için "Kur" düğmesine dokunun. Dosyayı silmek için "Sil" düğmesine dokunun.
+- **Yüklü uygulamalar:** Bu liste araçtaki uygulamaları gösterir. Uygulamayı başlatmak için "Aç" düğmesine dokunun. Uygulamayı kaldırmak için "Sil" düğmesine dokunun. FrostNav "Kilitli" görünür. Onu kaldıramazsınız.
+- Listeyi güncellemek için "Yenile" düğmesine dokunun.
+
+## Bölüm: Link aç
+
+1. "Bağlantı" kutusuna bir link yazın. Örnek: bir web sitesi veya paylaşım linki.
+2. "Araçta aç" düğmesine dokunun.
+3. Link, aracın varsayılan tarayıcısında açılır. Linke uygun bir sistem uygulaması varsa onda açılır.
+
+:::note
+
+Sunucu http ve https linklerini, `geo` ve `google.navigation` adreslerini kabul eder. Sunucu `javascript`, `file`, `data` ve `content` adreslerini engeller.
+
+:::
+
+## Bölüm: Klavye
+
+Bu bölümle telefonunuzun veya bilgisayarınızın klavyesiyle araç ekranına yazarsınız.
+
+1. Araç ekranında bir metin alanına dokunun. Alan odakta kalmalıdır.
+2. Web sayfasında "Metin" kutusuna metninizi yazın.
+3. "Metni gönder (tek sefer)" düğmesine dokunun. Metin araçtaki alana gider.
+
+- **Anlık yazma:** Bu kutuyu seçerseniz sayfa her değişikliği hemen gönderir. Hızlı yazarsanız araç sadece son metni alır. Metni tek seferde göndermek için kutuyu kapatın.
+- FrostNav "Global Back" erişilebilirlik servisi açık olmalıdır. Bkz. [Ayarlar](./settings.mdx).
+- Bu işlev bazı araç ekranlarında çalışmayabilir.
+
+## Sunucuyu durdurun
+
+1. "Aktar" ekranına dönün.
+2. "■ Web Server Durdur" düğmesine dokunun. Durum "Sunucu durduruldu" olur.
+
+:::warning
+
+UYARI:
+
+Web sayfasının şifresi yoktur. Sunucu açıkken aynı ağdaki her cihaz adresi kullanabilir. İşiniz bitince sunucuyu durdurun.
+
+:::

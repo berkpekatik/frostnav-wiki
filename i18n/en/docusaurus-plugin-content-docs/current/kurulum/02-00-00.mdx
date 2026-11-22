@@ -1,0 +1,110 @@
+---
+title: "Install for Version 02.00.00"
+sidebar_position: 3
+description: "Installing FrostNav on Chery vehicles with multimedia software version 02.00.00."
+---
+
+import Shot from '@site/src/components/Shot';
+
+Use this guide if the software version is exactly `02.00.00`. You do not need an `adbauth.key` file.
+
+## Prepare
+
+### What you need
+
+- One web browser: Chrome, Edge, or Opera. Safari and Firefox do not work.
+- One device: a Windows PC, a Mac, or an Android phone.
+- One USB cable.
+- For a phone only: one OTG cable. Use a USB-C OTG cable for a USB-C phone. Use a Micro USB OTG cable for a Micro USB phone.
+
+### Turn on ADB in the car
+
+:::note
+
+In the pictures, the glowing gold dot shows where to touch. The yellow dot is an extra mark.
+
+:::
+
+1. Touch the blinking dot on the car screen. The car settings open.
+
+   <Shot src={require('@site/assets/howto/1.png').default} alt="Step 1: car settings" dots={[{top: '90%', left: '82.3%'}]} />
+2. Find the blue dot in System. Touch it 10 times quickly.
+
+   <Shot src={require('@site/assets/howto/2.png').default} alt="Step 2: blue dot" dots={[{top: '56.8%', left: '4.1%'}, {top: '54.8%', left: '96.1%', yellow: true}]} />
+3. Touch `USB2.0 AUTH` / `USB2.0认证`.
+
+   <Shot src={require('@site/assets/howto/3.png').default} alt="Step 3: USB2.0 AUTH / USB2.0认证" dots={[{top: '72%', left: '7.7%'}]} />
+4. A window opens. Touch the `DEVICE EYE PATTERN` / `Device眼图` button.
+
+   <Shot src={require('@site/assets/howto/4.png').default} alt="Step 4: DEVICE EYE PATTERN / Device眼图" dots={[{top: '82%', left: '40.8%'}]} />
+5. Compare your screen with the picture below.
+
+   <img src={require('@site/assets/howto/5.png').default} alt="Step 5: expected result" width={400} />
+
+:::note
+
+If you do not see `DEVICE EYE PATTERN` / `Device眼图`, open the [vehicle heading](./araclar.mdx). You may need `adbauth.key`.
+
+:::
+
+### Connect the cable
+
+#### Android phone or tablet
+
+You need two parts. One is a Type-C OTG adapter. The Type-C plug goes into the phone or the tablet. The other end is a USB socket. The second part is a cable with a USB plug on both ends.
+
+<img src={require('@site/assets/howto/usb-otg-typec.jpg').default} alt="Type-C OTG: Type-C plug on one end, USB socket on the other" width={400} />
+
+Photo: Fructibus, Wikimedia Commons, CC0.
+
+<img src={require('@site/assets/howto/usb-a-a-cable.svg').default} alt="Cable with a USB plug on both ends" width={400} />
+
+1. Put the Type-C plug into the Type-C port of the phone or the tablet.
+2. Put one USB plug of the cable into the socket of the adapter.
+3. Put the other USB plug of the cable into the USB port of the car.
+
+#### Windows laptop
+
+You do not need the OTG adapter. A cable with a USB plug on both ends is enough.
+
+1. Put one USB plug of the cable into a USB port of the computer.
+2. Put the other USB plug of the cable into the USB port of the car.
+
+## Install the app
+
+1. Open [/install](https://frostnav.com/install) in your browser.
+2. Select the install type **"02.00.00"**.
+3. Press "Connect". Select the car in the browser window.
+4. Press "Device Info". Make sure that the device information shows.
+5. Press "Install". Wait for the install to complete.
+6. If you want a store app, press "Install market app". This step is separate from the FrostNav install.
+
+### What the installer does
+
+1. It downloads the APK file `/apk/com.frostnav.apk`.
+2. It sends the file to `/data/local/tmp/com.frostnav.apk` in the car.
+3. It sets `persist.sys.sv.isl true`.
+4. It runs `pm install -r -d -g`. Then it deletes the file.
+5. It gives the permissions.
+
+## Permissions that the installer gives
+
+The installer gives these permissions to `com.frostnav`. The source is `MapControl/install.sh`.
+
+- Doze whitelist: `dumpsys deviceidle whitelist +com.frostnav`
+- AppOps: SYSTEM_ALERT_WINDOW, GET_USAGE_STATS, REQUEST_INSTALL_PACKAGES, MANAGE_EXTERNAL_STORAGE, WRITE_SETTINGS
+- `pm grant`: READ_LOGS, QUERY_ALL_PACKAGES, PACKAGE_USAGE_STATS, location (fine, coarse, background), WRITE_SECURE_SETTINGS, RECORD_AUDIO, BLUETOOTH_CONNECT, CAMERA, and others
+- Accessibility service: `com.frostnav/com.frostnav.service.GlobalBackService`
+- Notification listener: `com.frostnav/com.frostnav.media.LauncherMediaNotificationListener`
+
+## Install with the terminal (optional)
+
+```
+adb shell "setprop persist.sys.sv.isl true"
+adb push com.frostnav.apk /data/local/tmp/mapcontrol.apk
+adb shell "pm install -r /data/local/tmp/mapcontrol.apk"
+```
+
+For the complete permission list, read `MapControl/install.sh` in the repository.
+
+[Back to the guide home](./index.mdx)

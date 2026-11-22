@@ -1,0 +1,80 @@
+.shot {
+  position: relative;
+  display: block;
+  width: 400px;
+  max-width: 100%;
+  margin: 6px 0;
+}
+
+.shot img {
+  display: block;
+  width: 100%;
+  border: 1px solid var(--ifm-color-emphasis-300);
+}
+
+.shot i {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+.shot i::before,
+.shot i::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.shot i::before {
+  width: 16px;
+  height: 16px;
+  background: #00b0ff;
+  box-shadow: 0 0 14px rgba(0, 176, 255, 0.9);
+  animation: dot 1.5s ease-in-out infinite;
+}
+
+.shot i::after {
+  width: 36px;
+  height: 36px;
+  border: 3px solid #00b0ff;
+  animation: ring 1.5s ease-out infinite;
+}
+
+.shot i.yellow::before {
+  background: #ffc107;
+  box-shadow: 0 0 14px rgba(255, 193, 7, 0.8);
+  animation: none;
+}
+
+.shot i.yellow::after {
+  border-color: #ffc107;
+  animation: none;
+}
+
+@keyframes dot {
+  50% {
+    transform: translate(-50%, -50%) scale(1.2);
+    opacity: 0.8;
+  }
+}
+
+@keyframes ring {
+  0% {
+    transform: translate(-50%, -50%) scale(0.6);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.5);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shot i::before,
+  .shot i::after {
+    animation: none;
+  }
+}

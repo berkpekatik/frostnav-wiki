@@ -1,0 +1,110 @@
+---
+title: "02.00.00 Sürümü İçin Kurulum"
+sidebar_position: 3
+description: "Multimedya yazılım sürümü 02.00.00 olan Chery araçlara FrostNav kurulumu."
+---
+
+import Shot from '@site/src/components/Shot';
+
+Yazılım sürümü tam olarak `02.00.00` ise bu rehberi kullanın. `adbauth.key` dosyası gerekmez.
+
+## Hazırlık
+
+### Gerekenler
+
+- Bir web tarayıcısı: Chrome, Edge veya Opera. Safari ve Firefox çalışmaz.
+- Bir cihaz: Windows PC, Mac veya Android telefon.
+- Bir USB kablosu.
+- Sadece telefon için: bir OTG kablosu. USB-C telefon için USB-C OTG kullanın. Micro USB telefon için Micro USB OTG kullanın.
+
+### Araçta ADB'yi açın
+
+:::note
+
+Resimlerde parlayan altın nokta dokunacağınız yeri gösterir. Sarı nokta ek bir işarettir.
+
+:::
+
+1. Araç ekranındaki yanıp sönen noktaya dokunun. Araç ayarları açılır.
+
+   <Shot src={require('@site/assets/howto/1.png').default} alt="Adım 1: araç ayarları" dots={[{top: '90%', left: '82.3%'}]} />
+2. Sistem içinde mavi noktayı bulun. Ona hızlıca 10 kez dokunun.
+
+   <Shot src={require('@site/assets/howto/2.png').default} alt="Adım 2: mavi nokta" dots={[{top: '56.8%', left: '4.1%'}, {top: '54.8%', left: '96.1%', yellow: true}]} />
+3. `USB2.0 AUTH` / `USB2.0认证` yazısına dokunun.
+
+   <Shot src={require('@site/assets/howto/3.png').default} alt="Adım 3: USB2.0 AUTH / USB2.0认证" dots={[{top: '72%', left: '7.7%'}]} />
+4. Bir pencere açılır. `DEVICE EYE PATTERN` / `Device眼图` düğmesine dokunun.
+
+   <Shot src={require('@site/assets/howto/4.png').default} alt="Adım 4: DEVICE EYE PATTERN / Device眼图" dots={[{top: '82%', left: '40.8%'}]} />
+5. Ekranınızı aşağıdaki resimle karşılaştırın.
+
+   <img src={require('@site/assets/howto/5.png').default} alt="Adım 5: beklenen görünüm" width={400} />
+
+:::note
+
+`DEVICE EYE PATTERN` / `Device眼图` yazısını görmezseniz [araç başlığına](./araclar.mdx) bakın. `adbauth.key` gerekebilir.
+
+:::
+
+### Kabloyu bağlayın
+
+#### Android telefon veya tablet
+
+İki parça gerekir. Biri Type-C OTG adaptörüdür. Type-C fiş telefona veya tablete girer. Diğer uç USB dişidir. İkincisi, iki ucu da USB fiş olan bir kablodur.
+
+<img src={require('@site/assets/howto/usb-otg-typec.jpg').default} alt="Type-C OTG: bir uç Type-C fiş, diğer uç USB dişi" width={400} />
+
+Fotoğraf: Fructibus, Wikimedia Commons, CC0.
+
+<img src={require('@site/assets/howto/usb-a-a-cable.svg').default} alt="İki ucu USB fiş olan kablo" width={400} />
+
+1. Type-C fişi telefonun veya tabletin Type-C girişine takın.
+2. Kablonun bir USB fişini adaptörün dişi ucuna takın.
+3. Kablonun diğer USB fişini aracın USB girişine takın.
+
+#### Windows dizüstü bilgisayar
+
+OTG adaptörü gerekmez. İki ucu USB fiş olan kablo yeterlidir.
+
+1. Kablonun bir USB fişini bilgisayarın USB girişine takın.
+2. Kablonun diğer USB fişini aracın USB girişine takın.
+
+## Uygulamayı kurun
+
+1. Tarayıcıda [/install](https://frostnav.com/install) sayfasını açın.
+2. Kurulum tipi olarak **"02.00.00"** seçin.
+3. "Bağlan" düğmesine basın. Tarayıcı penceresinde aracı seçin.
+4. "Cihaz Bilgisi" düğmesine basın. Cihaz bilgisinin göründüğünden emin olun.
+5. "Kur" düğmesine basın. Kurulumun bitmesini bekleyin.
+6. Mağaza uygulaması istiyorsanız "Market uygulaması yükle" düğmesine basın. Bu adım FrostNav kurulumundan ayrıdır.
+
+### Yükleyici ne yapar?
+
+1. APK dosyasını indirir: `/apk/com.frostnav.apk`.
+2. Dosyayı araçta `/data/local/tmp/com.frostnav.apk` konumuna gönderir.
+3. `persist.sys.sv.isl true` değerini ayarlar.
+4. `pm install -r -d -g` komutunu çalıştırır. Sonra dosyayı siler.
+5. İzinleri verir.
+
+## Yükleyicinin verdiği izinler
+
+Yükleyici bu izinleri `com.frostnav` uygulamasına verir. Kaynak: `MapControl/install.sh`.
+
+- Doze whitelist: `dumpsys deviceidle whitelist +com.frostnav`
+- AppOps: SYSTEM_ALERT_WINDOW, GET_USAGE_STATS, REQUEST_INSTALL_PACKAGES, MANAGE_EXTERNAL_STORAGE, WRITE_SETTINGS
+- `pm grant`: READ_LOGS, QUERY_ALL_PACKAGES, PACKAGE_USAGE_STATS, konum (hassas, yaklaşık, arka plan), WRITE_SECURE_SETTINGS, RECORD_AUDIO, BLUETOOTH_CONNECT, CAMERA ve diğerleri
+- Erişilebilirlik servisi: `com.frostnav/com.frostnav.service.GlobalBackService`
+- Bildirim dinleyicisi: `com.frostnav/com.frostnav.media.LauncherMediaNotificationListener`
+
+## Terminal ile kurulum (isteğe bağlı)
+
+```
+adb shell "setprop persist.sys.sv.isl true"
+adb push com.frostnav.apk /data/local/tmp/mapcontrol.apk
+adb shell "pm install -r /data/local/tmp/mapcontrol.apk"
+```
+
+Tam izin listesi için depodaki `MapControl/install.sh` dosyasını okuyun.
+
+[Rehber ana sayfasına dön](./index.mdx)

@@ -1,0 +1,140 @@
+---
+title: Known issues
+slug: /bilinen-sorunlar
+sidebar_position: 101
+description: Known issues in FrostNav, vehicle-specific limits and their workarounds.
+---
+
+This page lists the issues we know about and how to work around them for now. If your issue is not here,
+see the [support](#destek) steps at the end of the page.
+
+## Restarting the multimedia unit {#yeniden-baslatma}
+
+If the screen froze, went black, or an issue does not go away, first restart the multimedia unit.
+This is not a factory reset; it does not delete apps or settings, it only restarts the screen.
+
+| Car / screen | How |
+|---|---|
+| Tiggo 7 / Tiggo 8, landscape unified screen | Press and hold the volume knob next to the gear selector for **10 seconds** without turning it. |
+| Tiggo 8 portrait screen and cars without a volume knob | Press and hold the **star** and **nested rectangle** buttons together for **10 seconds**. |
+
+The screen turns off and on again. If the voice assistant then starts talking by itself, follow the step [below](#sesli-asistan).
+
+## Open issues
+
+### The voice assistant starts by itself after a restart {#sesli-asistan}
+
+**Symptom:** When the car restarts with Wi‑Fi on, the car's voice assistant starts by itself and keeps talking.
+
+**Cause:** After a restart the voice assistant wakes up and, because Wi‑Fi is on, tries to reach the internet. When it cannot connect, it retries and gets stuck in a loop.
+
+**Fix:** Turn Wi‑Fi off for 1–2 minutes, then turn it back on. The issue goes away.
+
+### The car cannot get a location (GPS) {#gps}
+
+**Symptom:** Google Maps or Yandex cannot find your location, says there is no location, or cannot draw a route. Even without FrostNav, the car's compass keeps pointing the same way (e.g. North) while driving.
+
+**Cause:** On some cars, especially some Jaecoo and Tiggo 8 models, the car's own GPS module sometimes fails to get a location. This is not caused by FrostNav.
+
+**Fix:**
+
+- Send your phone's location to the car: turn on GPS Link in the [FrostNav mobile app](./kullanim/mobile.mdx). Map apps then use the phone's location.
+- Wait a while under open sky; the issue often goes away by itself.
+- If it does not, [restart](#yeniden-baslatma) the multimedia unit.
+
+### The screen may stop responding if the app is closed while camera recording is on {#kamera-kapatma}
+
+**Symptom:** If FrostNav is closed while Camera 360 recording or live preview is on, the screen can go black or the image may not come through properly.
+
+**Fix:** [Restart](#yeniden-baslatma) the multimedia unit; the screen returns to normal. This is not a permanent fault recorded in the car. To avoid it:
+
+- Do not swipe FrostNav away from the recent apps screen while recording.
+- Stop recording before updating.
+- End recording with the "Stop" / "Stop Recording" button in the app.
+
+Details: [Camera 360](./kullanim/camera-360.mdx#kayit-acikken).
+
+### If the app closes unexpectedly, the last clip may be incomplete {#son-klip}
+
+**Symptom:** If FrostNav closes unexpectedly while recording, the clip being recorded at that moment (up to 3 minutes) may not be saved. Earlier clips are not affected.
+
+**Fix:** Copy clips you want to keep to USB right away with the [Viewer](./kullanim/camera-360.mdx#izleme-ekrani).
+
+### USB music does not resume by itself after a phone call {#usb-muzik}
+
+**Symptom:** While music plays from the car's USB, a phone call stops it and it does not come back after the call. Radio, Spotify and YouTube Music resume normally.
+
+**Fix:** Press Play after the call. This behavior comes from the car's own music app.
+
+### Sound may switch to Bluetooth when a message arrives {#telefon-onceligi}
+
+**Symptom:** While radio or USB plays, a message on the phone switches the source to Bluetooth; a paused song on the phone may start playing.
+
+**Fix:** Turn off "Phone priority" in the home screen's gear settings. An improvement is being worked on.
+See [Full-screen home](./kullanim/launcher-mode.mdx#ana-ekran-ayarlari-dislisi).
+
+### Tire pressure shows only on 4x4 cars {#lastik}
+
+**Symptom:** Tire pressure stays empty.
+
+**Explanation:** Tire pressure can be read only from 4x4 cars. Other cars do not provide it.
+Rely on the tire warning on the car's own cluster.
+
+### Home and Work places are not in the backup {#ev-is}
+
+**Symptom:** After restoring a settings backup, the Home and Work places in the Navigation widget are missing. Home/Work addresses saved in Google Maps or Yandex are not read automatically either.
+
+**Fix:** Enter the places by hand in the [Navigation widget](./kullanim/launcher-mode.mdx#ev-is).
+
+### Extra FrostNav icons on the Jaecoo home screen {#jaecoo-ikon}
+
+**Symptom:** More than one FrostNav or Mini dashboard icon appears on the car's own home screen.
+
+**Fix:** Tap **Settings > Fix home screen icons**. The car's home screen restarts for a moment; system icons and their positions stay.
+See [Settings](./kullanim/settings.mdx#ikon-onar).
+
+### The screen lags while recording with CarPlay or Android Auto on {#kayit-carplay}
+
+**Symptom:** While camera recording runs, the screen slows down if CarPlay, Android Auto, YouTube or Yandex Maps is also open.
+
+**Cause:** Recording compresses the image on the graphics processor. CarPlay and Android Auto process the phone's video at the same time. At high resolution both share the same video chip.
+
+**Fix:** Lower the recording resolution to 960×600 or 640×400. If it still lags, do not record while CarPlay or Android Auto is on.
+See [Camera 360](./kullanim/camera-360.mdx#onerilen-kullanim).
+
+### Processor load rises while the turn-signal camera is on {#sinyal-kamerasi}
+
+**Symptom:** While "Side camera on cluster with turn signal" is on, the cameras are kept ready for the whole drive so the first signal has no delay. This adds load on the processor.
+
+**Fix:** If you do not use it, turn it off on the [Camera 360](./kullanim/camera-360.mdx#sinyal-kamerasi) screen.
+
+## Vehicle-specific limits
+
+| Topic | Explanation |
+|---|---|
+| Face recognition, Jaecoo | Access to the DMS camera on Jaecoo cars is not done yet. Face recognition does not work on these cars for now. |
+| CPD (child presence detection) | Depends on the hardware; does not work on some Tiggo 8 hardware. |
+| Camera 360 | Not available on cars without surround cameras. Does not work on the Omoda 9. |
+| Split screen | Does not open if the car does not allow free windows. See [Split screen](./kullanim/split-screen.mdx). |
+| Climate stops at 23.5 instead of HI | In the home screen settings, set "Climate temperature scale" to "Whole degree". See [Full-screen home](./kullanim/launcher-mode.mdx). |
+| XAPK files | Installing XAPK fails on unified screens. Use the app's APK version. |
+| Tiggo 8 Pro | Not supported. See [Supported vehicles](./desteklenen-araclar.mdx). |
+| AM/FM switching does not work | In the home screen settings, try Type 1 or Type 2 for "Radio command type". |
+| Wi‑Fi drops while Android Auto is on | The car may not run the hotspot and Wi‑Fi at the same time. See [FAQ](./sss.mdx#android-auto-wifi). |
+| A warning at every start while USB is plugged in | The car shows this warning. Remove the USB stick after ADB is on. See [FAQ](./sss.mdx#usb-uyarisi). |
+
+## Troubleshooting sections on other pages
+
+- [Camera 360](./kullanim/camera-360.mdx)
+- [Full-screen home](./kullanim/launcher-mode.mdx)
+- [Face recognition](./kullanim/face-recognition.mdx)
+- [Automation](./kullanim/automation.mdx)
+- [Split screen](./kullanim/split-screen.mdx)
+- [ADB Lock: Chinese messages](./kurulum/adb-kilid.mdx)
+- [Frequently asked questions](./sss.mdx)
+
+## If your issue is not listed {#destek}
+
+1. Make sure FrostNav is on the latest version. See [Apps](./kullanim/apps.mdx).
+2. Right after the issue happens, send a log with **Settings > Send Log to Developer**. See [Settings](./kullanim/settings.mdx#log-gonder).
+3. Write to the [WhatsApp support group](https://chat.whatsapp.com/FoUWKEC0xbr09DtLAgvthg) with the reference number shown.

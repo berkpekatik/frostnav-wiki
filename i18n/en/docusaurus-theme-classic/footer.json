@@ -1,0 +1,42 @@
+{
+  "link.title.FrostNav": {
+    "message": "FrostNav",
+    "description": "The title of the footer links column with title=FrostNav in the footer"
+  },
+  "link.title.Mobil": {
+    "message": "Mobile",
+    "description": "The title of the footer links column with title=Mobil in the footer"
+  },
+  "link.title.Destek": {
+    "message": "Support",
+    "description": "The title of the footer links column with title=Destek in the footer"
+  },
+  "link.item.label.frostnav.com": {
+    "message": "frostnav.com",
+    "description": "The label of footer link with label=frostnav.com linking to https://frostnav.com"
+  },
+  "link.item.label.Web Installer": {
+    "message": "Web Installer",
+    "description": "The label of footer link with label=Web Installer linking to https://frostnav.com/install"
+  },
+  "link.item.label.Platform": {
+    "message": "Platform",
+    "description": "The label of footer link with label=Platform linking to https://platform.frostnav.com"
+  },
+  "link.item.label.App Store": {
+    "message": "App Store",
+    "description": "The label of footer link with label=App Store linking to https://apps.apple.com/tr/app/frostnav/id6829233441"
+  },
+  "link.item.label.Google Play": {
+    "message": "Google Play",
+    "description": "The label of footer link with label=Google Play linking to https://play.google.com/store/apps/details?id=com.frostblack.frostnav"
+  },
+  "link.item.label.WhatsApp": {
+    "message": "WhatsApp",
+    "description": "The label of footer link with label=WhatsApp linking to https://chat.whatsapp.com/FoUWKEC0xbr09DtLAgvthg"
+  },
+  "link.item.label.YouTube": {
+    "message": "YouTube",
+    "description": "The label of footer link with label=YouTube linking to https://www.youtube.com/watch?v=D8KxEsYhqpA"
+  }
+}

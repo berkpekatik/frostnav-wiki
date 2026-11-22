@@ -1,0 +1,231 @@
+---
+title: Sık sorulan sorular
+slug: /sss
+sidebar_position: 100
+description: FrostNav kurulumu, adbauth.key, kablo, yansıtma, kamera ve diğer konularda sık sorulan sorular.
+---
+
+:::tip Önce rehberi okuyun
+
+`adbauth.key` veya uygulama kurulumu hakkında soru sormadan önce [kurulum rehberini](./kurulum/index.mdx) okuyun.
+Kurulum videosu: [YouTube](https://www.youtube.com/watch?v=D8KxEsYhqpA).
+
+:::
+
+## Kurulum
+
+### Kuruluma nereden başlarım? {#kurulum-nereden}
+
+Önce [aracınızın desteklendiğini](./desteklenen-araclar.mdx) kontrol edin. Sonra [kurulum rehberindeki](./kurulum/index.mdx) adımları izleyin.
+Rehber yazılım sürümünüzü bulmanızı ve doğru kurulum yolunu seçmenizi sağlar.
+
+### Yazılım sürümümü nasıl bulurum? {#yazilim-surumu}
+
+Araç ekranında **Ayarlar > Sistem** sayfasının en altındaki sürüm satırına bakın. Örnek: `02.00.00`.
+
+| Sürüm | Kurulum | Web yükleyicide kurulum tipi |
+|---|---|---|
+| Tam olarak `02.00.00` | [02.00.00 kurulumu](./kurulum/02-00-00.mdx), `adbauth.key` gerekmez | "02.00.00" |
+| `02.00.00`'dan yüksek (ADB Kilidi) | [ADB Kilid kurulumu](./kurulum/adb-kilid.mdx), `adbauth.key` gerekir | "adbauth.key sahibiyim" |
+
+### Hangi tarayıcıyla kurulur? {#tarayici}
+
+[Web yükleyici](https://frostnav.com/install) Chrome, Edge veya Opera ile çalışır. Safari ve Firefox çalışmaz.
+JavaScript ve WebUSB açık olmalıdır. Windows bilgisayar, Mac veya Android telefon kullanabilirsiniz.
+
+### Hangi kablo ve OTG gerekir? {#kablo}
+
+- **Telefon veya tablet:** Type-C OTG adaptörü ve iki ucu da USB fiş olan bir kablo.
+- **Bilgisayar:** Yalnızca iki ucu USB fiş olan kablo.
+
+Görseller için [02.00.00 kurulumu](./kurulum/02-00-00.mdx) sayfasına bakın.
+
+### Telefonla kurulum olmuyor, ne yapmalıyım? {#telefonla-kurulum}
+
+Bazı telefonlarda kurulum tamamlanmıyor. Mümkünse **bilgisayar** kullanın; kurulum genelde tek seferde biter.
+
+- Samsung telefonlarda **Ayarlar > Güvenlik ve gizlilik > Otomatik Engelleyici** açıksa USB bağlantısını engelleyebilir. Kurulum süresince kapatın.
+- Önce iki ucu USB-A olan kabloyla deneyin; çalıştığını gördükten sonra Type-C deneyin.
+- Kabloyu çıkarıp yeniden takın ve tarayıcıda USB iznini tekrar verin.
+
+### USB bellek "yazma yetkisi yok" diyor {#usb-yazma}
+
+Bellek eski ya da arızalı olabilir. Başka bir USB bellek deneyin ve [FAT32](./kurulum/fat32.mdx) olarak biçimlendirin.
+
+### Multimedya ekranı donarsa ne yapmalıyım? {#ekran-dondu}
+
+Multimedya ünitesini yeniden başlatın: ses düğmesine (rulo) ya da yıldız ve dikdörtgen tuşlarına 10 saniye basılı tutun.
+Ayrıntılar: [Bilinen sorunlar](./bilinen-sorunlar.mdx#yeniden-baslatma).
+
+### Servise giderken uygulamayı silmek gerekir mi? {#servis}
+
+Evet. Servise gitmeden önce uygulamaları kaldırın. Uygulama Yönetimi'nden tek tek silebilir
+ya da **Ayarlar > Sistem** altından fabrika ayarlarına dönebilirsiniz.
+
+## adbauth.key
+
+### adbauth.key nedir? {#adbauth-key-nedir}
+
+`adbauth.key`, araçta ADB'yi açmaya yarayan bir anahtar dosyasıdır. Lisans değildir.
+Kurulumdan önce ADB'yi açmak için kullanılır. Ayrıntılar: [ADB Kilid](./kurulum/adb-kilid.mdx).
+
+### Önce key mi alınır, kablo mu? Key'in fiyatı nedir? {#fiyat}
+
+FrostNav uygulaması ücretsizdir. `adbauth.key` ücretlidir, güncel fiyatı [platform.frostnav.com](https://platform.frostnav.com/) üzerinde görebilirsiniz.
+
+Kilitli araçta sıra şöyledir:
+
+1. Product ID'yi alın ve gönderin.
+2. `adbauth.key` dosyasını alın.
+3. Kabloyla kurulumu yapın.
+
+Kablo ayrıca satılır.
+
+### Product ID nereden okunur? {#product-id}
+
+Product ID, `productID / 产品序列号` satırındaki 15 haneli seri numarasıdır. `0` (sıfır) ile `O` (harf) karıştırılmamalıdır.
+Gizli menüye girip `VERSION INFO` / `版本信息` düğmesine dokunarak okunur. Modele göre adımlar
+[Araca göre kurulum](./kurulum/araclar.mdx) ve [ADB Kilid](./kurulum/adb-kilid.mdx) sayfalarındadır.
+
+### Ekran değişirse key yeniden mi alınır? {#ekran-degisirse}
+
+Evet. Product ID multimedya ekranına bağlıdır. Ekran değişirse (ör. kaza sonrası) Product ID de değişir ve yeni bir `adbauth.key` gerekir.
+
+### USB belleği nasıl hazırlarım? {#usb-bellek}
+
+1. Belleği FAT32 olarak biçimlendirin: [FAT32](./kurulum/fat32.mdx).
+2. `adbauth.key` ve `svtasklist.flag` dosyalarını belleğin **ana klasörüne** kopyalayın. Alt klasöre koymayın.
+
+### Araç tarihi neden key ile aynı olmalı? {#arac-tarihi}
+
+Key dosyası `yyyyMMdd` biçiminde bir tarih taşır. Araç tarihini bu tarihe ayarlayın.
+Tarih aynı olduğu sürece ADB'yi tekrar tekrar açabilirsiniz.
+
+Örnek: key `20260930` ise araç tarihi 30 Eylül 2026 olmalıdır.
+
+### Ekranda Çince mesaj çıkarsa ne anlama gelir? {#cince-mesajlar}
+
+Her mesajın anlamı ve çözümü [ADB Kilid](./kurulum/adb-kilid.mdx) sayfasındaki tabloda yer alır. Kısaca:
+
+- **Başarılı:** ADB açıldı. USB belleği çıkarın.
+- **Dosya bulunamadı:** `adbauth.key` dosyasını belleğin ana klasörüne koyun.
+- **Dosya geçersiz veya boş:** Dosyayı tekrar kopyalayın veya yeniden indirin.
+- **Seri numarası okunamadı:** Aracı yeniden başlatıp tekrar deneyin.
+- **Doğrulama başarısız:** Key araç veya tarihle eşleşmiyor. Araç tarihini key tarihine ayarlayın.
+
+### USB takılıyken her açılışta çıkan uyarı nasıl kapanır? {#usb-uyarisi}
+
+ADB başarılı mesajını gördükten sonra USB belleği çıkarın. Bellek takılı kaldıkça uyarıyı araç kendisi gösterir;
+FrostNav'da bunu kapatan bir ayar yoktur.
+
+## Kullanım
+
+### Yandex veya Google Maps nereden kurulur? Gösterge ekranına yansır mı? {#harita-kurulumu}
+
+Harita uygulamaları ayrıca kurulur: web yükleyicideki "Market uygulaması yükle" seçeneğiyle ya da
+[Uygulamalar](./kullanim/apps.mdx) ekranındaki Sunucu moduyla.
+
+Yansıtmayı FrostNav'ın [Yansıtma](./kullanim/projection.mdx) ekranından açın.
+Google Maps için bildirim erişimi açıksa gösterge kartları gelir. Yandex için FrostNav erişilebilirlik hizmeti gerekir.
+
+### WhatsApp'tan gelen konum haritada nasıl açılır? {#whatsapp-konum}
+
+Telefonda [FrostNav mobil uygulaması](./kullanim/mobile.mdx) gerekir. WhatsApp'taki konumu FrostNav'a paylaşın ve "Araçta aç" seçeneğine dokunun.
+Telefon ve araç aynı Wi‑Fi ağında olmalıdır.
+
+### Telefondan araca dosya veya link nasıl gönderilir? {#dosya-gonderme}
+
+Telefon ve araç aynı Wi‑Fi ağında olmalıdır. [Aktar](./kullanim/web-server.mdx) ekranında sunucuyu başlatın,
+ekrandaki adresi açın ya da QR kodu okutun. Port her zaman `7462`'dir (örnek: `http://192.168.1.20:7462`).
+
+- Dosyalar aracın İndirilenler klasörüne gider. APK dosyalarında kurma düğmesi çıkar.
+- `http`, `https`, `geo` ve `google.navigation` linkleri açılır. `javascript`, `file`, `data` ve `content` linkleri engellenir.
+
+### Android Auto açıkken Wi‑Fi neden kopuyor? {#android-auto-wifi}
+
+Araç hotspot ile Wi‑Fi'yi aynı anda çalıştıramıyorsa bağlantı kopabilir. Aracın Wi‑Fi ayarlarında telefonu bağlı olarak işaretleyin.
+
+Telefonun hotspot'una bağlıysanız telefon, kullanılmadığını düşünüp hotspot'u kendiliğinden kapatabilir. Telefonun hotspot ayarlarında otomatik kapanmayı kapatın.
+
+### Android Auto veya CarPlay ile birlikte kullanılır mı? {#android-auto}
+
+Evet. Ancak kamera kaydı açıkken birlikte kullanmak ekranı yavaşlatabilir. Bkz. [Bilinen sorunlar](./bilinen-sorunlar.mdx#kayit-carplay).
+
+### Mobil uygulama tek başına çalışır mı? {#mobil-tek-basina}
+
+Hayır. Mobil uygulama, araçtaki ücretsiz FrostNav uygulamasıyla birlikte çalışır. Önce FrostNav'ı araca kurun.
+
+### FrostNav Wi‑Fi ekranında bağlantı neden başarısız olur? {#wifi-hata}
+
+| Mesaj | Çözüm |
+|---|---|
+| Wi‑Fi kapalı | Wi‑Fi'yi açın, sonra yenileyin. |
+| Ağ bulunamadı | Yenileyin. Modemi veya hotspot'u kontrol edin. |
+| Şifre boş | Şifreyi girin. |
+| Bağlantı başarısız | Şifreyi kontrol edip tekrar deneyin. |
+
+Bağlanmak için: Wi‑Fi açıkken yenileyin, ağa dokunun, şifreyi girin ve Bağlan'a dokunun. Ayrıntılar: [Wi‑Fi](./kullanim/wifi.mdx).
+
+### Araç her çalışınca sürüş modu değişsin mi? {#surus-modu}
+
+[Sürüş Hafızası](./kullanim/memory-mode.mdx) seçtiğiniz sürüş modunu kaydeder ve araç her çalıştığında geri uygular
+(Eco, Normal, Sport; "4x4 modlar" açıkken Snow, Mud, Offroad, Sand). Varsayılan "Hiçbiri"dir, otomatik değişiklik yapmaz.
+[Ayarlar](./kullanim/settings.mdx) ekranında "Arka planda çalış" Açık olmalıdır.
+
+### Araç kamerasıyla kayıt yapılır mı? Kayıt açıkken ekran neden kasıyor? {#kamera-kayit}
+
+Evet. [Kamera 360](./kullanim/camera-360.mdx) dört kamerayı canlı gösterir; FAT32 USB belleğe veya araç içi depoya kaydeder.
+Her modelde kamera yoktur.
+
+En yüksek çözünürlükte kayıt dakikada yaklaşık 60 MB tutar. Ekran kasıyorsa:
+
+- Kaydı durdurun ya da 960×600 veya 640×400 çözünürlüğe geçin.
+- Sinyal kamerasında "Düz görünüm" açıksa kapatın.
+
+Araç içi otomatik kayıt ile USB otomatik kayıt aynı anda açık olamaz.
+
+:::warning
+
+Kayıt açıkken FrostNav'ı son uygulamalardan kaydırarak kapatmayın ve güncellemeden önce kaydı durdurun. Aksi halde ekran kararabilir. Ayrıntılar ve önerilen kullanım: [Kamera 360](./kullanim/camera-360.mdx#kayit-acikken).
+
+:::
+
+### Yüz tanıma koltuğu neden oynatmıyor? {#yuz-tanima}
+
+Koltuk hafızası seçilmediyse [Yüz tanıma](./kullanim/face-recognition.mdx) yalnızca kişiyi tanır ve söyler. Koltuğun oynaması için:
+
+- Kontak açık olmalı.
+- Profil 1, 2 veya 3 seçilmeli ve aracın hafıza tuşuyla eşleşmeli.
+- En az bir yüz profili kayıtlı olmalı.
+- Otomatik tanıma açık olmalı.
+- [Ayarlar](./kullanim/settings.mdx) ekranında "Arka planda çalış" Açık olmalı.
+
+Kamera izni verilmediyse tanıma çalışmaz. Jaecoo araçlarda DMS kamerasına erişim henüz yapılmadı; yüz tanıma bu araçlarda şimdilik çalışmaz.
+
+### Koltuk ısıtması neden hemen kapanıyor? {#koltuk-isitma}
+
+[Otomasyon](./kullanim/automation.mdx) ekranındaki süre kaydırıcısı 0 değilse özellik, kontaktan sonra seçilen dakika dolunca kapanır.
+Otomatik kapanmasın istiyorsanız 0 yapın. "Otomasyonu çalıştır" açık olmalıdır.
+
+Isıtma ve havalandırma sıcaklık aralıkları çakışırsa uyarı çıkar ve değişiklik geri alınır.
+Örnek: 10°C altında ısıt, 25°C üstünde havalandır. Özelliği araç ekranından kapatırsanız otomasyon o sürüş için durur.
+
+### Bölünmüş ekran neden açılmıyor? {#bolunmus-ekran}
+
+Durum satırı aracın serbest pencerelere izin vermediğini söylüyorsa [Bölünmüş ekran](./kullanim/split-screen.mdx) açılamaz.
+Aksi halde Uygulama 1 ve Uygulama 2 için iki farklı uygulama seçip "Böl ve aç" düğmesine dokunun.
+Zaten açık olan bir uygulama boyutunu korur; onu kapatıp tekrar deneyin.
+
+### Launcher paneli açılışta neden gelmiyor? {#launcher}
+
+[Ayarlar](./kullanim/settings.mdx) ekranında "Tam ekran ana sayfa" seçeneğini Evet yapın ve "Arka planda çalış" seçeneğini Açık tutun.
+FrostNav'ı varsayılan ana ekran uygulaması yapın. Ana ekran tuşu paneli açar.
+
+"Araç verisi bekleniyor" yazıyorsa araç çalışır durumda olmalıdır. Hızlı erişim kartındaki X ile normal görünüme dönebilirsiniz.
+Ayrıntılar: [Tam ekran ana sayfa](./kullanim/launcher-mode.mdx).
+
+## Hesap ve destek
+
+### E-posta onayı gelmiyor veya giriş yapamıyorum {#giris}
+
+[WhatsApp destek grubundan](https://chat.whatsapp.com/FoUWKEC0xbr09DtLAgvthg) veya [platform.frostnav.com](https://platform.frostnav.com/) üzerindeki iletişim sayfasından bize ulaşın.

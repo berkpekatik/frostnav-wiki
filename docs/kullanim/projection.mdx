@@ -1,0 +1,97 @@
+---
+title: "Gösterge ekranı"
+sidebar_position: 15
+description: "FrostNav gösterge ekranı: haritayı yansıtma, FrostNav tuşu, harita kaydırma, Google Maps ve Yandex kartları."
+---
+
+Gösterge ekranı, bir uygulamanın (örneğin harita uygulamasının) ekranını sürücünün önündeki gösterge paneline gönderir. Yansıtmayı bu ekrandan yönetirsiniz.
+
+## Ekranı açın
+
+1. FrostNav uygulamasını açın.
+2. Sol menüde "Gösterge ekranı" öğesine dokunun.
+3. Tam ekran ana sayfadaysanız araç kartındaki "Yansıtma" durumuna dokunun. Bu durum aynı ekranı açar.
+
+## Yansıtmayı ilk kez başlatın
+
+1. "Uygulama" bölümünde "Değiştir" düğmesine dokunun.
+2. Listeden uygulamayı seçin. Liste kurulu uygulamaları gösterir. Uygulama adı "Seçildi:" yanında görünür.
+3. "Yansıt" düğmesine dokunun.
+4. Durum "Yansıtma kapalı" yazısından "Yansıtma aktif" yazısına döner. İşlem sırasında uygulama "Yansıtılıyor…" yazar.
+
+:::note
+
+Uygulama "Overlay izni gerekli" derse Overlay iznini verin. Yükleyici bu izni verir.
+
+:::
+
+Uygulama seçmediyseniz "Önce bir uygulama seçin!" mesajı görünür.
+
+## Yansıtmayı durdurun
+
+1. "Durdur" düğmesine dokunun.
+2. Uygulama "Durduruluyor…" yazar. Sonra durum "Yansıtma kapalı" olur.
+
+[Ekrandaki geri tuşu](./settings.mdx) çubuğunu da kullanabilirsiniz: başlatmak için Harita, durdurmak için X simgesi.
+
+## Uygulamayı ana ekrana alın
+
+1. Uygulamayı seçin.
+2. "Ana Ekrana Al" düğmesine dokunun.
+3. Uygulama ana multimedya ekranında açılır.
+
+## Navigasyon davranışı
+
+### Başlatma: yansıtma ne zaman başlar?
+
+| Seçenek | Anlamı |
+|---|---|
+| Motor | Direkt start verildiğinde yansıtma başlar. |
+| Hazır | Frene basmadan Engine Start düğmesine bir kez basınca yansıtma başlar. |
+| Elle | Yansıtmayı kendiniz "Yansıt" düğmesiyle başlatırsınız. |
+
+### Kapanış
+
+- **Evet:** Araç kapanınca yansıtma kendiliğinden kapanır.
+- **Hayır:** Yansıtma açık kalır. Elle kapatın.
+
+### FrostNav tuşu
+
+- **Açık:** Aracın donanım tuşu göstergedeki haritayı kontrol eder.
+- **Kapalı:** Donanım tuşu harita için bir şey yapmaz.
+
+### Harita kaydırma
+
+- **Açık:** İki parmakla sola kaydırınca Google Maps veya Yandex göstergeye taşınır. İki harita da açıksa yer değiştirirler. Sağa kaydırınca gösterge kapanır.
+- **Kapalı:** Araç kaydırması yok sayılır. FrostNav uygulama taşımaz.
+
+Kullanım erişimi gerekir. Erişim yoksa uygulama "Önce FrostNav için kullanım erişimini açın. Erişim yokken kaydırma kapalı kalır." mesajını gösterir.
+
+Aynı kaydırmayı [bölünmüş ekran](./split-screen.mdx) veya [cam tavan](./sunroof.mdx) kullanıyorsa bu anahtar açılmaz. Önce o hareketi kapatın.
+
+## Google Maps
+
+### Navigasyonla birlikte aç
+
+- **Açık:** Google Maps yol tarifi başlayınca gösterge açılır. Google Maps seçili olmalı ve bildirim erişimi açık olmalıdır. Yol tarifi bitince gösterge açık kalır.
+- **Kapalı:** Uygulama Google Maps bildirimlerinden göstergeyi açmaz.
+
+Bildirim erişimi kapalıysa uygulama "Önce FrostNav için bildirim erişimini açın" mesajını gösterir.
+
+### Yol tarifi kartları
+
+- **Açık:** Gösterge ekranında manevra ve ETA kartlarını gösterir. Bildirim erişimi gerekir.
+- **Kapalı:** Cluster navigasyon kartları kapanır.
+
+"Kart tasarımı" üç seçenek sunar. "Detay kartı" üstte manevrayı, altta kalan yolu, varışı ve süreyi gösterir. "İnce çizgi" manevrayı ve ETA'yı tek satırda gösterir. "Launcher camı" aydınlık ve karanlık temaya uyan, büyük mesafe yazılı ana ekran görünümüdür; altta kalan yol, varış ve süre yer alır.
+
+"Google Maps kart konumu" kartın yerini ve boyutunu ayarlar. Sürgülerin adı Yatay (X), Dikey (Y) ve Boyut'tur. "Sıfırla" kartı varsayılan yere ve boyuta döndürür.
+
+## Yandex → Cluster
+
+- **Açık:** Uygulama Yandex Haritalar yönlendirmesini okur. Yönlendirme sırasında gösterge panelinde manevra ve ETA kartını gösterir. Ana ekranın sol çeyreğini kapatmaz.
+- **Kapalı:** Gösterge paneli navigasyon özeti kapalıdır.
+
+FrostNav erişilebilirlik servisi açık olmalıdır. Kapalıysa uygulama "Önce FrostNav erişilebilirlik servisini açın" mesajını gösterir.
+
+"Yandex kart konumu" Google Maps kartıyla aynı sürgüleri kullanır: Yatay (X), Dikey (Y), Boyut ve Sıfırla. Kart tasarımı için burada da aynı üç seçenek vardır.

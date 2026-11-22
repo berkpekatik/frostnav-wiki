@@ -1,0 +1,76 @@
+---
+title: "Web Server"
+sidebar_position: 5
+description: "How to start the FrostNav web server, open its page from a phone or PC, upload files, open links, and send text to the car."
+---
+
+The web server lets you control the car from a phone or a PC. You open a web page on your device. The page has three sections: Files, Open link, and Keyboard.
+
+## Requirements
+
+- The car and your device must use the same Wi-Fi network. See [Wi-Fi screen](./wifi.mdx).
+- Any web browser works on your device.
+
+## Start the server
+
+1. Open the FrostNav app.
+2. Touch "Transfer" in the side menu. On the home panel, touch the "Transfer" shortcut. The "Phone" status on the vehicle card also opens this screen.
+3. Touch "▶ Start Web Server".
+4. Read the address on the screen. It looks like `http://192.168.1.20:7462`. The port number is always `7462`.
+5. A QR code also shows on the screen.
+
+## Open the page on your device
+
+1. Option A: Scan the QR code with your phone.
+2. Option B: Type the address in the browser of your device.
+3. The page "FrostNav - Web management" opens.
+4. To change the language, touch "TR" or "EN" on the page.
+
+## Section: Files
+
+Use this section to send files to the car and to manage apps.
+
+1. Touch "Choose a file or drag it here". Select a file. You can send APK, ZIP, PDF, and other types.
+2. Touch "Send". The file goes to the Downloads folder of the car.
+3. Wait for the message "File uploaded".
+
+- **Uploaded files:** This list shows the files on the car. Touch "Install" to install an APK file. Touch "Delete" to delete a file.
+- **Installed apps:** This list shows the apps on the car. Touch "Open" to start an app. Touch "Delete" to remove an app. FrostNav shows "Locked". You cannot remove it.
+- Touch "Refresh" to update a list.
+
+## Section: Open link
+
+1. Type a link in the "Link" box. Example: a web site or a share link.
+2. Touch "Open on vehicle".
+3. The link opens in the default browser of the car, or in a system app that matches the link.
+
+:::note
+
+The server accepts http and https links, `geo`, and `google.navigation`. The server blocks `javascript`, `file`, `data`, and `content`.
+
+:::
+
+## Section: Keyboard
+
+Use this section to type on the car screen with your phone or PC keyboard.
+
+1. On the car screen, touch a text field. The field must stay in focus.
+2. On the web page, type your text in the "Text" box.
+3. Touch "Send text (once)". The text goes to the field on the car.
+
+- **Live typing:** If you select this box, the page sends each change at once. If you type fast, the car receives only the latest text. Clear the box to send text one time.
+- The "Global Back" accessibility service of FrostNav must be on. See [Settings](./settings.mdx).
+- This function can fail on some car screens.
+
+## Stop the server
+
+1. Go back to the "Transfer" screen.
+2. Touch "■ Stop Web Server". The status changes to "Server stopped".
+
+:::warning
+
+WARNING:
+
+The web page has no password. When the server is on, each device on the same network can use the address. Stop the server when you finish.
+
+:::
