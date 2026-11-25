@@ -10,5 +10,9 @@
   "sidebar.wiki.category.Kullanım": {
     "message": "Usage",
     "description": "The label for category 'Kullanım' in sidebar 'wiki'"
+  },
+  "sidebar.wiki.category.Uygulamalar": {
+    "message": "Apps",
+    "description": "The label for category 'Uygulamalar' in sidebar 'wiki'"
   }
 }
