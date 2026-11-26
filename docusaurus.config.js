@@ -2,6 +2,7 @@
 import {themes as prismThemes} from 'prism-react-renderer';
 
 const SITE = 'https://frostnav.com';
+const INSTALLER = 'https://app.frostnav.com';
 const PLATFORM = 'https://platform.frostnav.com';
 const SITE_URL = 'https://wiki.frostnav.com';
 
@@ -80,7 +81,7 @@ const config = {
         items: [
           {type: 'docSidebar', sidebarId: 'wiki', position: 'left', label: 'Rehber'},
           {to: '/sss/', label: 'SSS', position: 'left'},
-          {href: `${SITE}/install`, label: 'Web Installer', position: 'right'},
+          {href: INSTALLER, label: 'Web Installer', position: 'right'},
           {href: PLATFORM, label: 'Platform', position: 'right'},
           {type: 'localeDropdown', position: 'right'},
         ],
@@ -92,7 +93,7 @@ const config = {
             title: 'FrostNav',
             items: [
               {label: 'frostnav.com', href: SITE},
-              {label: 'Web Installer', href: `${SITE}/install`},
+              {label: 'Web Installer', href: INSTALLER},
               {label: 'Platform', href: PLATFORM},
             ],
           },

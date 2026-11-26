@@ -10,7 +10,7 @@ import styles from './styles.module.css';
  */
 
 const BUY_URL = 'https://platform.frostnav.com/buy';
-const INSTALLER_URL = 'https://frostnav.com/install';
+const INSTALLER_URL = 'https://app.frostnav.com';
 const LEGACY = '02.00.00';
 
 const CABINS = [
