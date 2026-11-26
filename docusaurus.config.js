@@ -40,6 +40,13 @@ const config = {
           routeBasePath: '/',
           sidebarPath: './sidebars.js',
           showLastUpdateTime: true,
+          // Kategori sayfası (ör. kurulum/index) sidebars.js'te kategori linki olarak zaten var.
+          // Otomatik listede ikinci kez çıkarsa sayfa "Sonraki" olarak kendini gösterir; bu yüzden çıkarıyoruz.
+          sidebarItemsGenerator: async ({defaultSidebarItemsGenerator, ...args}) => {
+            const items = await defaultSidebarItemsGenerator(args);
+            const indexId = `${args.item.dirName}/index`;
+            return items.filter((item) => !(item.type === 'doc' && item.id === indexId));
+          },
           // "Bu sayfayı düzenle" → yönetim panelinde (Decap CMS) aynı sayfa. Koleksiyon adları static/admin/config.yml ile aynı.
           editUrl: ({docPath, locale}) => {
             const [dir, file] = docPath.includes('/') ? docPath.split('/') : ['genel', docPath];
