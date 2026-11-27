@@ -102,6 +102,20 @@ Apps, Wi-Fi, Transfer and Settings are always shown. This choice turns no settin
 
 To change the choice later, tap **Settings > Edit menu**.
 
+## iFlytek restart-loop fix {#iflytek-dongu}
+
+Only shown on vehicles with the car's own iFlytek voice assistant.
+
+On some vehicles, the iFlytek voice assistant crashes and restarts over and over at startup while Wi-Fi is connected.
+The cause is a request the assistant sends at startup to a server that returns a broken reply (`flamesdev.iflytekauto.cn`).
+With this setting on, FrostNav blocks only that address, inside the car. The voice assistant keeps working and the loop stops.
+
+To turn it on, open **Settings** and choose **On** in the "iFlytek restart-loop fix" card above the "Send Log to Developer" card.
+
+- Your traffic is not redirected anywhere and no outside VPN service is used. Every other address goes through the car's own connection.
+- A VPN key icon may appear in the status bar. This is normal.
+- FrostNav keeps checking the connection. If the setting breaks the car's internet, it turns itself off and the internet comes back within half a minute.
+
 ## Send Log to Developer {#log-gonder}
 
 If the app froze, Bluetooth dropped or the screen restarted, use this button to send the system logs to the developer.
