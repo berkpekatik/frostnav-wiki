@@ -1,0 +1,68 @@
+---
+title: "Service mode"
+sidebar_position: 18
+description: "FrostNav service mode: hide the apps you installed without uninstalling them before a service visit, and restore them with a password file on a USB drive."
+---
+
+Service mode **hides the apps you installed, without uninstalling them**, before you take the car to the service. FrostNav is hidden too and stops running in the background. When you are back, plug in a USB drive with your password and everything comes back.
+
+:::danger
+
+You do this entirely at your own risk. The developer advises against this method.
+Before going to the service, the strongly recommended way is **System > Factory reset**.
+
+:::
+
+## What is hidden and what is not?
+
+- **Hidden:** Apps you installed that have an icon on the home screen. This is the same list as **Local** on the [Apps](./apps.mdx) screen (for example Google Maps, Yandex Maps, YouTube).
+- **Hidden:** FrostNav. Its icon disappears. The on-screen back button, the home page, notifications and background services stop.
+- **Not hidden:** The car's own apps (radio, settings, cameras, climate and so on). They are never touched.
+- **Keyboard:** If a keyboard you installed is the default keyboard, the car switches to its own keyboard and yours is hidden too. If the car has no keyboard of its own, your keyboard is not hidden.
+
+Apps are not uninstalled. Their data, settings and sign-ins stay as they are.
+
+## Turn on service mode
+
+1. Open FrostNav and go to the [Settings](./settings.mdx) screen.
+2. Tap the red **SERVICE MODE** button on the "Service Mode" card.
+3. Read the warning. The **I CONFIRM** button unlocks after 5 seconds.
+4. Check the list of apps to hide. The list is for information only. Tap **Continue**.
+5. Set a password (at least 4 characters) and type it again. Tap **Turn on service mode**.
+6. The apps are hidden and the car's own home screen opens.
+
+:::warning
+
+Write your password down. It is the only way to restore the apps.
+
+:::
+
+## Restore the apps
+
+1. On a computer, create a text file named `frostnav-unlock.txt` in the **root** of a USB drive (not inside a folder).
+2. Write only your password in the file and save it.
+3. Plug the USB drive into the car.
+4. Within a few seconds the apps come back, FrostNav opens and the "Service mode off" window appears.
+5. **Turn the car off and on once.** The FrostNav icon shows up on the car's home screen only after a restart.
+
+:::tip
+
+- Upper and lower case in the file name do not matter. If Windows hides the extension and the file is saved as `frostnav-unlock.txt.txt`, it still works.
+- If the car does not read the USB drive, format it as [FAT32](../kurulum/fat32.mdx).
+- Do not leave the USB drive with your password in the car when you go to the service. If the drive is plugged in when the car starts, service mode turns off right away.
+
+:::
+
+## Frequently asked questions
+
+**Does service mode turn off when the car is restarted?**
+No. The apps stay hidden until the USB drive is plugged in, and FrostNav does not start.
+
+**Do hidden apps run in the background?**
+No. To the system a hidden app looks uninstalled: it is stopped, shows no notifications and does not start by itself.
+
+**Do the apps run right after they come back?**
+They start when you open them or the next time you start the car.
+
+**The service mode button shows a "device owner" warning.**
+Service mode needs FrostNav to be installed with the method in the [installation guide](../kurulum/index.mdx).

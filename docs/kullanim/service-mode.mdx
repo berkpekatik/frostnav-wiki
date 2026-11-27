@@ -1,0 +1,68 @@
+---
+title: "Servis modu"
+sidebar_position: 18
+description: "FrostNav servis modu: servise giderken sonradan yüklenen uygulamaları silmeden gizlemek ve USB bellekteki şifre dosyasıyla geri açmak."
+---
+
+Servis modu, aracı servise götürmeden önce sonradan yüklediğiniz uygulamaları **silmeden gizler**. FrostNav da gizlenir ve arka planda çalışmaz. Servis dönüşü şifrenizin yazılı olduğu USB belleği takınca her şey geri gelir.
+
+:::danger
+
+Bu işlem tamamen sizin sorumluluğunuzdadır. Geliştirici bu yöntemi önermez.
+Servise gitmeden önce şiddetle önerilen yol **Sistem > Fabrika ayarlarına dön** seçeneğidir.
+
+:::
+
+## Ne gizlenir, ne gizlenmez?
+
+- **Gizlenir:** Sonradan yüklediğiniz, ana ekranda simgesi olan uygulamalar. Bu liste [Uygulamalar](./apps.mdx) ekranındaki **Yerel** listesiyle aynıdır (ör. Google Haritalar, Yandex Haritalar, YouTube).
+- **Gizlenir:** FrostNav. Simgesi kaybolur. Ekrandaki geri tuşu, ana sayfa, bildirimler ve arka plan servisleri durur.
+- **Gizlenmez:** Aracın kendi uygulamaları (radyo, ayarlar, kamera, klima vb.). Bunlara hiç dokunulmaz.
+- **Klavye:** Sonradan yüklediğiniz klavye varsayılan klavyeyse araç kendi klavyesine geçer ve sizin klavyeniz de gizlenir. Aracın kendi klavyesi yoksa klavyeniz gizlenmez.
+
+Uygulamalar silinmez. Verileri, ayarları ve girişleriniz olduğu gibi kalır.
+
+## Servis modunu açın
+
+1. FrostNav uygulamasını açın ve [Ayarlar](./settings.mdx) ekranına girin.
+2. "Servis Modu" kartındaki kırmızı **SERVİS MODU** düğmesine dokunun.
+3. Uyarıyı okuyun. **ONAYLIYORUM** düğmesi 5 saniye sonra açılır.
+4. Gizlenecek uygulamaların listesini kontrol edin. Liste yalnızca bilgi içindir. **Devam** düğmesine dokunun.
+5. Bir şifre belirleyin (en az 4 karakter) ve tekrar yazın. **Servis modunu aç** düğmesine dokunun.
+6. Uygulamalar gizlenir ve aracın kendi ana ekranı açılır.
+
+:::warning
+
+Şifrenizi bir yere not edin. Uygulamaları geri açmanın tek yolu bu şifredir.
+
+:::
+
+## Uygulamaları geri açın
+
+1. Bilgisayarda USB belleğin **köküne** (hiçbir klasörün içine değil) `frostnav-unlock.txt` adlı bir metin dosyası oluşturun.
+2. Dosyaya yalnızca şifrenizi yazın ve kaydedin.
+3. USB belleği araca takın.
+4. Birkaç saniye içinde uygulamalar geri gelir, FrostNav açılır ve "Servis modu kapatıldı" penceresi çıkar.
+5. **Aracı bir kez kapatıp açın.** FrostNav simgesi aracın ana ekranında ancak yeniden başlatmadan sonra görünür.
+
+:::tip
+
+- Dosya adındaki büyük/küçük harf önemli değildir. Windows uzantıyı gizlediği için dosya `frostnav-unlock.txt.txt` olarak kaydedilirse de çalışır.
+- Araç USB belleği okumazsa belleği [FAT32](../kurulum/fat32.mdx) olarak biçimlendirin.
+- Şifrenin yazılı olduğu USB belleği servise giderken araçta bırakmayın. Araç açılırken bellek takılıysa servis modu hemen kapanır.
+
+:::
+
+## Sık sorulanlar
+
+**Araç kapanıp açılınca servis modu kapanır mı?**
+Hayır. USB bellek takılana kadar uygulamalar gizli kalır, FrostNav da başlamaz.
+
+**Gizlenen uygulamalar arka planda çalışır mı?**
+Hayır. Gizlenen uygulama sistem için kaldırılmış gibidir: kapanır, bildirim göstermez, kendiliğinden başlamaz.
+
+**Uygulamalar geri gelince hemen çalışır mı?**
+Uygulamayı açtığınızda ya da aracı bir sonraki açışınızda çalışmaya başlar.
+
+**Servis modu düğmesi "cihaz sahibi" uyarısı veriyor.**
+Servis modu, FrostNav'ın [kurulum rehberindeki](../kurulum/index.mdx) yöntemle kurulmuş olmasını gerektirir.
